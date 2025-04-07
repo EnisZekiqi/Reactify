@@ -41,6 +41,15 @@
   z-index: 1000;
 }
 
+.list ::before{
+ content: '';
+ position: absolute;
+ width: 100%;
+ bottom: 0;
+ left: 0;
+ background: linear-gradient(to top,#060606,transparent);
+}
+
 .logowrapper{
   background-color: #00d8ff;
   border-radius: 10px;
