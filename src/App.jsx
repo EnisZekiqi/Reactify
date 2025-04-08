@@ -7,6 +7,7 @@ import 'tippy.js/dist/tippy.css'
 import { CiGift,CiFaceSmile,CiCircleCheck ,CiHardDrive    } from "react-icons/ci";
 import circlewallpaper from './assets/download.png'
 import Example from './components/Example'
+import Variants from './components/Variants'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -53,6 +54,7 @@ const words = text.split(" ");
      <HeroSection circlewallpaper={circlewallpaper} words={words} containerVariants={containerVariants} logos={logos} itemVariants={itemVariants} />
     <div className="empty"></div>
       <Example />
+      <Variants/>
     </div>
   )
 }
@@ -106,13 +108,13 @@ export default App
           delay: 1,
           duration: 0.5
         }
-      }} className="relative font-medium text-9xl text-white z-[10] text-center px-6 py-3">
+      }} className="relative font-medium text-5xl lg:text-7xl xl:text-9xl text-white z-[10] text-center px-6 py-3">
     Reactify
   </motion.h1>
     </div>
 
       <div className="flex w-full justify-center">
-       <motion.p className="read-the-docs text-center w-[55%] mt-5 flex flex-wrap justify-center">
+       <motion.p className="read-the-docs text-center text-sm md:text-md lg:text-lg w-full md:w-[55%] mt-5 flex flex-wrap justify-center">
   {words.map((word, index) => <motion.span key={index} initial={{
           opacity: 0,
           y: 20,
@@ -145,11 +147,11 @@ export default App
         delay: 0.5
       }
     }} className="flex items-center justify-center gap-4">
-      <p className="text-white mt-4 text-lg text-center underline">
+      <p className="text-white mt-4 text-md md:text-lg text-center underline">
   Ready to bring your ideas to life?
       </p>
 
-      <motion.button className="mt-4 px-6 py-3 bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg shadow" whileHover={{
+      <motion.button className="mt-4 md:px-6 md:py-3  px-4 py-2 bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg shadow" whileHover={{
         scale: 1.05
       }} whileTap={{
         scale: 0.95
@@ -166,7 +168,7 @@ export default App
             <Tippy className='opacity-100 hover:opacity-60 transition-all duration-300 ' content={logo.text} placement="top">
               <div className="text-2xl cursor-pointer opacity:100 hover:opacity-60 transition-all duration-300 flex flex-col items-center">
                 {logo.svg}
-                <p className='text-white font-light text-sm w-3/5 text-center'>{logo.label}</p>
+                <p className='text-white font-light text-sm w-full lg:w-3/5 text-center'>{logo.label}</p>
               </div>
             </Tippy>
           </motion.div>)}

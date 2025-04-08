@@ -1,4 +1,4 @@
-import { motion,AnimatePresence } from "framer-motion";
+import { motion,AnimatePresence,LayoutGroup } from "framer-motion";
 import { SiFramer,SiReact ,SiTailwindcss  } from "react-icons/si";
 import { CiCircleQuestion } from "react-icons/ci";
 import { useState, useEffect } from "react";
@@ -106,10 +106,24 @@ const wordVariants = {
   exit: { opacity: 0, y: -20 },
   };
   
-  const items = [0, 1, 2]; // simulate multiple blocks
+const items = [
+  {
+    title: 'Framer Motion',
+    bgImage: 'https://framerusercontent.com/images/PW7TZzsRuEq5sLfu3FYVeD6Kcg.png',
+    text:'Framer Motion or now called Motion is an animation library that is simple to start and fun to master '
+  },
+  {
+    title: 'React',
+    bgImage: 'https://media.licdn.com/dms/image/v2/D5612AQHK3Cr_P9REJw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1708847734586?e=2147483647&v=beta&t=FCYsysCNzjm85_2l02-lh5PltEu34kZN1R2CH_hplto',
+    text:'React 19 is used in this Library which means it has new hooks on the components and better optimization'
+  },
+  {
+    title: 'TailwindCSS',
+    bgImage: 'https://miro.medium.com/v2/resize:fit:1400/1*Q0uAcG_S2J2gkcUaF5PyxA.png',
+    text:'For styling direct into the JSX or TSX we use the TailwindCSS for faster coding and better layout of the code '
+  },
+];
 
-
-const bgImage = "https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=1000&q=80";
   const mask = "https://tailwindcss.com/_next/static/media/mask.4b6d7838.png";
   
   const [activeIndex, setActiveIndex] = useState(null);
@@ -139,13 +153,20 @@ setTimeout(() => {
                 className="flex flex-col items-center justify-center">
                 <p className="rounded-full bg-[#1A1A1A] font-extralight uppercase text-xs p-2">Examples</p>
                 <h1 className="text-3xl font-medium text-[#fff] mt-3">Powerful Components</h1>
-                <span className="text-md font-normal text-white opacity-50 w-[30%] text-center mt-3">Created with smooth animated & high performance animated components with interactive gestures</span>
+                <span className="text-md font-normal text-white opacity-50 w-full md:w-[30%] text-center mt-3">Created with smooth animated & high performance animated components with interactive gestures</span>
             </motion.div>
-            <div class="grid grid-cols-3 gap-2 mt-[10%] justify-items-center">
-                <div class="... bg-[#191919] rounded-xl p-2 w-[300px] h-[300px]">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{once:true}}
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-2 mt-[5%] justify-items-center">
+                <motion.div
+                variants={letterVariants}
+            class="... bg-[#191919] rounded-xl p-2 w-[100%] md:w-[300px] h-[300px]">
                     <div className="i text-end w-full pr-2 pt-2 flex items-end justify-end"><CiCircleQuestion  className="w-[25px] h-[25px]"/></div>
                       <motion.p
-        className="relative text-md md:text-lg text-center lg:text-3xl font-medium text-[rgba(255,255,255,0.5)] w-[100%]  mt-[30%] z-10"
+        className="relative text-2xl text-md md:text-lg text-center lg:text-3xl font-medium text-[rgba(255,255,255,0.5)] w-[100%] mt-[15%] md:mt-[30%] z-10"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -158,7 +179,7 @@ setTimeout(() => {
         ))}
         
       </motion.p>
-                    <div className="flex justify-between items-center mt-[35%] px-4">
+                    <div className="flex justify-between items-center mt-[23%] md:mt-[35%] px-4">
                         <h1 className="text-md font-medium text-white ">Simple Text</h1>
                         <div className="flex items-center gap-3 text-[rgba(255,255,255,0.5)]">
                             <SiFramer />
@@ -166,11 +187,13 @@ setTimeout(() => {
                             <SiTailwindcss/>
                         </div>
         </div>
-                </div>
-                <div class="... bg-[#191919] rounded-xl p-2 w-[450px] h-[300px]">
+                </motion.div>
+                <motion.div 
+                variants={letterVariants}
+            class="... bg-[#191919] rounded-xl p-2 w-[100%] md:w-[420px] lg:w-[450px] h-[300px]">
               <div className="i text-end w-full pr-2 pt-2 flex items-end justify-end"><CiCircleQuestion  className="w-[25px] h-[25px]"/></div>
                     <motion.p
-  className="relative text-md md:text-lg text-center lg:text-3xl font-medium w-[100%] text-[rgba(255,255,255,0.5)] z-10 mt-[20%] flex flex-wrap justify-center gap-1"
+  className="relative text-2xl md:text-lg text-center lg:text-3xl font-medium w-[100%] text-[rgba(255,255,255,0.5)] z-10 mt-[15%] md:mt-[20%] flex flex-wrap justify-center gap-1"
   variants={wordContainerVariants}
   initial="hidden"
   whileInView="visible"
@@ -186,7 +209,7 @@ setTimeout(() => {
     </motion.span>
   ))}
 </motion.p>
-<div className="flex justify-between items-center mt-[22%] px-4">
+<div className="flex justify-between items-center mt-[23%] md:mt-[22%] px-4">
                         <h1 className="text-md font-medium text-white ">Blury Text</h1>
                         <div className="flex items-center gap-3 text-[rgba(255,255,255,0.5)]">
                             <SiFramer />
@@ -194,14 +217,16 @@ setTimeout(() => {
                             <SiTailwindcss/>
                         </div>
         </div>
-  </div>
-                <div className="bg-[#191919] rounded-xl p-2 w-[300px] h-[600px] flex flex-col justify-between overflow-hidden">
+  </motion.div>
+          <motion.div
+                variants={letterVariants}
+            className="bg-[#191919] rounded-xl p-2 w-full md:w-[300px] h-[300px] lg:h-[600px]  flex flex-col justify-between overflow-hidden">
         <div>
           <div className="i text-end w-full pr-2 pt-2 flex items-end justify-end">
             <CiCircleQuestion className="w-[25px] h-[25px]" />
           </div>
 
-          <div className="flex w-full justify-center items-center mt-[70%]">
+          <div className="flex w-full justify-center items-center mt-[0%] lg:mt-[70%] ">
             <motion.div
           initial={{ opacity: 1, scale: 1 }}
           animate={navMenu ? { opacity: 0, transition: { duration: 0.5 } } : { opacity: 1, transition: { duration: 0.5 } }}
@@ -245,28 +270,41 @@ setTimeout(() => {
           <SiTailwindcss />
         </div>
       </div>
-    </div>
-          <div class="col-span-2 ... bg-[#191919] rounded-xl p-2 -mt-[30%] w-[95%] ml-17  flex-col gap-10 items-center justify-center">
+    </motion.div>
+          <motion.div
+                variants={letterVariants}
+            class="col-span-1 lg:col-span-2 ... bg-[#191919] rounded-xl p-2 lg:-mt-[30%] w-[100%] lg:w-[95%] -ml-4 lg:ml-17  flex-col gap-10 items-center justify-center">
  <div className="i text-end w-full pr-2 pt-2 flex items-end justify-end">
             <CiCircleQuestion className="w-[25px] h-[25px]" />
           </div>
-          <div className="flex justify-center items-center gap-10">
-               {items.map((_, index) => (
-          <Tippy key={index} content="Click Me" placement="top">
-            <motion.div
-              layoutId={`image-${index}`}
-              onClick={() => handleClick(index)}
-              className={`w-[200px] h-[100px] cursor-pointer 
-                ${index === 0 ? '-rotate-10' : index === 1 ? '-mt-12' : 'rotate-10'}
-                mask-[url('${mask}')] mask-no-repeat mask-center mask-contain 
-                bg-[url('${bgImage}')] bg-cover bg-center transition-all duration-300 hover:opacity-70`}
-            />
-          </Tippy>
-        ))}
-                 <AnimatePresence>
+            <LayoutGroup>
+              <div className="flex justify-center items-center gap-10">
+              {items.map((item, index) => (
+  <Tippy key={index} content="Click Me" placement="top">
+    <motion.div
+      layoutId={`image-${index}`}
+      onClick={() => handleClick(item,index)}
+      style={{
+      maskImage: `url('${mask}')`,
+  WebkitMaskImage: `url('${mask}')`,
+        maskRepeat: 'no-repeat',
+        maskPosition: 'center',
+        maskSize: 'contain',
+        backgroundImage: `url(${item.bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+      className={`w-[200px] h-[100px] cursor-pointer 
+        ${index === 0 ? '-rotate-10' : index === 1 ? '-mt-12' : 'rotate-10'}
+        transition-all duration-300 hover:opacity-70`}
+    />
+  </Tippy>
+))}
+
+                <AnimatePresence>
         {activeIndex !== null && (
           <>
-            {/* Backdrop */}
+            {/* BACKDROP */}
             <motion.div
               key="backdrop"
               className="fixed inset-0 bg-[rgba(0,0,0,0.5)] bg-opacity-60 z-40"
@@ -276,49 +314,39 @@ setTimeout(() => {
               onClick={handleClose}
             />
 
-            {/* Enlarged Card */}
+            {/* CENTER IMAGE WITHOUT MASK */}
             <motion.div
               layoutId={`image-${activeIndex}`}
-              className={`fixed top-1/2 left-1/2 z-50 w-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 bg-cover bg-center rounded-xl shadow-2xl p-6 text-white flex flex-col justify-between`}
+              className="fixed top-1/2 left-1/2 z-50 w-[400px] h-[250px] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center"
               style={{
-                backgroundImage: `url(${bgImage})`,
-                WebkitMaskImage: showMask ? `url(${mask})` : 'none',
-                maskImage: showMask ? `url(${mask})` : 'none',
-                WebkitMaskRepeat: 'no-repeat',
-                WebkitMaskPosition: 'center',
-                WebkitMaskSize: 'contain',
-                transition: 'mask-image 0.1s ease-in-out',
+                backgroundImage: `url(${activeIndex.bgImage})`,
               }}
-              initial={{ opacity: 0.5, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ borderRadius: 20,opacity:0,scale:0 }}
+              animate={{ borderRadius: 16,opacity:1,scale:1,transition:{duration:0.5} }}
               exit={{ opacity: 0, scale: 0.9 }}
-            >
-              {/* Content inside the zoomed card */}
-              <div>
-                <h2 className="text-2xl font-bold mb-2">Fruit Card #{activeIndex + 1}</h2>
+                    >
+                       <div>
+                <h2 className="text-2xl font-bold mb-2">{activeIndex.title}</h2>
                 <p className="text-sm opacity-90">
-                  This is some additional content inside the zoomed card. You can put descriptions, links, or anything here!
-                </p>
+                  {activeIndex.text}
+                        </p>
               </div>
 
-              <div className="flex justify-end gap-3 mt-4">
+              <div className="flex justify-end items-end h-full gap-3 -mt-22">
                 <button
                   onClick={handleClose}
-                  className="px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition"
+                  className="px-4 py-2 bg-[#232829] text-white rounded-md hover:bg-[#181b1b] transition-all duration-300"
                 >
                   Close
                 </button>
-                <button
-                  className="px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-700 transition"
-                >
-                  Action
-                </button>
+                
               </div>
             </motion.div>
           </>
         )}
       </AnimatePresence>
           </div>
+          </LayoutGroup>
 <div className="flex justify-between items-center w-full px-4 mb-2 mt-[10%]">
         <h1 className="text-md font-medium text-white">Mask Modal</h1>
         <div className="flex items-center gap-3 text-[rgba(255,255,255,0.5)]">
@@ -327,10 +355,12 @@ setTimeout(() => {
           <SiTailwindcss />
         </div>
       </div>
-  </div>
-        </div>
+          </motion.div>
+          
+        </motion.div>
             <button className="bg-transparent text-md font-medium text-white mt-6 text-center w-full cursor-pointer hover:text-(rgba(255,255,255,0.5))">Explore all components</button>
         <div className="empty"></div>
+        
         </div>
      );
 }
