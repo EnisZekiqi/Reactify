@@ -8,6 +8,7 @@ import { CiGift,CiFaceSmile,CiCircleCheck ,CiHardDrive    } from "react-icons/ci
 import circlewallpaper from './assets/download.png'
 import Example from './components/Example'
 import Variants from './components/Variants'
+import Ending from './components/Ending'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -54,7 +55,8 @@ const words = text.split(" ");
      <HeroSection circlewallpaper={circlewallpaper} words={words} containerVariants={containerVariants} logos={logos} itemVariants={itemVariants} />
     <div className="empty"></div>
       <Example />
-      <Variants/>
+      <Variants />
+      <Ending/>
     </div>
   )
 }
@@ -146,12 +148,12 @@ export default App
         duration: 0.5,
         delay: 0.5
       }
-    }} className="flex items-center justify-center gap-4">
-      <p className="text-white mt-4 text-md md:text-lg text-center underline">
+    }} className="flex items-center justify-center gap-4 w-full sm:w-fit">
+      <p className="text-white mt-4 hidden sm:block text-md md:text-lg text-center underline">
   Ready to bring your ideas to life?
       </p>
 
-      <motion.button className="mt-4 md:px-6 md:py-3  px-4 py-2 bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg shadow" whileHover={{
+      <motion.button className="mt-4 md:px-6 md:py-3  sm:px-4 sm:py-2 px-2 py-2 w-full sm:w-fit bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg shadow font-medium" whileHover={{
         scale: 1.05
       }} whileTap={{
         scale: 0.95
@@ -165,10 +167,10 @@ export default App
     }
       <motion.div className="flex gap-8 justify-center mt-15" variants={containerVariants} initial="hidden" animate="show">
         {logos.map((logo, index) => <motion.div className='' key={logo.id} variants={itemVariants}>
-            <Tippy className='opacity-100 hover:opacity-60 transition-all duration-300 ' content={logo.text} placement="top">
-              <div className="text-2xl cursor-pointer opacity:100 hover:opacity-60 transition-all duration-300 flex flex-col items-center">
+            <Tippy className='opacity-100 hover:opacity-60 transition-all duration-300 w-[200px] mx-6' content={logo.text} placement="top">
+              <div className="text-xl sm:text-2xl cursor-pointer opacity:100 hover:opacity-60 transition-all duration-300 flex flex-col items-center">
                 {logo.svg}
-                <p className='text-white font-light text-sm w-full lg:w-3/5 text-center'>{logo.label}</p>
+                <p className='text-white font-light text-xs sm:text-sm w-full lg:w-3/5 text-center'>{logo.label}</p>
               </div>
             </Tippy>
           </motion.div>)}
