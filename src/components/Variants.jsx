@@ -54,11 +54,11 @@ const variants = () => {
             <motion.div
                 whileInView={() => setHasStarted(true)}
             viewport={{once:true}}
-            className="flex items-center mt-10 gap-4 justify-center">
+            className="flex flex-col md:flex-row items-center mt-10 gap-4 justify-center ">
                 {hasStarted && 
                     <>
-                    <div className="flex flex-col justify-end bg-[#00D8FF] rounded-xl text-8xl font-bold text-black p-6 w-[450px] h-[220px]">{variant} <p className="font-normal text-lg">Components</p></div>
-                    <div className="flex flex-col items-start justify-end bg-transparent border border-[#00D8FF] rounded-xl text-8xl p-6 text-[#00D8FF] w-[450px] h-[220px]">{components} <p className="font-normal text-lg">Variants</p></div>    
+                    <div className="flex flex-col justify-end bg-[#00D8FF] rounded-xl text-8xl font-bold text-black p-6 w-[300px] md:w-[450px]  h-[220px]">{variant} <p className="font-normal text-lg">Components</p></div>
+                    <div className="flex flex-col items-start justify-end bg-transparent border border-[#00D8FF] rounded-xl text-8xl p-6 text-[#00D8FF] w-[300px] md:w-[450px] h-[220px]">{components} <p className="font-normal text-lg">Variants</p></div>    
                 </>
                 }
             </motion.div>    

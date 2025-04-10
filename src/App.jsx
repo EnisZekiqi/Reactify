@@ -9,6 +9,9 @@ import circlewallpaper from './assets/download.png'
 import Example from './components/Example'
 import Variants from './components/Variants'
 import Ending from './components/Ending'
+import { BrowserRouter as Router, Routes, Route,Navigate } from "react-router-dom";
+import Docs from './Example/Docs/Docs'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -48,16 +51,29 @@ const itemVariants = {
 
 const words = text.split(" ");
 
-
-  return (
-    <div className='app-bg'>
-      <Navbar />
-     <HeroSection circlewallpaper={circlewallpaper} words={words} containerVariants={containerVariants} logos={logos} itemVariants={itemVariants} />
+const AllIntro = () => (
+  <div className='app-bg'>
+    <Navbar />
+    <HeroSection
+      circlewallpaper={circlewallpaper}
+      words={words}
+      containerVariants={containerVariants}
+      logos={logos}
+      itemVariants={itemVariants}
+    />
     <div className="empty"></div>
-      <Example />
-      <Variants />
-      <Ending/>
-    </div>
+    <Example />
+    <Variants />
+    <div className="empty" style={{ height: '100px' }}></div>
+    <Ending />
+  </div>
+);
+  
+  return (
+    <Routes>
+      <Route path='/' element={<AllIntro/>} />
+      <Route path='/docs' element={<Docs/>}/>
+   </Routes>
   )
 }
 
@@ -65,7 +81,7 @@ export default App
 
     function HeroSection({circlewallpaper, words, containerVariants, logos, itemVariants}) {
       return (<div className=" text-white">
-       <div className="relative flex flex-col items-center justify-center mt-10 z-[90]">
+       <div className="relative flex flex-col items-center justify-center mt-24 sm:mt-10 z-[90]">
       <div className="flex flex-col items-center mt-[5%]">
         <motion.div initial={{
         opacity: 0,
@@ -95,7 +111,7 @@ export default App
           ease: "easeOut"
         }
       }} src={circlewallpaper} // 🔁 Replace this with your image URL
-      alt="Title Background" className="absolute inset-0 w-screen h-screen object-contain pointer-events-none select-none z-0  blur-md" />
+      alt="Title Background" className="absolute inset-0 w-screen -mt-24 sm:-mt-0 h-screen object-contain pointer-events-none select-none z-0  blur-md" />
 
   {
         /* The Animated Title */
