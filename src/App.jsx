@@ -11,6 +11,8 @@ import Variants from './components/Variants'
 import Ending from './components/Ending'
 import { BrowserRouter as Router, Routes, Route,Navigate } from "react-router-dom";
 import Docs from './Example/Docs/Docs'
+import Example2 from './Example/Docs/Example'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -72,7 +74,9 @@ const AllIntro = () => (
   return (
     <Routes>
       <Route path='/' element={<AllIntro/>} />
-      <Route path='/docs' element={<Docs/>}/>
+      <Route path='/docs' element={<Docs />} />
+      <Route path='/example' element={<Example2/>}/>
+
    </Routes>
   )
 }
