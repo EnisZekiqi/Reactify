@@ -11,7 +11,7 @@ const Navbar = () => {
                 </div></Link>
                 <div className="flex items-center gap-4 text-sm font-normal mt-4">
                     <a className="opacity-70 hover:opacity-100 transition-all duration-300" href="https://github.com/EnisZekiqi" target="_blank">GitHub</a>
-                    <Link className="opacity-70 hover:opacity-100 transition-all duration-300" to='/example'>Examples</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition-all duration-300" to='/example/simple-text'>Examples</Link>
                     <Link className="opacity-70 hover:opacity-100 transition-all duration-300" to='/docs'>Docs</Link>
 
                 </div>

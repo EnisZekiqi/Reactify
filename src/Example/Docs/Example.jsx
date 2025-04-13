@@ -1,15 +1,39 @@
 import SecondNavbar from "../../components/SecondNavbar";
 import { examples } from "../../ComponentExamples/examples/examples-data";
-import { useState,Suspense } from "react";
+import { useState,Suspense,useEffect } from "react";
 import { IoMdEye,IoMdCode  } from "react-icons/io";
+import { useParams, useNavigate,Link } from "react-router-dom";
 
 const Example = () => {
 
-  const [selectedExampleIndex, setSelectedExampleIndex] = useState(0);
-  const SelectedComponent = examples[selectedExampleIndex].component;
+  const { exampleId } = useParams();
+const navigate = useNavigate();
 
+// 🛠️ Match URL param to example
+const initialIndex = examples.findIndex((ex) => ex.id === exampleId);
+
+// 🔁 If not found, redirect to a default one or 404
+useEffect(() => {
+  if (initialIndex === -1) {
+    navigate("/example/simple-text", { replace: true });
+  }
+}, [initialIndex, navigate]);
+
+const [selectedExampleIndex, setSelectedExampleIndex] = useState(
+  initialIndex >= 0 ? initialIndex : 0
+);
+
+  useEffect(() => {
+  const newIndex = examples.findIndex((ex) => ex.id === exampleId);
+  if (newIndex !== -1 && newIndex !== selectedExampleIndex) {
+    setSelectedExampleIndex(newIndex);
+  }
+}, [exampleId, selectedExampleIndex]);
 
   const [seeCode, setSeeCode] = useState('preview')
+  
+    const SelectedComponent = examples[selectedExampleIndex].component;
+
   
     return ( 
         <div className="app-bg">
@@ -18,28 +42,23 @@ const Example = () => {
             <div className="flex items-start">
                 <div className="overflow-y-auto h-full w-[200px]">
                     <h1 className="text-xl text-white font-semibold">Animated Text</h1>
-                    <div className="mt-4">
-                        {examples.map((ex, i) => (
-            <button
-              key={i}
-              onClick={() => setSelectedExampleIndex(i)}
-              className={`block w-full text-start mb-1 p-1 mt-1 rounded cursor-pointer ${
-                selectedExampleIndex === i
-                  ? " text-[rgba(255,255,255,1)] transition-all duration-300"
-                  : "text-[rgba(255,255,255,0.5)] hover:text-white transition-all duration-300"
-              }`}
-    >
-              {ex.drawerLabel}
-            </button>
-          ))} 
+                    <div className="mt-4 flex flex-col gap-3">
+                       {examples.map((example) => (
+  <Link
+    key={example.id}
+    to={`/example/${example.id}`}
+    className="opacity-70 hover:opacity-100 transition-all duration-300"
+  >
+    {example.drawerLabel}
+  </Link>
+))}
+
         </div>
           </div>
           <div className="flex flex-col items-start  ml-[10%] justify-center w-screen">
-            {examples.map((ex, i) => (
-            <div key={i} style={{opacity:selectedExampleIndex === i ? 1:0,display:selectedExampleIndex === i ? 'block':'none'}}>
-              <h1 className="text-white font-bold text-7xl text-start"> {ex.drawerLabel}</h1>
-              </div>
-            ))}
+              <h1 className="text-white font-bold text-7xl text-start">
+            {examples[selectedExampleIndex].drawerLabel}
+          </h1>
             <div className="flex items-center gap-2 mt-10 mb-4">
               <div
                 onClick={()=>setSeeCode('preview')}

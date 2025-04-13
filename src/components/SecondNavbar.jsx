@@ -1,12 +1,38 @@
 import { Link } from "react-router-dom";
 import { motion,AnimatePresence } from "framer-motion";
 import { CiSearch } from "react-icons/ci";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { examples } from "../ComponentExamples/examples/examples-data";
 const SecondNavbar = () => {
     
 const [openSearch,setOpenSearch] =useState(false)
 
     
+    const [searchQuery, setSearchQuery] = useState('')
+    
+    const [SearchResults, setSearchResults] = useState([])
+    
+
+    useEffect(() => {
+        if (searchQuery.trim() === '') {
+            setSearchResults([])
+            return
+        } 
+        const filtered = examples.filter(example => example.id.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()))
+        setSearchResults(filtered)
+    },[searchQuery])
+    
+
+    const [searchFunction, setSearchFunction] = useState(false)
+
+    useEffect(() => {
+        if (searchQuery.trim() !== '') {
+            setSearchFunction(true)
+        } else {
+            setSearchFunction(false)
+        }
+    },[searchQuery])
+
     return ( 
         <div>
    <div className="navbar flex justify-between fixed w-screen px-4">
@@ -34,11 +60,36 @@ const [openSearch,setOpenSearch] =useState(false)
                             initial={{ y: 20, opacity: 1 }}
                                 animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
                                 exit={{ y: 20, opacity: 0, tranistion: { duration: 0.5 } }}
-              className="fixed top-1/2 left-1/2 w-[270px] flex items-center gap-2 md:w-[500px] border border-[#3b4345] h-[70px] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
+              className="fixed top-1/2 left-1/2 w-[270px] flex flex-col items-center gap-2 md:w-[500px] border border-[#3b4345] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
+                        style={{height:searchFunction ? '400px' :'70px ',transition:'height 0.5s ease-in-out'}}
                         >
-                            <CiSearch className="w-[25px] h-[25px]" />
-                            <label>Search Docs</label>
-                            <input type="text" />
+                            <div className="flex items-center justify-start w-full mt-3 gap-2 pb-2.5"
+                                style={{ borderBottom: searchFunction ? '1px solid rgba(255,255,255,0.5)' :'',transition:'all 0.5s ease'}}
+                            >
+                                 <CiSearch className="w-[25px] h-[25px]" />
+                            <input type="text" placeholder="Search Docs" className="focus:outline-0" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+                           </div>
+                            <AnimatePresence>
+                                 {SearchResults.map((item, i) => (
+                                     <motion.div
+                                         initial={{ opacity: 0, y: 20 }}
+                                         animate={{ opacity: 1, y: 0, transition: { duration: 0.5,delay:0.5 } }}
+                                         exit={{ opacity: 0, y: 20, transition: { duration: 0.5, delay: 0.2 } }}
+                                         className="mt-2.5"
+                                     >
+                                          <Link
+                                key={i}
+                                onClick={() => setOpenSearch(false)}
+                                to={`/example/${item.id}`}
+                                className="flex flex-col items-start w-[75vh] bg-[#232829] border border-[#3b4345] gap-1 hover:bg-[#181b1b] p-2 rounded-xl transition-all duration-300"
+                            >
+                                <span className="text-white font-semibold">{item.name}</span>
+                                <span className="text-[rgba(255,255,255,0.5)] text-sm">{item.for}</span>
+                            </Link>
+                           </motion.div>
+                            ))}
+                           </AnimatePresence>
+
                 </motion.div>
                     </div>
                        }
