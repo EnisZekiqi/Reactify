@@ -1,4 +1,4 @@
-export const example2 = 'Blur Text'
+export const example2 = 'This is so cool'
 
 
 

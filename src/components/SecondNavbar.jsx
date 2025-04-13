@@ -19,26 +19,30 @@ const [openSearch,setOpenSearch] =useState(false)
                      <a className="opacity-70 hover:opacity-100 bg-[#00d8ff] px-3.5 py-1.5 font-medium rounded-md text-black transition-all duration-300" href="https://github.com/EnisZekiqi" target="_blank">GitHub</a>
                     <button onClick={()=>setOpenSearch(true)} className="bg-transparent cursor-pointer text-[rgba(255,255,255,0.5)] hover:text-white"><CiSearch className="w-[20px] h-[20px]"/></button>
                 </div>
-                <AnimatePresence>
+                
+            </div>  
+            <AnimatePresence>
                      {openSearch &&
                         <div>
                             <motion.div
                                 initial={{ opactiy: 0 }}
                                 animate={{ opacity: 1, transition: { duration: 0.5 } }}
-                                exit={{opacity:0,transition:{duration:0.5}}}
-                                className="div fixed top-0 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)]"></motion.div>
+                            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+                            onClick={()=>setOpenSearch(false)}
+                                className="div fixed z-[500] top-0  bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)]"></motion.div>
                              <motion.div
-                            initial={{ scale: 0, opacity: 1 }}
-                                animate={{ scale: 1, opacity: 1, transition: { duration: 0.5 } }}
-                                exit={{ scale: 0, opacity: 0, tranistion: { duration: 0.5 } }}
-                                className="bg-[#181b1b] border border-[#3b4345] p-2 rounded-md"
+                            initial={{ y: 20, opacity: 1 }}
+                                animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+                                exit={{ y: 20, opacity: 0, tranistion: { duration: 0.5 } }}
+              className="fixed top-1/2 left-1/2 w-[270px] flex items-center gap-2 md:w-[500px] border border-[#3b4345] h-[70px] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
                         >
-                        123123
+                            <CiSearch className="w-[25px] h-[25px]" />
+                            <label>Search Docs</label>
+                            <input type="text" />
                 </motion.div>
                     </div>
                        }
                </AnimatePresence>
-             </div>           
         </div>
      );
 }

@@ -12,6 +12,7 @@ import Ending from './components/Ending'
 import { BrowserRouter as Router, Routes, Route,Navigate } from "react-router-dom";
 import Docs from './Example/Docs/Docs'
 import Example2 from './Example/Docs/Example'
+import { Link } from "react-router-dom";
 
 
 function App() {
@@ -178,8 +179,8 @@ export default App
       }} whileTap={{
         scale: 0.95
       }}>
-  Get Started
-      </motion.button>
+        <Link to='/docs'>  Get Started</Link>
+            </motion.button>
 
       </motion.div>
       {

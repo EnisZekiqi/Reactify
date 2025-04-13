@@ -20,7 +20,7 @@ const SimpleText = () => {
     >
       {example1.split("").map((char, index) => (
         <motion.span
-          className="inline-block -ml-1 text-3xl font-semibold"
+          className="inline-block -ml-1 text-5xl font-semibold"
           key={index}
           variants={letterVariants}
         >
