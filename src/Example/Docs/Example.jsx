@@ -3,6 +3,11 @@ import { examples } from "../../ComponentExamples/examples/examples-data";
 import { useState,Suspense,useEffect } from "react";
 import { IoMdEye,IoMdCode  } from "react-icons/io";
 import { useParams, useNavigate,Link } from "react-router-dom";
+import { MdRestartAlt } from "react-icons/md";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { IoMdCheckmark,IoMdCopy  } from "react-icons/io";
+
 
 const Example = () => {
 
@@ -32,8 +37,21 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
 
   const [seeCode, setSeeCode] = useState('preview')
   
-    const SelectedComponent = examples[selectedExampleIndex].component;
-
+    const SelectedComponent = examples[selectedExampleIndex].component; ///// for the example showdown
+    const SelectedCode = examples[selectedExampleIndex].code
+  
+const [restartKey, setRestartKey] = useState(0);
+  
+  const [copied,setCopied]=useState(false) /// copy event changer for the icon 
+    
+    const handleCopy = (event) => {     //// function to copy the code 
+      event.stopPropagation()
+      setCopied(true)
+      navigator.clipboard.writeText(SelectedCode)
+      setTimeout(() => {
+        setCopied(false)
+      }, 3000);
+    }
   
     return ( 
         <div className="app-bg">
@@ -47,7 +65,8 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   <Link
     key={example.id}
     to={`/example/${example.id}`}
-    className="opacity-70 hover:opacity-100 transition-all duration-300"
+   className="opacity-70 hover:opacity-100 transition-all duration-300"
+   style={{opacity:example.id === exampleId ? '1' :'0.7'}}              
   >
     {example.drawerLabel}
   </Link>
@@ -75,12 +94,44 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
                 <p className="text-sm font-light">Code</p>
               </div>
             </div>
+            {seeCode === 'preview' ? (
                 <div className="content flex flex-col items-center justify-center  bg-[#121212] p-4 rounded-md border w-[90%] h-[400px] border-[#3b4345]">
-<Suspense fallback={<div>Loading...</div>}>
-            <SelectedComponent />
-          </Suspense>
+              <div className="flex items-start justify-end w-full h-[0%]">
+                <button
+  onClick={() => setRestartKey(prev => prev + 1)}
+  className="px-2 py-2 bg-[#181b1b] text-white cursor-pointer rounded-lg border border-[#3b4345] hover:bg-[#222]"
+>
+<MdRestartAlt className="w-[20px] h-[20px]"/>
+              </button>
+
+</div>
+              <Suspense fallback={<div>Loading...</div>}>
+                <div className="flex h-full justify-center items-center">
+                  <SelectedComponent  key={restartKey}/>
+                </div>
+              </Suspense>
 
                 </div>
+            ) : (
+                
+                <div className="bg-[#121212] flex flex-row-reverse  items-center justify-between p-4 rounded-md border border-[#3b4345] w-[90%] h-[500px] overflow-y-auto">
+                  <div className="flex items-start justify-end h-full">
+                     <button
+         onClick={handleCopy}
+         className="mt-4  top-4 right-6 bg-[rgba(0,0,0,0.5)] border border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded  transition"
+       >
+         {copied ? (
+                 <IoMdCheckmark className="w-[20px] h-[20px]" />
+               ) : (
+                 <IoMdCopy className="w-[20px] h-[20px]" />
+               )}          </button>
+ </div>
+                  <SyntaxHighlighter language="jsx" style={oneDark} customStyle={{ backgroundColor: 'transparent' }}>
+    {SelectedCode}
+  </SyntaxHighlighter>
+</div>
+
+            )}
           </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { IoMdCheckmark,IoMdCopy  } from "react-icons/io";
 import { useFormState,useFormStatus } from "react-dom";
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 const Example = () => {
@@ -464,7 +465,7 @@ const [copied,setCopied]=useState(false)
               <pre className="mb-4 relative">
                 <SyntaxHighlighter
         language="jsx"
-        style={nord} // Use the base Nord theme
+        style={oneDark} // Use the base Nord theme
         customStyle={customStyle} // Apply the custom style
         codeTagProps={{ style: customTokenStyles }} // Apply custom token styles
       >
