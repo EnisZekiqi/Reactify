@@ -38,8 +38,10 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   const [seeCode, setSeeCode] = useState('preview')
   
     const SelectedComponent = examples[selectedExampleIndex].component; ///// for the example showdown
-    const SelectedCode = examples[selectedExampleIndex].code
-  
+  const SelectedCode = examples[selectedExampleIndex].code
+  const SelectedUsage =examples[selectedExampleIndex].usage
+  const SelectedAnimation =examples[selectedExampleIndex].animations
+
 const [restartKey, setRestartKey] = useState(0);
   
   const [copied,setCopied]=useState(false) /// copy event changer for the icon 
@@ -51,7 +53,26 @@ const [restartKey, setRestartKey] = useState(0);
       setTimeout(() => {
         setCopied(false)
       }, 3000);
-    }
+  }
+  
+   const handleCopyUsage = (event) => {     //// function to copy the code 
+      event.stopPropagation()
+      setCopied(true)
+      navigator.clipboard.writeText(SelectedUsage)
+      setTimeout(() => {
+        setCopied(false)
+      }, 3000);
+  }
+  
+  const handleCopyAnimation = (event) => {
+    event.stopPropagation()
+    setCopied(true)
+    navigator.clipboard.writeText(SelectedAnimation)
+    setTimeout(() => {
+      setCopied(false)
+    }, 3000);
+  }
+  
   
     return ( 
         <div className="app-bg">
@@ -64,8 +85,9 @@ const [restartKey, setRestartKey] = useState(0);
                        {examples.map((example) => (
   <Link
     key={example.id}
-    to={`/example/${example.id}`}
-   className="opacity-70 hover:opacity-100 transition-all duration-300"
+     to={`/example/${example.id}`}
+        onClick={()=>setSeeCode('preview')}                   
+    className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium`}
    style={{opacity:example.id === exampleId ? '1' :'0.7'}}              
   >
     {example.drawerLabel}
@@ -114,22 +136,123 @@ const [restartKey, setRestartKey] = useState(0);
                 </div>
             ) : (
                 
-                <div className="bg-[#121212] flex flex-row-reverse  items-center justify-between p-4 rounded-md border border-[#3b4345] w-[90%] h-[500px] overflow-y-auto">
-                  <div className="flex items-start justify-end h-full">
-                     <button
-         onClick={handleCopy}
-         className="mt-4  top-4 right-6 bg-[rgba(0,0,0,0.5)] border border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded  transition"
-       >
-         {copied ? (
-                 <IoMdCheckmark className="w-[20px] h-[20px]" />
-               ) : (
-                 <IoMdCopy className="w-[20px] h-[20px]" />
-               )}          </button>
- </div>
-                  <SyntaxHighlighter language="jsx" style={oneDark} customStyle={{ backgroundColor: 'transparent' }}>
-    {SelectedCode}
-  </SyntaxHighlighter>
+                <div className="w-full">
+                  {/* USAGE CONTAINER */}
+                  <div className="flex flex-col">
+                        <p className="text-3xl font-semibold text-white mb-2 mt-12">Usage</p>
+                    <div className="bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[300px] overflow-y-auto relative mb-6">
+  <div className="absolute top-4 right-6">
+    <button
+      onClick={handleCopyUsage}
+      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+    >
+      {copied ? (
+        <IoMdCheckmark className="w-[20px] h-[20px]" />
+      ) : (
+        <IoMdCopy className="w-[20px] h-[20px]" />
+      )}
+    </button>
+  </div>
+
+  <div className="flex flex-col items-start mt-4">
+    <SyntaxHighlighter
+      language="jsx"
+      style={oneDark}
+      showLineNumbers={false}
+      customStyle={{
+        background: 'transparent',
+        padding: 0,
+        margin: 0,
+        width: '100%',
+      }}
+      codeTagProps={{
+        style: { background: 'transparent' },
+      }}
+    >
+      {SelectedUsage}
+    </SyntaxHighlighter>
+  </div>
 </div>
+</div>
+
+{/* Animation CONTAINER */}
+                  <div className="flex flex-col">
+                        <p className="text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
+                    <div className="bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[300px] overflow-y-auto relative mb-6">
+  <div className="absolute top-4 right-6">
+    <button
+      onClick={handleCopyAnimation}
+      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+    >
+      {copied ? (
+        <IoMdCheckmark className="w-[20px] h-[20px]" />
+      ) : (
+        <IoMdCopy className="w-[20px] h-[20px]" />
+      )}
+    </button>
+  </div>
+
+  <div className="flex flex-col items-start mt-4">
+    <SyntaxHighlighter
+      language="jsx"
+      style={oneDark}
+      showLineNumbers={false}
+      customStyle={{
+        background: 'transparent',
+        padding: 0,
+        margin: 0,
+        width: '100%',
+      }}
+      codeTagProps={{
+        style: { background: 'transparent' },
+      }}
+    >
+      {SelectedAnimation}
+    </SyntaxHighlighter>
+  </div>
+</div>
+</div>
+
+{/* CODE CONTAINER */}
+                  <div className="flex flex-col mt-12">
+    <p className="text-3xl font-semibold text-white mb-2">Code</p>
+
+                    <div className="bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[400px] overflow-y-auto relative">
+  <div className="absolute top-4 right-6">
+    <button
+      onClick={handleCopy}
+      className="bg-[rgba(0,0,0,0.5)] border border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+    >
+      {copied ? (
+        <IoMdCheckmark className="w-[20px] h-[20px]" />
+      ) : (
+        <IoMdCopy className="w-[20px] h-[20px]" />
+      )}
+    </button>
+  </div>
+
+  <div className="flex flex-col items-start mt-4">
+    <SyntaxHighlighter
+      language="jsx"
+      style={oneDark}
+      showLineNumbers={false}
+      customStyle={{
+        background: 'transparent',
+        padding: 0,
+        margin: 0,
+        width: '100%',
+      }}
+      codeTagProps={{
+        style: { background: 'transparent' },
+      }}
+    >
+      {SelectedCode}
+    </SyntaxHighlighter>
+  </div>
+</div>
+</div>
+
+</div>                 
 
             )}
           </div>

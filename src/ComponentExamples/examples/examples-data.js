@@ -2,6 +2,8 @@
 import React from 'react';
 import { codeSnippet } from '../javascript/helloLogic';
 import { codeSnippet2 } from '../javascript/helloLogic2';
+import { Usage as Usage1, Animations as Animations1 } from '../javascript/helloLogic';
+import { Usage as Usage2, Animations as Animations2 } from '../javascript/helloLogic2';
 
 
 const SimpleText = React.lazy(() => import('../Components/SimpleText'));
@@ -14,7 +16,9 @@ export const examples = [
     name: "Simple Text",
     component: SimpleText,
     drawerLabel: "Simple Text",
-    code: codeSnippet
+    code: codeSnippet,
+    usage: Usage1,
+    animations:Animations1
     },
   {
     id: 'blur-text',
@@ -22,7 +26,9 @@ export const examples = [
     name: "Blur Text",
     component: BlurText,
     drawerLabel: "Blur Text",
-    code: codeSnippet2
+    code: codeSnippet2,
+     usage: Usage2,
+    animations:Animations2
     },
   // other components here...
 ];
