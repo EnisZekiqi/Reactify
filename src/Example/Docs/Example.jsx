@@ -106,7 +106,7 @@ const [restartKey, setRestartKey] = useState(0);
               <h1 className="text-white font-bold text-7xl text-start">
             {examples[selectedExampleIndex].drawerLabel}
           </h1>
-            <div className="relative flex w-fit items-center gap-2 rounded-full mt-10 mb-4 p-2 border border-[#3b4345]"
+            <div className="relative flex w-fit items-center justify-between gap-2 rounded-full mt-10 mb-4 p-2 border border-[#3b4345]"
             style={{padding:seeCode === 'code' ? '6px':''}}
             >
       <button
@@ -127,61 +127,68 @@ const [restartKey, setRestartKey] = useState(0);
           setSeeCode("code");
         }}
       >
-         <AnimatePresence mode="wait">
-          <motion.span
-            initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1, transition: { duration: 0.3, delay: 0.1 } }}
-                  exit={{opacity:0,scale:0,transition:{duration:0.3}}}
-          className="relative z-10 flex items-center gap-3 text-white">
-                    {seeCode === 'preview' ? <motion.span
-                      initial={{opacity:0}}
-                      animate={{opacity:1,transition:{duration:0.5,delay:0.1}}}
-                      exit={{opacity:0,transition:{duration:0.3,delay:0}}}
-                      className="relative flex flex-col">Code
-                      <div className="relative flex items-center gap-2 rounded-full px- py-">
-    {/* Background highlight for selected language */}
- {seeCode === 'preview' && 
-    <motion.span
-      layout
-      transition={{ type: "spring", stiffness: 250, damping: 20 }}
-      className="absolute h-[125%] rounded-full bg-gradient-to-r from-[#000] to-[#121212] z-0"
-      style={{
-        width: "50%",
-        left: chooseLanguage === "javascript" ? "0%" : "50%",
-      }}
-    />
- }
+       <AnimatePresence mode="wait">
+  <motion.span
+    initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1, transition: { duration: 0.3, delay: 0.1 } }}
+    exit={{ opacity: 0, scale: 0, transition: { duration: 0.3 } }}
+    className="relative z-10 flex flex-col gap-3 text-white"
+  >
+    {/* SHOW LABEL ONLY IN PREVIEW */}
+    {seeCode === 'preview' && (
+      <motion.span
+        key="codeLabel"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
+        exit={{ opacity: 0, transition: { duration: 0.3 } }}
+        className="text-md font-medium"
+      >
+        Code
+      </motion.span>
+    )}
 
-    {/* Language Buttons */}
-                        {seeCode !== 'preview' && <>
-                         <button
-        onClick={() => setChooseLanguage("javascript")}
-        style={{fontSize:seeCode === 'preview' ? '12px':'16px'}}
-      className={`relative z-10 px-2 py-1 rounded-full ${
-        chooseLanguage === "javascript" ? "text-white" : "text-slate-300"
-      }`}
-    >
-      JavaScript
-    </button>
-    <button
-                          onClick={() => setChooseLanguage("typescript")}
-                          style={{ fontSize: seeCode === 'preview' ? '12px' : '16px' }}
+    {/* LANGUAGE SELECTOR ONLY IN CODE MODE */}
+    {seeCode === 'code' && (
+      <motion.div
+        key="lang-buttons"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 0.5 } }}
+        exit={{ opacity: 0 }}
+        className="relative flex items-center gap-2 px-2 py- rounded-full bg-[#]"
+      >
+        {/* BG HIGHLIGHT — VERY IMPORTANT: inside the same container! */}
+        <motion.span
+          layout
+          transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+          className="absolute h-[125%] rounded-full bg-gradient-to-r from-[#000] to-[#121212] z-0"
+          style={{
+            width: '50%',
+            left: chooseLanguage === 'javascript' ? '0%' : '50%',
+          }}
+        />
 
-      className={`relative z-10 px-3 py-1 rounded-full ${
-        chooseLanguage === "typescript" ? "text-white" : "text-slate-300"
-      }`}
-    >
-      TypeScript
-    </button>
-                        </>}
-  </div>
-                    </motion.span> : <>
-                    <button  onClick={()=>setChooseLanguage('javascript')}>JavaScript</button>
-                      <button onClick={() => setChooseLanguage('typescript')}>TypeScript</button>
-                    </>}
-                
-          </motion.span>
-         </AnimatePresence>
+        {/* LANGUAGE BUTTONS */}
+        <button
+          onClick={() => setChooseLanguage('javascript')}
+          className={`relative z-10 px-3 py-1 rounded-full ${
+            chooseLanguage === 'javascript' ? 'text-white' : 'text-slate-300'
+          }`}
+        >
+          JavaScript
+        </button>
+        <button
+          onClick={() => setChooseLanguage('typescript')}
+          className={`relative z-10 px-3 py-1 rounded-full ${
+            chooseLanguage === 'typescript' ? 'text-white' : 'text-slate-300'
+          }`}
+        >
+          TypeScript
+        </button>
+      </motion.div>
+    )}
+  </motion.span>
+</AnimatePresence>
+
                 </button>
       <div
         className={`absolute inset-0 z-0 flex ${
