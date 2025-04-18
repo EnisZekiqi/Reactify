@@ -1,7 +1,7 @@
 // src/examples/examples-data.js
 import React from 'react';
 import { codeSnippet } from '../javascript/helloLogic';
-import { codeSnippet2 } from '../javascript/helloLogic2';
+import { codeSnippet2,codeSnippet2TS  } from '../javascript/helloLogic2';
 import { Usage as Usage1, Animations as Animations1 } from '../javascript/helloLogic';
 import { Usage as Usage2, Animations as Animations2 } from '../javascript/helloLogic2';
 
@@ -17,6 +17,7 @@ export const examples = [
     component: SimpleText,
     drawerLabel: "Simple Text",
     code: codeSnippet,
+    codeTS: codeSnippet2TS, 
     usage: Usage1,
     animations:Animations1
     },

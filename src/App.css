@@ -34,6 +34,19 @@
 .empty{
   height: 200px;
 }
+
+.showcode::-webkit-scrollbar {
+  width: 8px;
+}
+
+.showcode::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.showcode::-webkit-scrollbar-thumb {
+  background-color:rgba(159, 170, 172,0.6);
+  border-radius: 20px;
+}
 .library{
   background-color: #121212 ;
   border: 1px solid #3b4345;

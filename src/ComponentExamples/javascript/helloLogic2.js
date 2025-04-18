@@ -90,6 +90,39 @@ const wordVariants = {
 }
 `
 
+export const codeSnippet2TS = `
+import { Variants } from "framer-motion";
+
+interface BlurTextProps {
+  wordContainerVariants: Variants;
+  wordVariants: Variants;
+  example2: string;
+}
+
+const BlurText: React.FC<BlurTextProps> = ({ wordVariants, wordContainerVariants, example2 }) => {
+  return (
+    <motion.p
+      className="relative text-2xl text-center font-medium"
+      variants={wordContainerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      {example2.split(" ").map((word, index) => (
+        <motion.span
+          key={index}
+          className="inline-block mr-2"
+          variants={wordVariants}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.p>
+  );
+};
+`;
+
+
 
 export const Usage = `
 import BlurText from "./BlurText";

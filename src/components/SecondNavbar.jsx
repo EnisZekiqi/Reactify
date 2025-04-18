@@ -35,7 +35,7 @@ const [openSearch,setOpenSearch] =useState(false)
 
     return ( 
         <div>
-   <div className="navbar flex justify-between fixed w-screen px-4">
+   <div className="navbar flex justify-between fixed w-screen px-4 ">
                  <Link to="/">
                  <div className=" flex flex-row-reverse items-center  rounded-[10px] mt-4">
                     <p className="hidden md:block text-white font-medium text-lg">Reactify</p>
