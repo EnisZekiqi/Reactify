@@ -45,6 +45,38 @@ const letterVariants = {
 
 `
 
+export const codeSnippetTS = `
+import { motion, Variants } from "framer-motion";
+
+type SimpleTextProps = {
+  containerVariants: Variants;
+  letterVariants: Variants;
+  example1: string;
+};
+
+const SimpleText: React.FC<SimpleTextProps> = ({ containerVariants, letterVariants, example1 }) => {
+  return (
+    <motion.p
+      className="relative text-2xl text-center font-medium"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      {example1.split("").map((char, index) => (
+        <motion.span className="inline-block" key={index} variants={letterVariants}>
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.p>
+  );
+};
+
+export default SimpleText;
+
+`
+
+
 export const Usage = `
 import SimpleText from "./SimpleText";
 

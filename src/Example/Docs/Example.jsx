@@ -35,8 +35,18 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   }
 }, [exampleId, selectedExampleIndex]);
 
-  const [seeCode, setSeeCode] = useState('preview') ///// default this will show the code in javascript from its state 
+  const [seeCode, setSeeCode] = useState('preview') ///// default this will show the code in javascript from its state
   
+  useEffect(() => {
+
+    const navigator = examples.map((example)=> example.id)
+
+    if (navigator) {
+      setSeeCode('preview')
+  }
+},[selectedExampleIndex])
+  
+
     const SelectedComponent = examples[selectedExampleIndex].component; ///// for the example showdown
   const SelectedCode = examples[selectedExampleIndex].code
   const SelectedUsage =examples[selectedExampleIndex].usage
@@ -46,7 +56,9 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
 const [restartKey, setRestartKey] = useState(0);
   
   const [copied,setCopied]=useState(false) /// copy event changer for the icon 
-    
+  const [copiedUsage, setCopiedUsage] = useState(false)
+  const [copiedAnimation,setCopiedAnimation]=useState(false)
+
     const handleCopy = (event) => {     //// function to copy the code 
       event.stopPropagation()
       setCopied(true)
@@ -58,7 +70,7 @@ const [restartKey, setRestartKey] = useState(0);
   
    const handleCopyUsage = (event) => {     //// function to copy the code 
       event.stopPropagation()
-      setCopied(true)
+      setCopiedUsage(true)
       navigator.clipboard.writeText(SelectedUsage)
       setTimeout(() => {
         setCopied(false)
@@ -67,14 +79,25 @@ const [restartKey, setRestartKey] = useState(0);
   
   const handleCopyAnimation = (event) => {
     event.stopPropagation()
-    setCopied(true)
+    setCopiedAnimation(true)
     navigator.clipboard.writeText(SelectedAnimation)
     setTimeout(() => {
       setCopied(false)
     }, 3000);
   }
   
-  const [chooseLanguage,setChooseLanguage]=useState('javascript') /// state to choose between which language you want to see the code 
+
+  const [chooseLanguage,setChooseLanguage]=useState('javascript') /// state to choose between which language you want to see the code
+
+
+   useEffect(() => {
+    if (chooseLanguage === 'javascript' || 'typescript') {
+      setCopied(false)
+      setCopiedUsage(false)
+      setCopiedAnimation(false)
+    }
+  },[chooseLanguage])
+
 
   const TOGGLE_CLASSES =
   "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-1.5 md:py-0.5 transition-colors relative z-10 cursor-pointer";
@@ -85,8 +108,8 @@ const [restartKey, setRestartKey] = useState(0);
             <SecondNavbar />
             <div className="empty mask-t-from-10%" style={{height:'120px'}}></div>
             <div className="flex items-start ">
-                <div className="overflow-y-auto h-full w-[200px]">
-                    <h1 className="text-xl text-white font-semibold">Animated Text</h1>
+                <div className="componentList overflow-y-hidden lg:overflow-y-auto h-full w-[200px]">
+                    <h1 className="text-md lg:text-xl text-white font-bold lg:font-semibold">Animated Text</h1>
                     <div className="mt-8 flex flex-col gap-5">
                        {examples.map((example) => (
   <Link
@@ -102,8 +125,8 @@ const [restartKey, setRestartKey] = useState(0);
 
         </div>
           </div>
-          <div className="flex flex-col items-start  ml-[10%] justify-center w-screen">
-              <h1 className="text-white font-bold text-7xl text-start">
+          <div className="flex flex-col items-start w-[800px] lg:w-screen  ml-[10%] justify-center">
+              <h1 className="text-white font-bold text-[52px] lg:text-7xl text-start">
             {examples[selectedExampleIndex].drawerLabel}
           </h1>
             <div className="relative flex w-fit items-center justify-between gap-2 rounded-full mt-10 mb-4 p-2 border border-[#3b4345]"
@@ -223,17 +246,18 @@ const [restartKey, setRestartKey] = useState(0);
                 </div>
             ) : 
                 chooseLanguage === 'javascript' ? (
-                   <div className="w-full">
+                <div className="w-fit
+                   ">
                   {/* USAGE CONTAINER */}
                   <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[300px] overflow-y-auto relative mb-6">
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-6">
     <button
       onClick={handleCopyUsage}
       className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
     >
-      {copied ? (
+      {copiedUsage ? (
         <IoMdCheckmark className="w-[20px] h-[20px]" />
       ) : (
         <IoMdCopy className="w-[20px] h-[20px]" />
@@ -265,13 +289,13 @@ const [restartKey, setRestartKey] = useState(0);
 {/* Animation CONTAINER */}
                   <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[300px] overflow-y-auto relative mb-6">
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-6">
     <button
       onClick={handleCopyAnimation}
       className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
     >
-      {copied ? (
+      {copiedAnimation ? (
         <IoMdCheckmark className="w-[20px] h-[20px]" />
       ) : (
         <IoMdCopy className="w-[20px] h-[20px]" />
@@ -304,11 +328,11 @@ const [restartKey, setRestartKey] = useState(0);
                   <div className="flex flex-col mt-12">
     <p className="text-3xl font-semibold text-white mb-2">Code</p>
 
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[400px] overflow-y-auto relative">
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[400px] overflow-y-auto relative">
   <div className="absolute top-4 right-6">
     <button
       onClick={handleCopy}
-      className="bg-[rgba(0,0,0,0.5)] border border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+      className="bg-[rgba(0,0,0,0.5)] cursor-pointer border border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
     >
       {copied ? (
         <IoMdCheckmark className="w-[20px] h-[20px]" />
@@ -346,13 +370,13 @@ const [restartKey, setRestartKey] = useState(0);
                   {/* USAGE CONTAINER */}
                   <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[300px] overflow-y-auto relative mb-6">
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-6">
     <button
       onClick={handleCopyUsage}
       className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
     >
-      {copied ? (
+      {copiedUsage ? (
         <IoMdCheckmark className="w-[20px] h-[20px]" />
       ) : (
         <IoMdCopy className="w-[20px] h-[20px]" />
@@ -384,13 +408,13 @@ const [restartKey, setRestartKey] = useState(0);
 {/* Animation CONTAINER */}
                   <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[300px] overflow-y-auto relative mb-6">
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-6">
     <button
       onClick={handleCopyAnimation}
       className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
     >
-      {copied ? (
+      {copiedAnimation ? (
         <IoMdCheckmark className="w-[20px] h-[20px]" />
       ) : (
         <IoMdCopy className="w-[20px] h-[20px]" />
@@ -423,11 +447,11 @@ const [restartKey, setRestartKey] = useState(0);
                   <div className="flex flex-col mt-12">
     <p className="text-3xl font-semibold text-white mb-2">Code</p>
 
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[90%] h-[400px] overflow-y-auto relative">
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[600px] lg:w-[100%] h-[400px] overflow-y-auto relative">
   <div className="absolute top-4 right-6">
     <button
       onClick={handleCopy}
-      className="bg-[rgba(0,0,0,0.5)] border border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
     >
       {copied ? (
         <IoMdCheckmark className="w-[20px] h-[20px]" />

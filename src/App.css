@@ -47,6 +47,30 @@
   background-color:rgba(159, 170, 172,0.6);
   border-radius: 20px;
 }
+
+.componentList{
+  display: block;
+}
+.githubExample{
+    display: block;
+
+}
+.drawerComponent{
+    display: none;
+
+}
+
+@media (max-width:864px) {
+ .componentList{
+  display:none;
+ } 
+ .githubExample{
+    display:none;
+ }
+ .drawerComponent{
+ display:block;
+ }
+}
 .library{
   background-color: #121212 ;
   border: 1px solid #3b4345;
