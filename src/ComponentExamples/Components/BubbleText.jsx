@@ -10,7 +10,7 @@ const BubbleText = () => {
 >
   {example3.split("").map((char, index) => (
     <motion.span
-      className="inline-block -ml-0 text-5xl font-semibold"
+      className="inline-block -ml-0 text-3xl sm:text-5xl font-semibold"
       key={index}
       whileHover={{
         fontWeight: 700,

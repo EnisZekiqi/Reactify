@@ -48,6 +48,21 @@
   border-radius: 20px;
 }
 
+
+.searchComponent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.searchComponent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.searchComponent::-webkit-scrollbar-thumb {
+  background-color:rgba(159, 170, 172,0.6);
+  border-radius: 20px;
+}
+
+
 .componentList{
   display: block;
 }
@@ -89,6 +104,24 @@
   height: 55px;
   margin-left: -1rem;
   padding-right:  3rem;
+  padding-bottom: 5px;
+  border-radius: 20px;
+ margin-top: -35px;
+
+  /* Blurred backdrop */
+  background: rgba(6, 6, 6, 0.5); /* darker than app-bg's 0.3 */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+
+  z-index: 1000;
+}
+
+.navbar2 {
+  width: 100%;
+  height: 55px;
+  margin-left: -1rem;
+  padding-right:  1.3rem;
   padding-bottom: 5px;
   border-radius: 20px;
  margin-top: -35px;

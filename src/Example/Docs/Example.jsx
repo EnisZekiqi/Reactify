@@ -100,7 +100,7 @@ const [restartKey, setRestartKey] = useState(0);
 
 
   const TOGGLE_CLASSES =
-  "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-1.5 md:py-0.5 transition-colors relative z-10 cursor-pointer";
+  "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-1 md:py-1.5 md:py-0.5 transition-colors relative z-10 cursor-pointer";
 
 
     return ( 
@@ -125,12 +125,12 @@ const [restartKey, setRestartKey] = useState(0);
 
         </div>
           </div>
-          <div className="flex flex-col items-start w-[800px] lg:w-screen  ml-[10%] justify-center">
-              <h1 className="text-white font-bold text-[52px] lg:text-7xl text-start">
+          <div className="flex flex-col items-start w-[800px] lg:w-screen  -ml-[2.5%] sm:ml-[10%] justify-center">
+              <h1 className="text-white font-bold text-[36px] md:text-[52px] lg:text-7xl text-start">
             {examples[selectedExampleIndex].drawerLabel}
           </h1>
-            <div className="relative flex w-fit items-center justify-between gap-2 rounded-full mt-10 mb-4 p-2 border border-[#3b4345]"
-            style={{padding:seeCode === 'code' ? '6px':''}}
+            <div className="relative flex w-fit items-center justify-between gap-1 sm:gap-2 rounded-full mt-10 mb-4 p-1 md:p-2 border border-[#3b4345]"
+            style={{padding:seeCode === 'code' ? '4px':''}}
             >
       <button
         className={`${TOGGLE_CLASSES} ${
@@ -140,7 +140,7 @@ const [restartKey, setRestartKey] = useState(0);
           setSeeCode("preview");
         }}
       >
-        <span className="relative z-10">Preview</span>
+        <span className="relative z-10 text-xs sm:text-sm">Preview</span>
       </button>
         <button
         className={`${TOGGLE_CLASSES} ${
@@ -155,7 +155,7 @@ const [restartKey, setRestartKey] = useState(0);
     initial={{ opacity: 0, scale: 0 }}
     animate={{ opacity: 1, scale: 1, transition: { duration: 0.3, delay: 0.1 } }}
     exit={{ opacity: 0, scale: 0, transition: { duration: 0.3 } }}
-    className="relative z-10 flex flex-col gap-3 text-white"
+    className="relative z-10 flex flex-col gap-3 text-white -ml-2 sm:-ml-0"
   >
     {/* SHOW LABEL ONLY IN PREVIEW */}
     {seeCode === 'preview' && (
@@ -183,7 +183,7 @@ const [restartKey, setRestartKey] = useState(0);
         <motion.span
           layout
           transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-          className="absolute h-[125%] rounded-full bg-gradient-to-r from-[#000] to-[#121212] z-0"
+          className="absolute h-[125%] rounded-full bg-gradient-to-r from-[#000] to-[#121212] z-0 ml-2.5 sm:ml-0"
           style={{
             width: '50%',
             left: chooseLanguage === 'javascript' ? '0%' : '50%',
@@ -193,7 +193,7 @@ const [restartKey, setRestartKey] = useState(0);
         {/* LANGUAGE BUTTONS */}
         <button
           onClick={() => setChooseLanguage('javascript')}
-          className={`relative z-10 px-3 py-1 rounded-full ${
+          className={`relative z-10 px-3 py-1 rounded-full text-xs sm:text-sm ${
             chooseLanguage === 'javascript' ? 'text-white' : 'text-slate-300'
           }`}
         >
@@ -201,7 +201,7 @@ const [restartKey, setRestartKey] = useState(0);
         </button>
         <button
           onClick={() => setChooseLanguage('typescript')}
-          className={`relative z-10 px-3 py-1 rounded-full ${
+          className={`relative z-10 px-3 py-1 rounded-full text-xs sm:text-sm ${
             chooseLanguage === 'typescript' ? 'text-white' : 'text-slate-300'
           }`}
         >
@@ -227,18 +227,24 @@ const [restartKey, setRestartKey] = useState(0);
       </div>
     </div>
             {seeCode === 'preview' ? (
-                <div className="content flex flex-col items-center justify-center mt-4 bg-[#121212] p-4 rounded-md border w-[90%] h-[400px] border-[#3b4345]">
-              <div className="flex items-start justify-end w-full h-[0%]">
+                <div className="content flex flex-col items-center justify-center mt-4 bg-[#121212] p-4 rounded-md border w-[100%] h-[350px] md:h-[400px] border-[#3b4345]">
+              <div className="flex items-start justify-end w-full h-fit z-[500]">
                 <button
   onClick={() => setRestartKey(prev => prev + 1)}
   className="px-2 py-2 bg-[#181b1b] text-white cursor-pointer rounded-lg border border-[#3b4345] hover:bg-[#222]"
 >
-<MdRestartAlt className="w-[20px] h-[20px]"/>
-              </button>
+ <motion.div 
+ key={restartKey}
+initial={{rotate:0}}
+animate={{rotate:360 ,transition:{duration:0.5,ease:'easeInOut'}}}
+>
+  <MdRestartAlt className="w-[20px] h-[20px]"/>
+</motion.div>
+                  </button>
 
 </div>
               <Suspense fallback={<div>Loading...</div>}>
-                <div className="flex h-full justify-center items-center">
+                <div className="flex h-full justify-center items-center -mt-6">
                   <SelectedComponent  key={restartKey}/>
                 </div>
               </Suspense>
@@ -246,13 +252,136 @@ const [restartKey, setRestartKey] = useState(0);
                 </div>
             ) : 
                 chooseLanguage === 'javascript' ? (
-                <div className="w-fit
+                <div className="w-[270px] sm:w-[500px] md:w-full overflow-x-auto
                    ">
+                  {/* USAGE CONTAINER */}
+                  <div className="flex flex-col">
+                        <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
+                    <div className="showcode bg-[#121212] flex flex-col p-2.5 sm:p-4 rounded-md border border-[#3b4345]  h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
+  <div className="absolute top-4 right-0 sm:right-6">
+    <button
+      onClick={handleCopyUsage}
+      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+    >
+      {copiedUsage ? (
+        <IoMdCheckmark className="w-[20px] h-[20px]" />
+      ) : (
+        <IoMdCopy className="w-[20px] h-[20px]" />
+      )}
+    </button>
+  </div>
+
+  <div className="flex flex-col items-start mt-4">
+    <SyntaxHighlighter
+      language="jsx"
+      style={oneDark}
+      showLineNumbers={false}
+wrapLines={false}
+wrapLongLines={false}
+
+       customStyle={{
+    background: 'transparent',
+    padding: 0,
+    margin: 0,
+    width: 'max-content', // IMPORTANT: allows horizontal scroll
+    minWidth: '100%',
+  }}
+      codeTagProps={{
+        style: { background: 'transparent' },
+      }}
+    >
+      {SelectedUsage}
+    </SyntaxHighlighter>
+  </div>
+</div>
+</div>
+
+{/* Animation CONTAINER */}
+                  <div className="flex flex-col">
+                        <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
+  <div className="absolute top-4 right-0 sm:right-6">
+    <button
+      onClick={handleCopyAnimation}
+      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+    >
+      {copiedAnimation ? (
+        <IoMdCheckmark className="w-[20px] h-[20px]" />
+      ) : (
+        <IoMdCopy className="w-[20px] h-[20px]" />
+      )}
+    </button>
+  </div>
+
+  <div className="flex flex-col items-start mt-4">
+    <SyntaxHighlighter
+      language="jsx"
+      style={oneDark}
+      showLineNumbers={false}
+      customStyle={{
+        background: 'transparent',
+        padding: 0,
+        margin: 0,
+        width: '100%',
+      }}
+      codeTagProps={{
+        style: { background: 'transparent' },
+      }}
+    >
+      {SelectedAnimation}
+    </SyntaxHighlighter>
+  </div>
+</div>
+</div>
+
+{/* CODE CONTAINER */}
+                  <div className="flex flex-col mt-12">
+    <p className="text-2xl sm:text-3xl font-semibold text-white mb-2">Code</p>
+
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[400px] overflow-y-auto relative">
+  <div className="absolute top-4 right-0 sm:right-6">
+    <button
+      onClick={handleCopy}
+      className="bg-[rgba(0,0,0,0.5)] cursor-pointer border border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+    >
+      {copied ? (
+        <IoMdCheckmark className="w-[20px] h-[20px]" />
+      ) : (
+        <IoMdCopy className="w-[20px] h-[20px]" />
+      )}
+    </button>
+  </div>
+
+  <div className="flex flex-col items-start mt-4">
+    <SyntaxHighlighter
+      language="jsx"
+      style={oneDark}
+      showLineNumbers={false}
+      customStyle={{
+        background: 'transparent',
+        padding: 0,
+        margin: 0,
+        width: '100%',
+      }}
+      codeTagProps={{
+        style: { background: 'transparent' },
+      }}
+    >
+      {SelectedCode}
+    </SyntaxHighlighter>
+  </div>
+</div>
+</div>
+
+</div>           
+                ) : (
+                  <div>
+                       <div className="w-[270px] sm:w-[500px] md:w-full">
                   {/* USAGE CONTAINER */}
                   <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
-  <div className="absolute top-4 right-6">
+  <div className="absolute top-4 right-0 sm:right-6">
     <button
       onClick={handleCopyUsage}
       className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
@@ -290,7 +419,7 @@ const [restartKey, setRestartKey] = useState(0);
                   <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
-  <div className="absolute top-4 right-6">
+  <div className="absolute top-4 right-0 sm:right-6">
     <button
       onClick={handleCopyAnimation}
       className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
@@ -329,126 +458,7 @@ const [restartKey, setRestartKey] = useState(0);
     <p className="text-3xl font-semibold text-white mb-2">Code</p>
 
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[400px] overflow-y-auto relative">
-  <div className="absolute top-4 right-6">
-    <button
-      onClick={handleCopy}
-      className="bg-[rgba(0,0,0,0.5)] cursor-pointer border border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
-    >
-      {copied ? (
-        <IoMdCheckmark className="w-[20px] h-[20px]" />
-      ) : (
-        <IoMdCopy className="w-[20px] h-[20px]" />
-      )}
-    </button>
-  </div>
-
-  <div className="flex flex-col items-start mt-4">
-    <SyntaxHighlighter
-      language="jsx"
-      style={oneDark}
-      showLineNumbers={false}
-      customStyle={{
-        background: 'transparent',
-        padding: 0,
-        margin: 0,
-        width: '100%',
-      }}
-      codeTagProps={{
-        style: { background: 'transparent' },
-      }}
-    >
-      {SelectedCode}
-    </SyntaxHighlighter>
-  </div>
-</div>
-</div>
-
-</div>           
-                ) : (
-                  <div>
-                       <div className="w-full">
-                  {/* USAGE CONTAINER */}
-                  <div className="flex flex-col">
-                        <p className="text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
-  <div className="absolute top-4 right-6">
-    <button
-      onClick={handleCopyUsage}
-      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
-    >
-      {copiedUsage ? (
-        <IoMdCheckmark className="w-[20px] h-[20px]" />
-      ) : (
-        <IoMdCopy className="w-[20px] h-[20px]" />
-      )}
-    </button>
-  </div>
-
-  <div className="flex flex-col items-start mt-4">
-    <SyntaxHighlighter
-      language="jsx"
-      style={oneDark}
-      showLineNumbers={false}
-      customStyle={{
-        background: 'transparent',
-        padding: 0,
-        margin: 0,
-        width: '100%',
-      }}
-      codeTagProps={{
-        style: { background: 'transparent' },
-      }}
-    >
-      {SelectedUsage}
-    </SyntaxHighlighter>
-  </div>
-</div>
-</div>
-
-{/* Animation CONTAINER */}
-                  <div className="flex flex-col">
-                        <p className="text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
-  <div className="absolute top-4 right-6">
-    <button
-      onClick={handleCopyAnimation}
-      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
-    >
-      {copiedAnimation ? (
-        <IoMdCheckmark className="w-[20px] h-[20px]" />
-      ) : (
-        <IoMdCopy className="w-[20px] h-[20px]" />
-      )}
-    </button>
-  </div>
-
-  <div className="flex flex-col items-start mt-4">
-    <SyntaxHighlighter
-      language="jsx"
-      style={oneDark}
-      showLineNumbers={false}
-      customStyle={{
-        background: 'transparent',
-        padding: 0,
-        margin: 0,
-        width: '100%',
-      }}
-      codeTagProps={{
-        style: { background: 'transparent' },
-      }}
-    >
-      {SelectedAnimation}
-    </SyntaxHighlighter>
-  </div>
-</div>
-</div>
-
-{/* CODE CONTAINER */}
-                  <div className="flex flex-col mt-12">
-    <p className="text-3xl font-semibold text-white mb-2">Code</p>
-
-                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[600px] lg:w-[100%] h-[400px] overflow-y-auto relative">
-  <div className="absolute top-4 right-6">
+  <div className="absolute top-4 right-0 sm:right-6">
     <button
       onClick={handleCopy}
       className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"

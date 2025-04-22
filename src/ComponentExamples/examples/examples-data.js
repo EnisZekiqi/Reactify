@@ -11,6 +11,8 @@ import { Usage as Usage3, Animations as Animations3 } from '../javascript/Bubble
 const SimpleText = React.lazy(() => import('../Components/SimpleText'));
 const BlurText =React.lazy(()=>import ('../Components/BlurText'))
 const BubbleText = React.lazy(() => import('../Components/BubbleText'))
+const ExposeText = React.lazy(() => import('../Components/ExposeText'))
+const DecypherText =React.lazy(()=>import('../Components/DecypherText'))
 
 export const examples = [
   {
@@ -45,6 +47,29 @@ export const examples = [
     codeTS: codeSnippet3TS, 
     usage: Usage3,
     animations:Animations3
-    },
+  },
+   {
+    id: 'expose-text',
+    for:'in Text Animation',
+    name: "Expose Text",
+    component: ExposeText,
+    drawerLabel: "Expose Text",
+    code: codeSnippet3,
+    codeTS: codeSnippet3TS, 
+    usage: Usage3,
+    animations:Animations3
+  },
+   {
+    id: 'decypher-text',
+    for:'in Text Animation',
+    name: "Decypher Text",
+    component: DecypherText,
+    drawerLabel: "Decypher Text",
+    code: codeSnippet3,
+    codeTS: codeSnippet3TS, 
+    usage: Usage3,
+    animations:Animations3
+  },
+  
   // other components here...
 ];
