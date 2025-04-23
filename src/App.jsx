@@ -76,8 +76,7 @@ const AllIntro = () => (
     <Routes>
       <Route path='/' element={<AllIntro/>} />
       <Route path='/docs' element={<Docs />} />
-      <Route path="/example/:exampleId" element={<Example2/>}/>
-
+        <Route path="/example/:exampleId" element={<Example2/>}/>
    </Routes>
   )
 }

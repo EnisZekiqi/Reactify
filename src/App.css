@@ -2,7 +2,7 @@
   position: relative;
   min-height: 100vh;
   padding: 2rem;
-  overflow: hidden; /* just in case */
+  overflow-y:hidden ;
   z-index: 0;
 }
 

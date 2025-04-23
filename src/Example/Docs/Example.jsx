@@ -1,6 +1,6 @@
 import SecondNavbar from "../../components/SecondNavbar";
 import { examples } from "../../ComponentExamples/examples/examples-data";
-import { useState,Suspense,useEffect } from "react";
+import { useState,Suspense,useEffect,useRef } from "react";
 import { IoMdEye,IoMdCode  } from "react-icons/io";
 import { useParams, useNavigate,Link } from "react-router-dom";
 import { MdRestartAlt } from "react-icons/md";
@@ -8,6 +8,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { IoMdCheckmark,IoMdCopy  } from "react-icons/io";
 import { motion,AnimatePresence } from "framer-motion";
+import { useScrollContainerRef } from "../../components/ScrollContext";
 
 const Example = () => {
 
@@ -102,10 +103,13 @@ const [restartKey, setRestartKey] = useState(0);
   const TOGGLE_CLASSES =
   "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-1 md:py-1.5 md:py-0.5 transition-colors relative z-10 cursor-pointer";
 
+const scrollContainerRef = useScrollContainerRef();
+
+
 
     return ( 
         <div className="app-bg ">
-            <SecondNavbar />
+            <SecondNavbar/>
             <div className="empty mask-t-from-10%" style={{height:'120px'}}></div>
             <div className="flex items-start ">
                 <div className="componentList overflow-y-hidden lg:overflow-y-auto h-full w-[200px]">
@@ -116,8 +120,8 @@ const [restartKey, setRestartKey] = useState(0);
     key={example.id}
      to={`/example/${example.id}`}
         onClick={()=>setSeeCode('preview')}                   
-    className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-2 text-sm -mt-[20px]`}
-   style={{opacity:example.id === exampleId ? '1' :'0.7',borderLeft:example.id === exampleId ? '1px solid rgba(255,255,255,1)' : '1px solid rgba(255,255,255,0.4)'}}              
+    className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
+   style={{opacity:example.id === exampleId ? '1' :'0.6',borderLeft:example.id === exampleId ? '1px solid rgba(255,255,255,1)' : '1px solid rgba(255,255,255,0.4)'}}              
   >
     {example.drawerLabel}
   </Link>
@@ -227,7 +231,8 @@ const [restartKey, setRestartKey] = useState(0);
       </div>
     </div>
             {seeCode === 'preview' ? (
-                <div className="content flex flex-col items-center justify-center mt-4 bg-[#121212] p-4 rounded-md border w-[100%] h-[350px] md:h-[400px] border-[#3b4345]">
+                <div   ref={scrollContainerRef}
+            className="content flex flex-col items-center justify-center mt-4 bg-[#121212] p-4 rounded-md border w-[100%] h-[350px] md:h-[400px] overflow-y-auto border-[#3b4345]">
               <div className="flex items-start justify-end w-full h-fit z-[500]">
                 <button
   onClick={() => setRestartKey(prev => prev + 1)}
@@ -252,7 +257,7 @@ animate={{rotate:360 ,transition:{duration:0.5,ease:'easeInOut'}}}
                 </div>
             ) : 
                 chooseLanguage === 'javascript' ? (
-                <div className="w-[270px] sm:w-[500px] md:w-full overflow-x-auto
+                <div className="w-[270px] sm:w-[500px] md:w-[850px] overflow-x-auto
                    ">
                   {/* USAGE CONTAINER */}
                   <div className="flex flex-col">
@@ -376,7 +381,7 @@ wrapLongLines={false}
 </div>           
                 ) : (
                   <div>
-                       <div className="w-[270px] sm:w-[500px] md:w-full">
+                       <div className="w-[270px] sm:w-[500px] md:w-[850px]">
                   {/* USAGE CONTAINER */}
                   <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-4">Usage</p>

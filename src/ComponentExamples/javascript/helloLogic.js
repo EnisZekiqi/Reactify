@@ -48,7 +48,7 @@ const letterVariants = {
 export const codeSnippetTS = `
 import { motion, Variants } from "framer-motion";
 
-type SimpleTextProps = {
+interface SimpleTextProps = {
   containerVariants: Variants;
   letterVariants: Variants;
   example1: string;

@@ -6,6 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import { examples } from "../ComponentExamples/examples/examples-data";
 import { useParams } from "react-router-dom";
 
+
 const SecondNavbar = () => {
     
       const { exampleId } = useParams();
@@ -39,13 +40,14 @@ const [openSearch,setOpenSearch] =useState(false)
     },[searchQuery])
 
 
+ 
 const [DrawerComponent,setDrawerComponent]=useState(false)
 
     const drawerAction = () => {
-        setDrawerComponent(prev => !prev)
+      setDrawerComponent(prev => !prev)
     }
-    
-    
+
+
     const SelectComponent = () => {
         setDrawerComponent(false)
         setSearchQuery('')
@@ -92,60 +94,83 @@ const itemVariants = {
                 </div>
                 
             </div>  
-            <AnimatePresence>
-                     {openSearch &&
-                        <div>
-                            <motion.div
-                                initial={{ opactiy: 0 }}
-                                animate={{ opacity: 1, transition: { duration: 0.5 } }}
-                            exit={{ opacity: 0, transition: { duration: 0.5 } }}
-                            onClick={()=>setOpenSearch(false)}
-                                className="div fixed z-[500] top-0  bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)]"></motion.div>
-                             <motion.div
-                            initial={{ y: 20, opacity: 1 }}
-                                animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-                                exit={{ y: 20, opacity: 0, tranistion: { duration: 0.5 } }}
-              className="searchComponent fixed top-1/2 left-1/2 w-[270px] overflow-y-auto flex flex-col items-center gap-2 md:w-[520px] border border-[#3b4345] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
-                        style={{height:searchFunction ? '400px' :'70px ',transition:'height 0.5s ease-in-out'}}
-                        >
-                            <div className="flex  items-center justify-start w-full mt-3 gap-2 pb-2.5"
-                                style={{ borderBottom: searchFunction ? '1px solid rgba(255,255,255,0.5)' :'',transition:'all 0.5s ease'}}
-                            >
-                                 <CiSearch className="w-[25px] h-[25px]" />
-                            <input type="text" placeholder="Search Docs" className=" focus:outline-0 w-full" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-                           </div>
-                            <AnimatePresence>
-                                 {SearchResults.map((item, i) => (
-                                     <motion.div
-                                        variants={containerVariants}
-                                         initial="hidden"
-                                         animate="show"
-                                         exit={{ opacity: 0, y: 20, transition: { duration: 0.5, delay: 0.2 } }}
-                                         className="mt-2.5"
-                                     >
-                                         <motion.div
-                                             variants={itemVariants}
-                                             initial="hidden"
-                                             animate="show"
-                                             className="div">
-                                     <Link
-                                key={i}
-                                onClick={() => setOpenSearch(false)}
-                                to={`/example/${item.id}`}
-                                className="flex flex-col items-start w-[75vh] bg-[#232829] border border-[#3b4345] gap-1 hover:bg-[#181b1b] p-2 rounded-xl transition-all duration-300"
-                            >
-                                <span className="text-white font-semibold">{item.name}</span>
-                                <span className="text-[rgba(255,255,255,0.5)] text-sm">{item.for}</span>
-                            </Link>
-                                    </motion.div>
-                           </motion.div>
-                            ))}
-                           </AnimatePresence>
+        <AnimatePresence>
+  {openSearch && (
+    <>
+      {/* Backdrop */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 0.5 } }}
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+        onClick={() => setOpenSearch(false)}
+        className="fixed z-[500] top-0 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)]"
+      />
 
-                </motion.div>
-                    </div>
-                }
-                <AnimatePresence>
+      {/* Modal */}
+      <motion.div
+        key="search-modal"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+        exit={{ y: 20, opacity: 0, transition: { duration: 0.5 } }} 
+        className="searchComponent fixed top-1/2 left-1/2 w-[270px] overflow-y-auto flex flex-col items-center gap-2 md:w-[520px] border border-[#3b4345] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
+        style={{
+          height: searchFunction ? "400px" : "70px",
+          transition: "height 0.5s ease-in-out",
+        }}
+      >
+        {/* Search input */}
+        <div
+          className="flex items-center justify-start w-full mt-3 gap-2 pb-2.5"
+          style={{
+            borderBottom: searchFunction
+              ? "1px solid rgba(255,255,255,0.5)"
+              : "",
+            transition: "all 0.5s ease",
+          }}
+        >
+          <CiSearch className="w-[25px] h-[25px]" />
+          <input
+            type="text"
+            placeholder="Search Docs"
+            className="focus:outline-0 w-full"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+
+        {/* Results */}
+        <AnimatePresence>
+          {SearchResults.map((item, i) => (
+            <motion.div
+              key={item.id} // Make sure each one has a unique key!
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+              exit={{ opacity: 0, y: 20, transition: { duration: 0.5, delay: 0.2 } }}
+              className="mt-2.5"
+            >
+              <motion.div
+                variants={itemVariants}
+                initial="hidden"
+                animate="show"
+                className="div"
+              >
+                <Link
+                  onClick={() => setOpenSearch(false)}
+                  to={`/example/${item.id}`}
+                  className="flex flex-col items-start w-[75vh] bg-[#232829] border border-[#3b4345] gap-1 hover:bg-[#181b1b] p-2 rounded-xl transition-all duration-300"
+                >
+                  <span className="text-white font-semibold">{item.name}</span>
+                  <span className="text-[rgba(255,255,255,0.5)] text-sm">{item.for}</span>
+                </Link>
+              </motion.div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+    </>
+                )}
+                 <AnimatePresence>
                      {DrawerComponent && 
                     <>
                     <motion.div
@@ -171,7 +196,8 @@ const itemVariants = {
                 </>
                 }
                </AnimatePresence>
-               </AnimatePresence>
+</AnimatePresence>
+
         </div>
      );
 }
