@@ -53,6 +53,7 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   const SelectedUsage =examples[selectedExampleIndex].usage
   const SelectedAnimation =examples[selectedExampleIndex].animations
   const SelectedCodeTS =examples[selectedExampleIndex].codeTS
+  const SelectedCSS =examples[selectedExampleIndex].css
 
 const [restartKey, setRestartKey] = useState(0);
   
@@ -301,8 +302,9 @@ wrapLongLines={false}
 </div>
 </div>
 
-{/* Animation CONTAINER */}
-                  <div className="flex flex-col">
+{/* Animation CONTAINER & CSS*/}
+          {SelectedAnimation &&  
+          <div className="flex flex-col">
                         <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-0 sm:right-6">
@@ -338,6 +340,46 @@ wrapLongLines={false}
   </div>
 </div>
 </div>
+        }
+
+{SelectedCSS && 
+  <div className="flex flex-col">
+                        <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
+  <div className="absolute top-4 right-0 sm:right-6">
+    <button
+      onClick={handleCopyAnimation}
+      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+    >
+      {copiedAnimation ? (
+        <IoMdCheckmark className="w-[20px] h-[20px]" />
+      ) : (
+        <IoMdCopy className="w-[20px] h-[20px]" />
+      )}
+    </button>
+  </div>
+
+  <div className="flex flex-col items-start mt-4">
+    <SyntaxHighlighter
+      language="jsx"
+      style={oneDark}
+      showLineNumbers={false}
+      customStyle={{
+        background: 'transparent',
+        padding: 0,
+        margin: 0,
+        width: '100%',
+      }}
+      codeTagProps={{
+        style: { background: 'transparent' },
+      }}
+    >
+      {SelectedCSS}
+    </SyntaxHighlighter>
+  </div>
+</div>
+</div>
+}                  
 
 {/* CODE CONTAINER */}
                   <div className="flex flex-col mt-12">
@@ -421,7 +463,8 @@ wrapLongLines={false}
 </div>
 
 {/* Animation CONTAINER */}
-                  <div className="flex flex-col">
+          {SelectedAnimation &&
+          <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-0 sm:right-6">
@@ -457,6 +500,7 @@ wrapLongLines={false}
   </div>
 </div>
 </div>
+          }
 
 {/* CODE CONTAINER */}
                   <div className="flex flex-col mt-12">

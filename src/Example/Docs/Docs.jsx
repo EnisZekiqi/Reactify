@@ -85,9 +85,11 @@ export default defineConfig({
 
 
     return ( 
-        <div className="app-bg">
+        <div className="app-bg" style={{padding:0}}>
+        <div className="flex mt-8 mx-6">
             <Navbar />
-               <div className="relative flex flex-col items-center justify-center mt-24 sm:mt-10 z-[90]">
+          </div>
+        <div className="relative flex flex-col items-center justify-center mt-24 sm:mt-10 z-[90]">
       <div className="flex flex-col items-center mt-[5%]">
         <motion.div initial={{
         opacity: 0,
@@ -116,7 +118,7 @@ export default defineConfig({
           ease: "easeOut"
         }
       }} src={circlewallpaper} // 🔁 Replace this with your image URL
-      alt="Title Background" className="absolute inset-0 mask-b-from-20% mask-b-to-80% w-screen -mt-24 sm:-mt-28  h-screen object-cover pointer-events-none select-none z-0  blur-none" />
+      alt="Title Background" className="absolute inset-0 mask-b-from-20% mask-b-to-80% w-[100%]  -mt-24 sm:-mt-28  h-screen object-cover pointer-events-none select-none z-0  blur-none" />
 
   {
         /* The Animated Title */
@@ -160,7 +162,7 @@ export default defineConfig({
         <motion.div
             initial={{opacity:0}}
          animate={{opacity:1,transition:{duration:0.5,delay:1}}}
-    className="flex flex-col sm:flex-row  gap-4 items-center w-screen justify-center px-12">
+    className="flex flex-col sm:flex-row  gap-4 items-center w-full justify-center px-12">
   <motion.div 
   initial={{rotate:0}}
   whileHover={{ rotate: 5 }}
@@ -207,7 +209,7 @@ export default defineConfig({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 ,delay:0.5} }}
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
-      className="flex gap-8 justify-center mt-[25%] sm:mt-[10%] w-screen px-8 md:px-12"
+      className="flex gap-8 justify-center mt-[25%] sm:mt-[10%] w-full mb-10 ml-0 px-4 sm:px-8 md:px-12"
     >
       <div className="w-full">
         <h1 className="text-2xl md:text-4xl font-bold text-white w-full text-start">

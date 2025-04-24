@@ -39,7 +39,7 @@ const Ending = () => {
               }}
               viewport={{ once: true }}
               src={circlewallpaper} // 🔁 Replace this with your image URL
-          alt="Title Background" className="absolute mask-t-from-10% inset-0 -mt-40 sm:-mt-0 w-screen h-screen object-contain pointer-events-none select-none z-0  blur-md" />
+          alt="Title Background" className="absolute mask-t-from-10% inset-0 -mt-40 sm:-mt-0 w-[100%] h-screen object-contain pointer-events-none select-none z-0  blur-md" />
 
       {
         /* The Animated Title */

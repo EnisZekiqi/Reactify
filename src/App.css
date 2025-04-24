@@ -48,7 +48,6 @@
   border-radius: 20px;
 }
 
-
 .searchComponent::-webkit-scrollbar {
   width: 8px;
 }
@@ -184,3 +183,40 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+/*Components Custom Css is Here !*/
+
+.animate-aurora{
+  background-size: 200% auto;
+  animation: aurora 2s linear infinite;
+}
+
+@keyframes aurora {
+  0%{
+    background-position: 0% 50%;
+  }
+  100%{
+    background-position: 100% 100%;
+  }
+}
+
+
+
+@keyframes drip {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px) scaleY(2);
+    opacity: 0;
+  }
+}
+
+.animate-drip {
+  opacity: 0;
+  animation: drip 1.5s linear infinite;
+}
+

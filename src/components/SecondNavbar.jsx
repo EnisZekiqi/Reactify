@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { motion,AnimatePresence } from "framer-motion";
+import { motion,AnimatePresence,useTransform,useScroll } from "framer-motion";
 import { CiSearch,CiMenuFries,CiMenuBurger ,CiMinimize1   } from "react-icons/ci";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { examples } from "../ComponentExamples/examples/examples-data";
 import { useParams } from "react-router-dom";
@@ -77,6 +77,15 @@ const itemVariants = {
   },
 };
 
+    
+     const ref = useRef(null);
+    
+    
+        const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start 1.5", "end 0.9"], // Trigger start of animation when element enters viewport
+     });
+
     return ( 
         <div>
    <div className="navbar2 flex justify-between fixed w-screen px-1 sm:px-4 ">
@@ -111,8 +120,9 @@ const itemVariants = {
         key="search-modal"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-        exit={{ y: 20, opacity: 0, transition: { duration: 0.5 } }} 
-        className="searchComponent fixed top-1/2 left-1/2 w-[270px] overflow-y-auto flex flex-col items-center gap-2 md:w-[520px] border border-[#3b4345] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
+         exit={{ y: 20, opacity: 0, transition: { duration: 0.5 } }} 
+         ref={ref}
+        className="searchComponent fixed top-1/2 left-1/2  w-[290px] overflow-y-auto flex flex-col items-center gap-2 md:w-[520px] border border-[#3b4345] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
         style={{
           height: searchFunction ? "400px" : "70px",
           transition: "height 0.5s ease-in-out",
@@ -158,15 +168,15 @@ const itemVariants = {
                 <Link
                   onClick={() => setOpenSearch(false)}
                   to={`/example/${item.id}`}
-                  className="flex flex-col items-start w-[75vh] bg-[#232829] border border-[#3b4345] gap-1 hover:bg-[#181b1b] p-2 rounded-xl transition-all duration-300"
+                  className="flex flex-col items-start w-[245px] sm:w-[75vh] bg-[#232829] border border-[#3b4345] gap-1 hover:bg-[#181b1b] p-2 rounded-xl transition-all duration-300"
                 >
-                  <span className="text-white font-semibold">{item.name}</span>
-                  <span className="text-[rgba(255,255,255,0.5)] text-sm">{item.for}</span>
+                  <span className="text-white text-sm md:text-base font-semibold">{item.name}</span>
+                  <span className="text-[rgba(255,255,255,0.5)] text-xs sm:text-sm">{item.for}</span>
                 </Link>
               </motion.div>
             </motion.div>
           ))}
-        </AnimatePresence>
+        </AnimatePresence>        
       </motion.div>
     </>
                 )}

@@ -6,12 +6,17 @@ import { codeSnippet3, codeSnippet3TS } from '../javascript/BubbleLogic';
 import { codeSnippet4, codeSnippet4TS } from '../javascript/ExposeLogic';
 import { codeSnippet5, codeSnippet5TS } from '../javascript/DexypherLogic';
 import { codeSnippet6, codeSnippet6TS } from '../javascript/ScrollLogic';
+import { codeSnippet7, codeSnippet7TS } from '../javascript/LiquidLogic';
+import { codeSnippet8,codeSnippet8TS } from '../javascript/AuroraLogic';
 import { Usage as Usage1, Animations as Animations1 } from '../javascript/helloLogic';
 import { Usage as Usage2, Animations as Animations2 } from '../javascript/helloLogic2';
 import { Usage as Usage3, Animations as Animations3 } from '../javascript/BubbleLogic';
 import { Usage as Usage4, Animations as Animations4 } from '../javascript/ExposeLogic'
 import { Usage as Usage5, Animations as Animations5 } from '../javascript/DexypherLogic'
-import {Usage as Usage6 ,Animations as Animations6} from '../javascript/ScrollLogic'
+import { Usage as Usage6, Animations as Animations6 } from '../javascript/ScrollLogic'
+import { Usage as Usage7 } from '../javascript/LiquidLogic'
+import { Usage as Usage8 ,CSS} from '../javascript/AuroraLogic'
+
 
 
 
@@ -21,6 +26,9 @@ const BubbleText = React.lazy(() => import('../Components/BubbleText'))
 const ExposeText = React.lazy(() => import('../Components/ExposeText'))
 const DecypherText = React.lazy(() => import('../Components/DecypherText'))
 const ScrollText = React.lazy (()=>import ('../Components/ScrollText'))
+const LiquidText = React.lazy(() => import('../Components/LiquidText'))
+const AuroraText = React.lazy(() => import('../Components/AuroraText'))
+const DripText = React.lazy(() => import('../Components/DripText'))
 
 export const examples = [
   {
@@ -89,6 +97,39 @@ export const examples = [
     usage: Usage6,
     animations:Animations6
   },
+     {
+    id: 'liquid-text',
+    for:'in Text Animation',
+    name: "Liquid Text",
+    component: LiquidText,
+    drawerLabel: "Liquid Text",
+    code: codeSnippet7,
+    codeTS: codeSnippet7TS, 
+       usage: Usage7,
+  },
+    {
+    id: 'aurora-text',
+    for:'in Text Animation',
+    name: "Aurora Text",
+    component: AuroraText,
+    drawerLabel: "Aurora Text",
+    code: codeSnippet8,
+    codeTS: codeSnippet8TS, 
+      usage: Usage8,
+    css:CSS
+  },
+    {
+    id: 'drip-text',
+    for:'in Text Animation',
+    name: "Drip Text",
+    component: DripText,
+    drawerLabel: "Drip Text",
+    code: codeSnippet8,
+    codeTS: codeSnippet8TS, 
+      usage: Usage8,
+    css:CSS
+  },
+  
   
   // other components here...
 ];

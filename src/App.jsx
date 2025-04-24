@@ -115,7 +115,7 @@ export default App
           ease: "easeOut"
         }
       }} src={circlewallpaper} // 🔁 Replace this with your image URL
-      alt="Title Background" className="absolute inset-0 w-screen -mt-24 sm:-mt-0 h-screen object-contain pointer-events-none select-none z-0  blur-md" />
+      alt="Title Background" className="absolute inset-0 w-screen -mt-24 sm:-mt-0 h-screen object-cover sm:object-contain pointer-events-none select-none z-0  blur-md" />
 
   {
         /* The Animated Title */
