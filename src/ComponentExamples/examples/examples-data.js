@@ -37,6 +37,8 @@ const AuroraText = React.lazy(() => import('../Components/AuroraText'))
 const DripText = React.lazy(() => import('../Components/DripText'))
 const StreamText = React.lazy(() => import('../Components/StreamText'))
 const RotatingText = React.lazy(() => import('../Components/RotatingText'))
+const LoopText = React.lazy(() => import('../Components/LoopText'))
+
 
 
 export const examples = [
@@ -155,6 +157,17 @@ export const examples = [
     name: "Whirling Text",
     component: RotatingText,
     drawerLabel: "Whirling Text",
+    code: codeSnippet9,
+    codeTS: codeSnippet9TS, 
+      usage: Usage9,
+    animations:Animations9
+  },
+     {
+    id: 'loop-text',
+    for:'in Text Animation',
+    name: "Loop Text",
+    component: LoopText,
+    drawerLabel: "Loop Text",
     code: codeSnippet9,
     codeTS: codeSnippet9TS, 
       usage: Usage9,
