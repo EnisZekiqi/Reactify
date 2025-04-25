@@ -8,6 +8,9 @@ import { codeSnippet5, codeSnippet5TS } from '../javascript/DexypherLogic';
 import { codeSnippet6, codeSnippet6TS } from '../javascript/ScrollLogic';
 import { codeSnippet7, codeSnippet7TS } from '../javascript/LiquidLogic';
 import { codeSnippet8,codeSnippet8TS } from '../javascript/AuroraLogic';
+import { codeSnippet9, codeSnippet9TS } from '../javascript/StreamLogic';
+import { codeSnippet10,codeSnippet10TS } from '../javascript/MeltingLogic';
+
 import { Usage as Usage1, Animations as Animations1 } from '../javascript/helloLogic';
 import { Usage as Usage2, Animations as Animations2 } from '../javascript/helloLogic2';
 import { Usage as Usage3, Animations as Animations3 } from '../javascript/BubbleLogic';
@@ -16,6 +19,9 @@ import { Usage as Usage5, Animations as Animations5 } from '../javascript/Dexyph
 import { Usage as Usage6, Animations as Animations6 } from '../javascript/ScrollLogic'
 import { Usage as Usage7 } from '../javascript/LiquidLogic'
 import { Usage as Usage8 ,CSS} from '../javascript/AuroraLogic'
+import { Usage as Usage9, Animations as Animations9 } from '../javascript/StreamLogic'
+import { Usage as Usage10, CSS1 } from '../javascript/MeltingLogic'
+
 
 
 
@@ -29,6 +35,9 @@ const ScrollText = React.lazy (()=>import ('../Components/ScrollText'))
 const LiquidText = React.lazy(() => import('../Components/LiquidText'))
 const AuroraText = React.lazy(() => import('../Components/AuroraText'))
 const DripText = React.lazy(() => import('../Components/DripText'))
+const StreamText = React.lazy(() => import('../Components/StreamText'))
+const RotatingText = React.lazy(() => import('../Components/RotatingText'))
+
 
 export const examples = [
   {
@@ -115,7 +124,7 @@ export const examples = [
     drawerLabel: "Aurora Text",
     code: codeSnippet8,
     codeTS: codeSnippet8TS, 
-      usage: Usage8,
+    usage: Usage8,
     css:CSS
   },
     {
@@ -124,10 +133,32 @@ export const examples = [
     name: "Drip Text",
     component: DripText,
     drawerLabel: "Drip Text",
-    code: codeSnippet8,
-    codeTS: codeSnippet8TS, 
-      usage: Usage8,
-    css:CSS
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+      usage: Usage10,
+    css:CSS1
+  },
+     {
+    id: 'stream-text',
+    for:'in Text Animation',
+    name: "Stream Text",
+    component: StreamText,
+    drawerLabel: "Stream Text",
+    code: codeSnippet9,
+    codeTS: codeSnippet9TS, 
+      usage: Usage9,
+    animations:Animations9
+  },
+     {
+    id: 'whirling-text',
+    for:'in Text Animation',
+    name: "Whirling Text",
+    component: RotatingText,
+    drawerLabel: "Whirling Text",
+    code: codeSnippet9,
+    codeTS: codeSnippet9TS, 
+      usage: Usage9,
+    animations:Animations9
   },
   
   

@@ -129,8 +129,8 @@ const itemVariants = {
         }}
       >
         {/* Search input */}
-        <div
-          className="flex items-center justify-start w-full mt-3 gap-2 pb-2.5"
+          <div
+          className="flex items-center  justify-start w-full mt-3 gap-2 pb-2.5"
           style={{
             borderBottom: searchFunction
               ? "1px solid rgba(255,255,255,0.5)"

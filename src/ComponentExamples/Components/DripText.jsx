@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-
+import { example10 } from "../javascript/MeltingLogic";
 const droplets = [
   { left: "0", delay: "delay-0" },
   { left: "1rem", delay: "delay-100" },
@@ -31,7 +31,7 @@ const Drip = () => {
           transition={{ type: "spring", stiffness: 150 }}
           className="text-white text-3xl sm:text-5xl inline-block"
         >
-          Melting
+          {example10}
         </motion.span>
 
         {/* Underline */}

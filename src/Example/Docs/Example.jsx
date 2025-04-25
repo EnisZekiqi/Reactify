@@ -344,7 +344,7 @@ wrapLongLines={false}
 
 {SelectedCSS && 
   <div className="flex flex-col">
-                        <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
+                        <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-12">CSS</p>
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-0 sm:right-6">
     <button
