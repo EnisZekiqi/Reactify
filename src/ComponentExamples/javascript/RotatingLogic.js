@@ -1,4 +1,7 @@
-export const example11 = ['LinkedIn', 'GitHub', 'Reddit']
+export const example11 = [
+  'LinkedIn',
+  'GitHub',
+  'Reddit']
 
 export const wordContainerVariants = {
   hidden: { opacity: 1 },
