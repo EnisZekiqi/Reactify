@@ -1,5 +1,6 @@
 import SecondNavbar from "../../components/SecondNavbar";
 import { examples } from "../../ComponentExamples/examples/examples-data";
+import { components } from "../../ComponentExamples/examples/component-Buttons";
 import { useState,Suspense,useEffect,useRef } from "react";
 import { IoMdEye,IoMdCode  } from "react-icons/io";
 import { useParams, useNavigate,Link } from "react-router-dom";
@@ -17,7 +18,8 @@ const navigate = useNavigate();
 
 // 🛠️ Match URL param to example
 const initialIndex = examples.findIndex((ex) => ex.id === exampleId);
-
+  const initialIndex2 = components.findIndex((ex) => ex.id === exampleId)
+  
 // 🔁 If not found, redirect to a default one or 404
 useEffect(() => {
   if (initialIndex === -1) {
@@ -25,16 +27,33 @@ useEffect(() => {
   }
 }, [initialIndex, navigate]);
 
+useEffect(() => {
+  if (initialIndex2 === -1) {
+    navigate("/example/simple-text", { replace: true });
+  }
+}, [initialIndex2, navigate]);
+
 const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   initialIndex >= 0 ? initialIndex : 0
 );
 
+  const [selectedExampleIndex2, setSelectedExampleIndex2] = useState(
+  initialIndex2 >= 0 ? initialIndex2 : 0
+);
+  
   useEffect(() => {
   const newIndex = examples.findIndex((ex) => ex.id === exampleId);
   if (newIndex !== -1 && newIndex !== selectedExampleIndex) {
     setSelectedExampleIndex(newIndex);
   }
 }, [exampleId, selectedExampleIndex]);
+
+ useEffect(() => {
+  const newIndex = components.findIndex((ex) => ex.id === exampleId);
+  if (newIndex !== -1 && newIndex !== selectedExampleIndex2) {
+    setSelectedExampleIndex2(newIndex);
+  }
+}, [exampleId, selectedExampleIndex2]);
 
   const [seeCode, setSeeCode] = useState('preview') ///// default this will show the code in javascript from its state
   
@@ -112,8 +131,9 @@ const scrollContainerRef = useScrollContainerRef();
         <div className="app-bg ">
             <SecondNavbar/>
             <div className="empty mask-t-from-10%" style={{height:'120px'}}></div>
-            <div className="flex items-start ">
-                <div className="componentList overflow-y-hidden lg:overflow-y-auto h-full w-[200px]">
+            <div className="flex items-start gap-10">
+               <div className="flex flex-col gap-8">
+                 <div className="componentList overflow-y-hidden lg:overflow-y-auto h-full w-[200px]">
                     <h1 className="text-md lg:text-xl text-white font-bold lg:font-semibold">Animated Text</h1>
                     <div className="mt-8 flex flex-col gap-5">
                        {examples.map((example) => (
@@ -130,7 +150,26 @@ const scrollContainerRef = useScrollContainerRef();
 
         </div>
           </div>
-          <div className="flex flex-col items-start w-[800px] lg:w-screen  -ml-[2.5%] sm:ml-[10%] justify-center">
+          <div className="componentList overflow-y-hidden lg:overflow-y-auto h-full w-[200px]">
+              <h1 className="text-md lg:text-xl text-white font-bold lg:font-semibold">Components</h1>
+              <h1 className="text-md lg:text-md text-white font-medium lg:font-semibold mt-4">Buttons</h1>
+                    <div className="mt-8 flex flex-col gap-5">
+                       {components.map((example) => (
+  <Link
+    key={example.id}
+     to={`/example/${example.id}`}
+        onClick={()=>setSeeCode('preview')}                   
+    className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
+   style={{opacity:example.id === exampleId ? '1' :'0.6',borderLeft:example.id === exampleId ? '1px solid rgba(255,255,255,1)' : '1px solid rgba(255,255,255,0.4)'}}              
+  >
+    {example.drawerLabel}
+  </Link>
+))}
+
+        </div>
+          </div>
+               </div>
+          <div className="flex flex-col items-start w-[800px] lg:w-screen  -ml-[2.5%] sm:ml-[0%] justify-center">
               <h1 className="text-white font-bold text-[36px] md:text-[52px] lg:text-7xl text-start">
             {examples[selectedExampleIndex].drawerLabel}
           </h1>

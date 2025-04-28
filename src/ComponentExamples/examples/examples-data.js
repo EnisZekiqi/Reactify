@@ -10,6 +10,8 @@ import { codeSnippet7, codeSnippet7TS } from '../javascript/LiquidLogic';
 import { codeSnippet8,codeSnippet8TS } from '../javascript/AuroraLogic';
 import { codeSnippet9, codeSnippet9TS } from '../javascript/StreamLogic';
 import { codeSnippet10,codeSnippet10TS } from '../javascript/MeltingLogic';
+import { codeSnippet11, codeSnippet11TS } from '../javascript/RotatingLogic';
+import { codeSnippet12,codeSnippet12TS } from '../javascript/LoopLogic';
 
 import { Usage as Usage1, Animations as Animations1 } from '../javascript/helloLogic';
 import { Usage as Usage2, Animations as Animations2 } from '../javascript/helloLogic2';
@@ -21,7 +23,8 @@ import { Usage as Usage7 } from '../javascript/LiquidLogic'
 import { Usage as Usage8 ,CSS} from '../javascript/AuroraLogic'
 import { Usage as Usage9, Animations as Animations9 } from '../javascript/StreamLogic'
 import { Usage as Usage10, CSS1 } from '../javascript/MeltingLogic'
-
+import { Usage as Usage11, Animations as Animations10 } from '../javascript/RotatingLogic'
+import { Usage as Usage12, Animations as Animations11 } from '../javascript/LoopLogic'
 
 
 
@@ -157,10 +160,10 @@ export const examples = [
     name: "Whirling Text",
     component: RotatingText,
     drawerLabel: "Whirling Text",
-    code: codeSnippet9,
-    codeTS: codeSnippet9TS, 
-      usage: Usage9,
-    animations:Animations9
+    code: codeSnippet11,
+    codeTS: codeSnippet11TS, 
+      usage: Usage11,
+    animations:Animations10
   },
      {
     id: 'loop-text',
@@ -168,10 +171,10 @@ export const examples = [
     name: "Loop Text",
     component: LoopText,
     drawerLabel: "Loop Text",
-    code: codeSnippet9,
-    codeTS: codeSnippet9TS, 
-      usage: Usage9,
-    animations:Animations9
+    code: codeSnippet12,
+    codeTS: codeSnippet12TS, 
+      usage: Usage12,
+    animations:Animations11
   },
   
   
