@@ -16,20 +16,19 @@ import { Usage as Usage4, Animations as Animations4 } from '../javascript/Expose
 
 
 
-const SimpleText = React.lazy(() => import('../Components/SimpleText'));
+const ConfettiButton = React.lazy(() => import('../Buttons/ConfettiButton'));
 const BlurText =React.lazy(()=>import ('../Components/BlurText'))
 const BubbleText = React.lazy(() => import('../Components/BubbleText'))
 const ExposeText = React.lazy(() => import('../Components/ExposeText'))
 
 
-
 export const components = [
   {
-    id: 'simple-text',
-    for:'in Text Animation',
-    name: "Simple Text",
-    component: SimpleText,
-    drawerLabel: "Simple Text",
+    id: 'confetti-button',
+    for:'in Components/Buttons',
+    name: "Confetti Button",
+    component: ConfettiButton,
+    drawerLabel: "Confetti Button",
     code: codeSnippet,
     codeTS: codeSnippetTS, 
     usage: Usage1,

@@ -21,17 +21,17 @@ const initialIndex = examples.findIndex((ex) => ex.id === exampleId);
   const initialIndex2 = components.findIndex((ex) => ex.id === exampleId)
   
 // 🔁 If not found, redirect to a default one or 404
-useEffect(() => {
-  if (initialIndex === -1) {
-    navigate("/example/simple-text", { replace: true });
-  }
-}, [initialIndex, navigate]);
 
 useEffect(() => {
-  if (initialIndex2 === -1) {
+  const inExamples = examples.some((ex) => ex.id === exampleId);
+  const inComponents = components.some((ex) => ex.id === exampleId);
+
+  if (!inExamples && !inComponents) {
     navigate("/example/simple-text", { replace: true });
   }
-}, [initialIndex2, navigate]);
+}, [exampleId, navigate]);
+
+
 
 const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   initialIndex >= 0 ? initialIndex : 0
@@ -67,12 +67,25 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
 },[selectedExampleIndex])
   
 
-    const SelectedComponent = examples[selectedExampleIndex].component; ///// for the example showdown
+  const SelectedComponent = examples[selectedExampleIndex].component; ///// for the example showdown
   const SelectedCode = examples[selectedExampleIndex].code
   const SelectedUsage =examples[selectedExampleIndex].usage
   const SelectedAnimation =examples[selectedExampleIndex].animations
   const SelectedCodeTS =examples[selectedExampleIndex].codeTS
   const SelectedCSS =examples[selectedExampleIndex].css
+  const SelectedComponent2 = components[selectedExampleIndex2].component
+
+
+const getComponentToRender = () => {
+  const fromExamples = examples.find(e => e.id === exampleId)?.component;
+  if (fromExamples) return fromExamples;
+
+  const fromComponents = components.find(c => c.id === exampleId)?.component;
+  return fromComponents || null;
+};
+
+const Merge = getComponentToRender();
+
 
 const [restartKey, setRestartKey] = useState(0);
   
@@ -156,14 +169,20 @@ const scrollContainerRef = useScrollContainerRef();
                     <div className="mt-8 flex flex-col gap-5">
                        {components.map((example) => (
   <Link
-    key={example.id}
-     to={`/example/${example.id}`}
-        onClick={()=>setSeeCode('preview')}                   
-    className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
-   style={{opacity:example.id === exampleId ? '1' :'0.6',borderLeft:example.id === exampleId ? '1px solid rgba(255,255,255,1)' : '1px solid rgba(255,255,255,0.4)'}}              
-  >
-    {example.drawerLabel}
-  </Link>
+  key={example.id}
+  to={`/example/${example.id}`}
+  onClick={() => setSeeCode('preview')}
+  className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
+  style={{
+    opacity: example.id === exampleId ? '1' : '0.6',
+    borderLeft: example.id === exampleId
+      ? '1px solid rgba(255,255,255,1)'
+      : '1px solid rgba(255,255,255,0.4)'
+  }}
+>
+  {example.drawerLabel}
+</Link>
+
 ))}
 
         </div>
@@ -171,8 +190,10 @@ const scrollContainerRef = useScrollContainerRef();
                </div>
           <div className="flex flex-col items-start w-[800px] lg:w-screen  -ml-[2.5%] sm:ml-[0%] justify-center">
               <h1 className="text-white font-bold text-[36px] md:text-[52px] lg:text-7xl text-start">
-            {examples[selectedExampleIndex].drawerLabel}
-          </h1>
+              {examples[selectedExampleIndex]?.id === exampleId
+                ? examples[selectedExampleIndex]?.drawerLabel
+                : components[selectedExampleIndex2]?.drawerLabel}
+            </h1>
             <div className="relative flex w-fit items-center justify-between gap-1 sm:gap-2 rounded-full mt-10 mb-4 p-1 md:p-2 border border-[#3b4345]"
             style={{padding:seeCode === 'code' ? '4px':''}}
             >
@@ -288,12 +309,11 @@ animate={{rotate:360 ,transition:{duration:0.5,ease:'easeInOut'}}}
                   </button>
 
 </div>
-              <Suspense fallback={<div>Loading...</div>}>
-                <div className="flex h-full justify-center items-center -mt-6">
-                  <SelectedComponent  key={restartKey}/>
-                </div>
-              </Suspense>
-
+             <Suspense fallback={<div>Loading...</div>}>
+            <div className="flex h-full justify-center items-center -mt-6">
+              {Merge ? <Merge key={restartKey} /> : <div>Component not found</div>}
+            </div>
+          </Suspense>             
                 </div>
             ) : 
                 chooseLanguage === 'javascript' ? (
