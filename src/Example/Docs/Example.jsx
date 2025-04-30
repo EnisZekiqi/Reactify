@@ -18,13 +18,11 @@ const navigate = useNavigate();
 
 // 🛠️ Match URL param to example
 const initialIndex = examples.findIndex((ex) => ex.id === exampleId);
-  const initialIndex2 = components.findIndex((ex) => ex.id === exampleId)
   
 // 🔁 If not found, redirect to a default one or 404
 
 useEffect(() => {
   const inExamples = examples.some((ex) => ex.id === exampleId);
-  const inComponents = components.some((ex) => ex.id === exampleId);
 
   if (!inExamples && !inComponents) {
     navigate("/example/simple-text", { replace: true });
@@ -37,9 +35,6 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   initialIndex >= 0 ? initialIndex : 0
 );
 
-  const [selectedExampleIndex2, setSelectedExampleIndex2] = useState(
-  initialIndex2 >= 0 ? initialIndex2 : 0
-);
   
   useEffect(() => {
   const newIndex = examples.findIndex((ex) => ex.id === exampleId);
@@ -48,12 +43,7 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   }
 }, [exampleId, selectedExampleIndex]);
 
- useEffect(() => {
-  const newIndex = components.findIndex((ex) => ex.id === exampleId);
-  if (newIndex !== -1 && newIndex !== selectedExampleIndex2) {
-    setSelectedExampleIndex2(newIndex);
-  }
-}, [exampleId, selectedExampleIndex2]);
+
 
   const [seeCode, setSeeCode] = useState('preview') ///// default this will show the code in javascript from its state
   
@@ -72,19 +62,12 @@ const [selectedExampleIndex, setSelectedExampleIndex] = useState(
   const SelectedUsage =examples[selectedExampleIndex].usage
   const SelectedAnimation =examples[selectedExampleIndex].animations
   const SelectedCodeTS =examples[selectedExampleIndex].codeTS
-  const SelectedCSS =examples[selectedExampleIndex].css
-  const SelectedComponent2 = components[selectedExampleIndex2].component
+  const SelectedCSS = examples[selectedExampleIndex].css
+  const SelectedInstalation =examples[selectedExampleIndex].installation
+  
 
 
-const getComponentToRender = () => {
-  const fromExamples = examples.find(e => e.id === exampleId)?.component;
-  if (fromExamples) return fromExamples;
 
-  const fromComponents = components.find(c => c.id === exampleId)?.component;
-  return fromComponents || null;
-};
-
-const Merge = getComponentToRender();
 
 
 const [restartKey, setRestartKey] = useState(0);
@@ -140,59 +123,64 @@ const scrollContainerRef = useScrollContainerRef();
 
 
 
+
     return ( 
         <div className="app-bg ">
             <SecondNavbar/>
             <div className="empty mask-t-from-10%" style={{height:'120px'}}></div>
             <div className="flex items-start gap-10">
                <div className="flex flex-col gap-8">
-                 <div className="componentList overflow-y-hidden lg:overflow-y-auto h-full w-[200px]">
-                    <h1 className="text-md lg:text-xl text-white font-bold lg:font-semibold">Animated Text</h1>
-                    <div className="mt-8 flex flex-col gap-5">
-                       {examples.map((example) => (
-  <Link
-    key={example.id}
-     to={`/example/${example.id}`}
-        onClick={()=>setSeeCode('preview')}                   
-    className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
-   style={{opacity:example.id === exampleId ? '1' :'0.6',borderLeft:example.id === exampleId ? '1px solid rgba(255,255,255,1)' : '1px solid rgba(255,255,255,0.4)'}}              
-  >
-    {example.drawerLabel}
-  </Link>
-))}
-
-        </div>
-          </div>
+                <div className="componentList overflow-y-hidden lg:overflow-y-auto h-full w-[200px]">
+  <h1 className="text-md lg:text-xl text-white font-bold lg:font-semibold">Text Animations</h1>
+  <div className="mt-8 flex flex-col gap-5">
+    {examples
+      .filter(example => example.for === 'in Text Animation')  // Filter by Text Animation
+      .map((example) => (
+        <Link
+          key={example.id}
+          to={`/example/${example.id}`}
+          onClick={() => setSeeCode('preview')}
+          className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
+          style={{
+            opacity: example.id === exampleId ? '1' : '0.6',
+            borderLeft: example.id === exampleId
+              ? '1px solid rgba(255,255,255,1)'
+              : '1px solid rgba(255,255,255,0.4)'
+          }}
+        >
+          {example.drawerLabel}
+        </Link>
+      ))}
+  </div>
+</div>
           <div className="componentList overflow-y-hidden lg:overflow-y-auto h-full w-[200px]">
-              <h1 className="text-md lg:text-xl text-white font-bold lg:font-semibold">Components</h1>
-              <h1 className="text-md lg:text-md text-white font-medium lg:font-semibold mt-4">Buttons</h1>
-                    <div className="mt-8 flex flex-col gap-5">
-                       {components.map((example) => (
-  <Link
-  key={example.id}
-  to={`/example/${example.id}`}
-  onClick={() => setSeeCode('preview')}
-  className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
-  style={{
-    opacity: example.id === exampleId ? '1' : '0.6',
-    borderLeft: example.id === exampleId
-      ? '1px solid rgba(255,255,255,1)'
-      : '1px solid rgba(255,255,255,0.4)'
-  }}
->
-  {example.drawerLabel}
-</Link>
-
-))}
-
-        </div>
-          </div>
+  <h1 className="text-md lg:text-xl text-white font-bold lg:font-semibold">Components</h1>
+  <h1 className="text-md lg:text-md text-white font-medium lg:font-semibold mt-4">Buttons</h1>
+  <div className="mt-8 flex flex-col gap-5">
+    {examples
+      .filter(example => example.for === 'in Components/Buttons')  // Filter by Components/Buttons
+      .map((example) => (
+        <Link
+          key={example.id}
+          to={`/example/${example.id}`}
+          onClick={() => setSeeCode('preview')}
+          className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
+          style={{
+            opacity: example.id === exampleId ? '1' : '0.6',
+            borderLeft: example.id === exampleId
+              ? '1px solid rgba(255,255,255,1)'
+              : '1px solid rgba(255,255,255,0.4)'
+          }}
+        >
+          {example.drawerLabel}
+        </Link>
+      ))}
+  </div>
+</div>
                </div>
           <div className="flex flex-col items-start w-[800px] lg:w-screen  -ml-[2.5%] sm:ml-[0%] justify-center">
               <h1 className="text-white font-bold text-[36px] md:text-[52px] lg:text-7xl text-start">
-              {examples[selectedExampleIndex]?.id === exampleId
-                ? examples[selectedExampleIndex]?.drawerLabel
-                : components[selectedExampleIndex2]?.drawerLabel}
+              {examples[selectedExampleIndex].drawerLabel}
             </h1>
             <div className="relative flex w-fit items-center justify-between gap-1 sm:gap-2 rounded-full mt-10 mb-4 p-1 md:p-2 border border-[#3b4345]"
             style={{padding:seeCode === 'code' ? '4px':''}}
@@ -311,7 +299,7 @@ animate={{rotate:360 ,transition:{duration:0.5,ease:'easeInOut'}}}
 </div>
              <Suspense fallback={<div>Loading...</div>}>
             <div className="flex h-full justify-center items-center -mt-6">
-              {Merge ? <Merge key={restartKey} /> : <div>Component not found</div>}
+             <SelectedComponent key={restartKey} /> 
             </div>
           </Suspense>             
                 </div>
@@ -320,6 +308,46 @@ animate={{rotate:360 ,transition:{duration:0.5,ease:'easeInOut'}}}
                 <div className="w-[270px] sm:w-[500px] md:w-[850px] overflow-x-auto
                    ">
                   {/* USAGE CONTAINER */}
+
+                  {SelectedInstalation && 
+                  <div className="flex flex-col">
+                        <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-12">Installation</p>
+                    <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
+  <div className="absolute top-4 right-0 sm:right-6">
+    <button
+      onClick={handleCopyAnimation}
+      className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
+    >
+      {copiedAnimation ? (
+        <IoMdCheckmark className="w-[20px] h-[20px]" />
+      ) : (
+        <IoMdCopy className="w-[20px] h-[20px]" />
+      )}
+    </button>
+  </div>
+
+  <div className="flex flex-col items-start mt-4">
+    <SyntaxHighlighter
+      language="jsx"
+      style={oneDark}
+      showLineNumbers={false}
+      customStyle={{
+        background: 'transparent',
+        padding: 0,
+        margin: 0,
+        width: '100%',
+      }}
+      codeTagProps={{
+        style: { background: 'transparent' },
+      }}
+    >
+      {SelectedInstalation}
+    </SyntaxHighlighter>
+  </div>
+</div>
+</div>
+                  }
+
                   <div className="flex flex-col">
                         <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
                     <div className="showcode bg-[#121212] flex flex-col p-2.5 sm:p-4 rounded-md border border-[#3b4345]  h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
@@ -362,7 +390,7 @@ wrapLongLines={false}
 </div>
 
 {/* Animation CONTAINER & CSS*/}
-          {SelectedAnimation &&  
+          { SelectedAnimation && 
           <div className="flex flex-col">
                         <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
@@ -399,7 +427,8 @@ wrapLongLines={false}
   </div>
 </div>
 </div>
-        }
+    }
+
 
 {SelectedCSS && 
   <div className="flex flex-col">

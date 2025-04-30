@@ -12,6 +12,7 @@ import { codeSnippet9, codeSnippet9TS } from '../javascript/StreamLogic';
 import { codeSnippet10,codeSnippet10TS } from '../javascript/MeltingLogic';
 import { codeSnippet11, codeSnippet11TS } from '../javascript/RotatingLogic';
 import { codeSnippet12,codeSnippet12TS } from '../javascript/LoopLogic';
+import { codeSnippet14,codeSnippet14TS,installation } from '../javascript/ConfettiLogic';
 
 import { Usage as Usage1, Animations as Animations1 } from '../javascript/helloLogic';
 import { Usage as Usage2, Animations as Animations2 } from '../javascript/helloLogic2';
@@ -25,6 +26,7 @@ import { Usage as Usage9, Animations as Animations9 } from '../javascript/Stream
 import { Usage as Usage10, CSS1 } from '../javascript/MeltingLogic'
 import { Usage as Usage11, Animations as Animations10 } from '../javascript/RotatingLogic'
 import { Usage as Usage12, Animations as Animations11 } from '../javascript/LoopLogic'
+import { Usage as Usage13, Animations as Animations13 } from '../javascript/ConfettiLogic'
 
 
 
@@ -41,6 +43,8 @@ const DripText = React.lazy(() => import('../Components/DripText'))
 const StreamText = React.lazy(() => import('../Components/StreamText'))
 const RotatingText = React.lazy(() => import('../Components/RotatingText'))
 const LoopText = React.lazy(() => import('../Components/LoopText'))
+const ConfettiButton = React.lazy(() => import('../Buttons/ConfettiButton'));
+const RateButton = React.lazy(() => import('../Buttons/RateButton'));
 
 
 
@@ -178,5 +182,29 @@ export const examples = [
   },
   
   
-  // other components here...
+  // other components here... Buttons
+     
+ {
+    id: 'confetti-button',
+    for:'in Components/Buttons',
+    name: "Confetti Button",
+    component: ConfettiButton,
+    drawerLabel: "Confetti Button",
+    code: codeSnippet14,
+    codeTS: codeSnippet14TS, 
+    usage: Usage13,
+    animations: Animations13,
+    installation:installation
+    },
+  {
+    id: 'rate-button',
+    for:'in Components/Buttons',
+    name: "Rate Button",
+    component: RateButton,
+    drawerLabel: "Rate Button",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  },    
 ];
