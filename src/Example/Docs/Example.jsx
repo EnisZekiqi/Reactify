@@ -1,6 +1,5 @@
 import SecondNavbar from "../../components/SecondNavbar";
 import { examples } from "../../ComponentExamples/examples/examples-data";
-import { components } from "../../ComponentExamples/examples/component-Buttons";
 import { useState,Suspense,useEffect,useRef } from "react";
 import { IoMdEye,IoMdCode  } from "react-icons/io";
 import { useParams, useNavigate,Link } from "react-router-dom";
@@ -75,6 +74,7 @@ const [restartKey, setRestartKey] = useState(0);
   const [copied,setCopied]=useState(false) /// copy event changer for the icon 
   const [copiedUsage, setCopiedUsage] = useState(false)
   const [copiedAnimation,setCopiedAnimation]=useState(false)
+  const [copiedInstalation,setCopiedInstalation]=useState(false)
 
     const handleCopy = (event) => {     //// function to copy the code 
       event.stopPropagation()
@@ -90,7 +90,7 @@ const [restartKey, setRestartKey] = useState(0);
       setCopiedUsage(true)
       navigator.clipboard.writeText(SelectedUsage)
       setTimeout(() => {
-        setCopied(false)
+        setCopiedUsage(false)
       }, 3000);
   }
   
@@ -99,7 +99,16 @@ const [restartKey, setRestartKey] = useState(0);
     setCopiedAnimation(true)
     navigator.clipboard.writeText(SelectedAnimation)
     setTimeout(() => {
-      setCopied(false)
+      setCopiedAnimation(false)
+    }, 3000);
+  }
+  
+   const handleCopyInstalation = (event) => {
+    event.stopPropagation()
+    setCopiedInstalation(true)
+    navigator.clipboard.writeText(SelectedInstalation)
+    setTimeout(() => {
+      setCopiedInstalation(false)
     }, 3000);
   }
   
@@ -315,10 +324,10 @@ animate={{rotate:360 ,transition:{duration:0.5,ease:'easeInOut'}}}
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-x-auto overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-0 sm:right-6">
     <button
-      onClick={handleCopyAnimation}
+      onClick={handleCopyInstalation}
       className="bg-[rgba(0,0,0,0.5)] border cursor-pointer border-[#3b4345] text-[rgba(255,255,255,0.5)] px-2 py-2 rounded transition"
     >
-      {copiedAnimation ? (
+      {copiedInstalation ? (
         <IoMdCheckmark className="w-[20px] h-[20px]" />
       ) : (
         <IoMdCopy className="w-[20px] h-[20px]" />

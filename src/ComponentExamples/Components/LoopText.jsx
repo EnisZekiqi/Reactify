@@ -17,7 +17,7 @@ const letterVariants = {
         
         const interval =setInterval(() => {
             setCurrentIndex((prevIndex)=>(prevIndex + 1 ) % example12.length)
-        }, 5000);
+        }, 4000);
         
         return ()=> clearInterval(interval)
     },[example12.length])

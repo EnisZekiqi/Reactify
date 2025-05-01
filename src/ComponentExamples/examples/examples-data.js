@@ -43,8 +43,10 @@ const DripText = React.lazy(() => import('../Components/DripText'))
 const StreamText = React.lazy(() => import('../Components/StreamText'))
 const RotatingText = React.lazy(() => import('../Components/RotatingText'))
 const LoopText = React.lazy(() => import('../Components/LoopText'))
+//Components/Button//
 const ConfettiButton = React.lazy(() => import('../Buttons/ConfettiButton'));
 const RateButton = React.lazy(() => import('../Buttons/RateButton'));
+const SliderButton = React.lazy(() => import('../Buttons/SliderButton'));
 
 
 
@@ -206,5 +208,16 @@ export const examples = [
     codeTS: codeSnippet10TS, 
      usage: Usage13,
     animations:Animations13
-  },    
+  }, 
+  {
+    id: 'slider-button',
+    for:'in Components/Buttons',
+    name: "Slider Button",
+    component: SliderButton,
+    drawerLabel: "Slider Button",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  }, 
 ];
