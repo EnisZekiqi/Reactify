@@ -45,7 +45,7 @@ const filteredButtons = button3.filter(btn => btn !== 'Free' && btn !== 'Premium
         </motion.p>
       )}
 
-      <div className="relative flex items-center text-xs gap-8 font-light -mt-1 -mr-4 w-full justify-center">
+      <div className="relative flex items-center text-xs gap-8 font-light -mt-0 -mr-4 w-full justify-center">
         {selectMode === 'Premium' && (
           <motion.span
             layout
@@ -63,7 +63,11 @@ const filteredButtons = button3.filter(btn => btn !== 'Free' && btn !== 'Premium
         {filteredButtons.map((btn, i) => (
           <span
             key={i}
-            onClick={() => setSelectDay(btn)}
+            onClick={() => {
+              if (selectMode === 'Premium') {
+                setSelectDay(btn);
+              }
+            }}
             className={`relative z-20 cursor-pointer ${
               selectDay === btn || selectMode !== 'Premium' ? 'font-medium text-black' : 'text-white'
             }`}

@@ -47,6 +47,7 @@ const LoopText = React.lazy(() => import('../Components/LoopText'))
 const ConfettiButton = React.lazy(() => import('../Buttons/ConfettiButton'));
 const RateButton = React.lazy(() => import('../Buttons/RateButton'));
 const SliderButton = React.lazy(() => import('../Buttons/SliderButton'));
+const LoopCard = React.lazy(() => import('../Cards/LoopCard'));
 
 
 
@@ -215,6 +216,17 @@ export const examples = [
     name: "Slider Button",
     component: SliderButton,
     drawerLabel: "Slider Button",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  }, 
+  {
+    id: 'loop-card',
+    for:'in Components/Buttons',
+    name: "Loop Card",
+    component: LoopCard,
+    drawerLabel: "Loop Card",
     code: codeSnippet10,
     codeTS: codeSnippet10TS, 
      usage: Usage13,

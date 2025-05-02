@@ -77,6 +77,13 @@ const itemVariants = {
   },
 };
 
+  useEffect(() => {
+     if (DrawerComponent) {
+              document.body.style.overflow = 'hidden';
+            } else {
+              document.body.style.overflow = 'auto';
+           }
+  },[DrawerComponent])
     
      const ref = useRef(null);
     
@@ -193,13 +200,14 @@ const itemVariants = {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed w-full flex flex-col gap-0.5 justify-start items-start h-full top-0 right-0 left-0 bottom-0 bg-black z-[600]"
+        className="fixed w-full flex pb-4 flex-col overflow-y-auto gap-0.5 justify-start items-start h-full top-0 right-0 left-0 bottom-0 bg-black z-[600]"
       >
-        <h1 className="text-lg text-white font-bold lg:font-semibold ml-2 mb-4 mt-[30%]">
+        <h1 className="text-lg text-white font-bold lg:font-semibold ml-2 mb-4 mt-[20%]">
           Animated Text
         </h1>
-        {examples.map((example) => (
-          <div className="pl-2.5" key={`drawer-${example.id}`}>
+              {examples.filter((example) => example.for === 'in Text Animation')
+                  .map((example) => (
+                    <div className="pl-2.5" key={`drawer-${example.id}`}>
             <Link
               to={`/example/${example.id}`}
               onClick={SelectComponent}
@@ -212,7 +220,34 @@ const itemVariants = {
               {example.drawerLabel}
             </Link>
           </div>
-        ))}
+                  ))
+        }
+         <h1 className="text-lg text-white font-bold lg:font-semibold ml-2 mb-4 mt-6">
+        Components
+        </h1>
+         <h1 className="text-md text-white font-bold lg:font-semibold ml-2 mb-4">
+        Buttons
+         </h1> 
+               {examples
+                     .filter(example => example.for === 'in Components/Buttons')  // Filter by Components/Buttons
+                     .map((example) => (
+                       <div className="pl-2.5">
+                          <Link
+                         key={example.id}
+                         to={`/example/${example.id}`}
+                         onClick={SelectComponent}
+                         className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
+                         style={{
+                           opacity: example.id === exampleId ? '1' : '0.6',
+                           borderLeft: example.id === exampleId
+                             ? '1px solid rgba(255,255,255,1)'
+                             : '1px solid rgba(255,255,255,0.4)'
+                         }}
+                       >
+                         {example.drawerLabel}
+                       </Link>
+                      </div>
+                     ))}
       </motion.div>
     )}
   </AnimatePresence>
