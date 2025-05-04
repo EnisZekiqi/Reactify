@@ -84,6 +84,9 @@
  .drawerComponent{
  display:block;
  }
+ .componentList{
+  display: none;
+ }
 }
 .library{
   background-color: #121212 ;
@@ -218,5 +221,28 @@
 .animate-drip {
   opacity: 0;
   animation: drip 1.5s linear infinite;
+}
+
+
+.cardIm2g{
+  background-image: url(https://res.cloudinary.com/datm8nslc/image/upload/v1746221984/images8_c4eus0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: card 0.8s linear infinite
+
+}
+
+@keyframes card {
+  0%{
+    background-image: url(https://res.cloudinary.com/datm8nslc/image/upload/v1746222025/images_5_q74apj.jpg);
+
+  }
+  50%{
+    background-image: url(https://res.cloudinary.com/datm8nslc/image/upload/v1746222033/images_9_rgjjwh.jpg);
+
+  }
+  100%{
+    background-image: url(https://res.cloudinary.com/datm8nslc/image/upload/v1746221984/images8_c4eus0.jpg);
+  }
 }
 

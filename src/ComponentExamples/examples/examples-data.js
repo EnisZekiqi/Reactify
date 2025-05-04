@@ -47,7 +47,10 @@ const LoopText = React.lazy(() => import('../Components/LoopText'))
 const ConfettiButton = React.lazy(() => import('../Buttons/ConfettiButton'));
 const RateButton = React.lazy(() => import('../Buttons/RateButton'));
 const SliderButton = React.lazy(() => import('../Buttons/SliderButton'));
+//Components/Cards//
 const LoopCard = React.lazy(() => import('../Cards/LoopCard'));
+const AuroraCard = React.lazy(() => import('../Cards/AuroraCard'));
+const DefiniteCard = React.lazy(() => import('../Cards/DefiniteCard'));
 
 
 
@@ -223,10 +226,32 @@ export const examples = [
   }, 
   {
     id: 'loop-card',
-    for:'in Components/Buttons',
+    for:'in Components/Cards',
     name: "Loop Card",
     component: LoopCard,
     drawerLabel: "Loop Card",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  }, 
+  {
+    id: 'aurora-card',
+    for:'in Components/Cards',
+    name: "Aurora Card",
+    component: AuroraCard,
+    drawerLabel: "Aurora Card ",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  }, 
+  {
+    id: 'definite-card',
+    for:'in Components/Cards',
+    name: "Definite Card",
+    component: DefiniteCard,
+    drawerLabel: "Definite Card",
     code: codeSnippet10,
     codeTS: codeSnippet10TS, 
      usage: Usage13,
