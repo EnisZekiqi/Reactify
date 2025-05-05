@@ -51,6 +51,9 @@ const SliderButton = React.lazy(() => import('../Buttons/SliderButton'));
 const LoopCard = React.lazy(() => import('../Cards/LoopCard'));
 const AuroraCard = React.lazy(() => import('../Cards/AuroraCard'));
 const DefiniteCard = React.lazy(() => import('../Cards/DefiniteCard'));
+//Components/Menus// 
+const DropNav = React.lazy(() => import('../Menus/DropNav'));
+
 
 
 
@@ -252,6 +255,17 @@ export const examples = [
     name: "Definite Card",
     component: DefiniteCard,
     drawerLabel: "Definite Card",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  }, 
+   {
+    id: 'drop-nav',
+    for:'in Components/Cards',
+    name: "Drop Nav",
+    component: DropNav,
+    drawerLabel: "Drop Nav",
     code: codeSnippet10,
     codeTS: codeSnippet10TS, 
      usage: Usage13,
