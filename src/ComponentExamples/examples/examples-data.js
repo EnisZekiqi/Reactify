@@ -53,6 +53,7 @@ const AuroraCard = React.lazy(() => import('../Cards/AuroraCard'));
 const DefiniteCard = React.lazy(() => import('../Cards/DefiniteCard'));
 //Components/Menus// 
 const DropNav = React.lazy(() => import('../Menus/DropNav'));
+const DropDownNav = React.lazy(() => import('../Menus/DropDownNav'));
 
 
 
@@ -266,6 +267,17 @@ export const examples = [
     name: "Drop Nav",
     component: DropNav,
     drawerLabel: "Drop Nav",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  }, 
+   {
+    id: 'dropdown-nav',
+    for:'in Components/Cards',
+    name: "DropDown Nav",
+    component: DropDownNav,
+    drawerLabel: "DropDown Nav",
     code: codeSnippet10,
     codeTS: codeSnippet10TS, 
      usage: Usage13,

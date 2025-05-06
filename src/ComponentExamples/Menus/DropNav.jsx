@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CiCamera, CiAlarmOn, CiLocationOn, CiImageOn } from "react-icons/ci";
+import { CiCamera, CiAlarmOn, CiLocationOn, CiImageOn,CiAlarmOff,CiGps   } from "react-icons/ci";
 
 const menuItems = {
   Camera: [
@@ -17,26 +17,26 @@ const menuItems = {
   ],
   Alarm: [
     {
-      icon: <CiImageOn size={30} />,
-      title: "Gallery",
-      desc: "Check all the images you have taken",
+      icon: <CiAlarmOn size={30} />,
+      title: "Alarm",
+      desc: "Set up Alarm at anytime you need it",
     },
     {
-      icon: <CiCamera size={30} />,
-      title: "Camera",
-      desc: "Take selfies & photos whenever you are",
+      icon: <CiAlarmOff size={30} />,
+      title: "Disable",
+      desc: "Disable all Alarms you have set up ",
     },
   ],
   Location: [
     {
-      icon: <CiImageOn size={30} />,
-      title: "Gallery",
-      desc: "Check all the images you have taken",
+      icon: <CiLocationOn size={30} />,
+      title: "Current Location",
+      desc: "See where you are right now",
     },
     {
-      icon: <CiCamera size={30} />,
-      title: "Camera",
-      desc: "Take selfies & photos whenever you are",
+      icon: <CiGps size={30} />,
+      title: "Set up Location",
+      desc: "Choose where you want to travel",
     },
   ],
 };
@@ -46,7 +46,7 @@ const DropNav = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   return (
-    <div className="w-full h-[90%] flex items-end justify-end pb-6">
+    <div className="w-full sm:w-full h-[90%] flex items-end justify-end pb-2 sm:pb-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
@@ -57,7 +57,7 @@ const DropNav = () => {
             setIsAnimating(false);
           }, 300); // delay to let animation exit
         }}
-        className="dropnav rounded-2xl bg-[rgb(251,251,251,0.55)] border border-[#dde1e2] p-4 flex flex-col items-center justify-center gap-4 w-[350px]"
+        className="dropnav rounded-2xl bg-[rgb(251,251,251,0.55)] border border-[#dde1e2] p-2 sm:p-4 flex flex-col items-center justify-center gap-4 w-[310px] sm:w-[350px]"
       >
         {/* Content wrapper — expands before content animates in */}
         <motion.div
@@ -137,7 +137,7 @@ const DropNav = () => {
                   }, 250); // ensures exit transition finishes before re-enter
                 }
               }}
-              className={`flex items-center gap-1 p-1.5 rounded-xl transition-colors duration-300 cursor-pointer ${
+              className={`flex items-center gap-1 text-sm sm:text-base p-1.5 rounded-xl transition-colors duration-300 cursor-pointer ${
                 selectMenu === item
                   ? "bg-[#181b1b] text-[#fbfbfb]"
                   : "bg-transparent text-[#000] hover:bg-[#181b1b] hover:text-[#fbfbfb]"
