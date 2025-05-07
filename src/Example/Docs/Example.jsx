@@ -205,7 +205,28 @@ const scrollContainerRef = useScrollContainerRef();
           {example.drawerLabel}
         </Link>
       ))}
-    </div>        
+              </div> 
+    <h1 className="text-md lg:text-md text-white font-medium lg:font-semibold mt-4">Menus</h1>
+    <div className="mt-8 flex flex-col gap-5">
+    {examples
+      .filter(example => example.for === 'in Components/Menus')  // Filter by Components/Buttons
+      .map((example) => (
+        <Link
+          key={example.id}
+          to={`/example/${example.id}`}
+          onClick={() => setSeeCode('preview')}
+          className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
+          style={{
+            opacity: example.id === exampleId ? '1' : '0.6',
+            borderLeft: example.id === exampleId
+              ? '1px solid rgba(255,255,255,1)'
+              : '1px solid rgba(255,255,255,0.4)'
+          }}
+        >
+          {example.drawerLabel}
+        </Link>
+      ))}
+    </div>             
 </div>
                </div>
           <div className="flex flex-col items-start w-[800px] lg:w-screen  -ml-[15.5%] sm:ml-[0%] justify-center">

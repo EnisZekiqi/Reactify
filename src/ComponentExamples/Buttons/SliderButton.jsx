@@ -13,7 +13,7 @@ const filteredButtons = button3.filter(btn => btn !== 'Free' && btn !== 'Premium
 
     return ( 
 
-       <motion.div className="relative flex items-center justify-center shadow-2xl gap-24 cursor-pointer rounded-full bg-white text-black p-2.5 w-[300px] h-[60px] text-lg font-semibold">
+       <motion.div className="relative flex items-center justify-center shadow-2xl gap-24 cursor-pointer rounded-full bg-white text-black p-2.5 w-[280px]  sm:w-[300px] h-[60px] text-lg font-semibold">
   <span
     style={{
       color: selectMode === 'Free' ? '#fff' : '#000',
@@ -83,7 +83,7 @@ const filteredButtons = button3.filter(btn => btn !== 'Free' && btn !== 'Premium
   <motion.span
     layout
     transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-    className="absolute rounded-full bg-black z-0 ml-2.5 sm:ml-0"
+    className="absolute rounded-full bg-black z-0 ml-0.5 sm:ml-2.5"
     style={{
       width: '50%',
       height: selectMode === 'Premium' ? '60px' : '60px',

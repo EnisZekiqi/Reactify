@@ -11,11 +11,10 @@ import {
 const DropDownNav = () => {
 
     const [selected, setSelected] = useState(null)
-    const [selectStyle, setSelectStyle] = useState('')
-    
+     
     const TABS = [
         {
-            id: 'Product', content: <div className="grid grid-cols-3">
+            id: 'Product', content: <div className="grid grid-cols-3 ">
                 <div className="flex items-center justify-start ml-10  gap-4">
                     <span className="font-semibold">Startup</span>
                     <span className="font-semibold">Scaleup </span>
@@ -79,7 +78,7 @@ const DropDownNav = () => {
                 <div className="h-4 w-4 rotate-45 bg-[#232829] border-t border-[#3b4345] border-l mb-[-8px]" />
 
                 {/* Dropdown content */}
-                <div className="bg-[#232829] text-white p-4 rounded-xl border border-[#3b4345] min-w-[350px]  text-center">
+                <div className="bg-[#232829] text-white p-4 rounded-xl border border-[#3b4345] min-w-[280px] sm:min-w-[350px]  text-center">
                   {tab.content} 
                 </div>
               </motion.div>

@@ -57,7 +57,7 @@ const DropNav = () => {
             setIsAnimating(false);
           }, 300); // delay to let animation exit
         }}
-        className="dropnav rounded-2xl bg-[rgb(251,251,251,0.55)] border border-[#dde1e2] p-2 sm:p-4 flex flex-col items-center justify-center gap-4 w-[310px] sm:w-[350px]"
+        className="dropnav rounded-2xl bg-[rgb(251,251,251,0.55)] border border-[#dde1e2] p-2 sm:p-4 flex flex-col items-center justify-center gap-4 w-[290px] sm:w-[350px]"
       >
         {/* Content wrapper — expands before content animates in */}
         <motion.div
@@ -137,15 +137,15 @@ const DropNav = () => {
                   }, 250); // ensures exit transition finishes before re-enter
                 }
               }}
-              className={`flex items-center gap-1 text-sm sm:text-base p-1.5 rounded-xl transition-colors duration-300 cursor-pointer ${
+              className={`flex items-center gap-1 text-sm sm:text-base p-1 sm:p-1.5 rounded-xl transition-colors duration-300 cursor-pointer ${
                 selectMenu === item
                   ? "bg-[#181b1b] text-[#fbfbfb]"
                   : "bg-transparent text-[#000] hover:bg-[#181b1b] hover:text-[#fbfbfb]"
               }`}
             >
-              {item === "Camera" && <CiCamera size={23} />}
-              {item === "Alarm" && <CiAlarmOn size={23} />}
-              {item === "Location" && <CiLocationOn size={23} />}
+              {item === "Camera" && <CiCamera className="w-5 h-5 sm:w-6 sm:h-6" />}
+              {item === "Alarm" && <CiAlarmOn className="w-5 h-5 sm:w-6 sm:h-6" />}
+              {item === "Location" && <CiLocationOn className="w-5 h-5 sm:w-6 sm:h-6" />}
               <span>{item}</span>
             </div>
           ))}

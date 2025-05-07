@@ -54,6 +54,8 @@ const DefiniteCard = React.lazy(() => import('../Cards/DefiniteCard'));
 //Components/Menus// 
 const DropNav = React.lazy(() => import('../Menus/DropNav'));
 const DropDownNav = React.lazy(() => import('../Menus/DropDownNav'));
+const Elegance = React.lazy(() => import('../Menus/Elegance'));
+const Payment = React.lazy(() => import('../Others/Payment'));
 
 
 
@@ -263,7 +265,7 @@ export const examples = [
   }, 
    {
     id: 'drop-nav',
-    for:'in Components/Cards',
+    for:'in Components/Menus',
     name: "Drop Nav",
     component: DropNav,
     drawerLabel: "Drop Nav",
@@ -274,7 +276,7 @@ export const examples = [
   }, 
    {
     id: 'dropdown-nav',
-    for:'in Components/Cards',
+    for:'in Components/Menus',
     name: "DropDown Nav",
     component: DropDownNav,
     drawerLabel: "DropDown Nav",
@@ -283,4 +285,27 @@ export const examples = [
      usage: Usage13,
     animations:Animations13
   }, 
+   {
+    id: 'elegance-nav',
+    for:'in Components/Menus',
+    name: "Elegance Nav",
+    component: Elegance,
+    drawerLabel: "Elegance Nav",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  }, 
+   {
+    id: 'payment-modal',
+    for:'in Components/Menus',
+    name: "Payment Modal",
+    component: Payment,
+    drawerLabel: "Payment Modal",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  },
+  
 ];
