@@ -56,6 +56,7 @@ const DropNav = React.lazy(() => import('../Menus/DropNav'));
 const DropDownNav = React.lazy(() => import('../Menus/DropDownNav'));
 const Elegance = React.lazy(() => import('../Menus/Elegance'));
 const Payment = React.lazy(() => import('../Others/Payment'));
+const FAQ = React.lazy(() => import('../Others/FAQ'));
 
 
 
@@ -298,10 +299,21 @@ export const examples = [
   }, 
    {
     id: 'payment-modal',
-    for:'in Components/Menus',
+    for:'in Components/Others',
     name: "Payment Modal",
     component: Payment,
     drawerLabel: "Payment Modal",
+    code: codeSnippet10,
+    codeTS: codeSnippet10TS, 
+     usage: Usage13,
+    animations:Animations13
+  },
+   {
+    id: 'faq-modal',
+    for:'in Components/Others',
+    name: "FAQ ",
+    component: FAQ,
+    drawerLabel: "FAQ ",
     code: codeSnippet10,
     codeTS: codeSnippet10TS, 
      usage: Usage13,

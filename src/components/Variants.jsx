@@ -9,7 +9,7 @@ const variants = () => {
     
     useEffect(() => {
         if (!hasStarted)return
-        const achieve = 70;
+        const achieve = 24;
         const interval = setInterval(() => {
             setVariant((prev) => {
                 if (prev < achieve) {

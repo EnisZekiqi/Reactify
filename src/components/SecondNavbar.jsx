@@ -293,7 +293,30 @@ const itemVariants = {
                          {example.drawerLabel}
                        </Link>
                       </div>
-                     ))}                  
+                     ))} 
+       <h1 className="text-md text-white font-bold lg:font-semibold ml-2 mb-4 mt-4">
+        Ohters
+         </h1> 
+               {examples
+                     .filter(example => example.for === 'in Components/Others')  // Filter by Components/Buttons
+                     .map((example) => (
+                       <div className="pl-2.5">
+                          <Link
+                         key={example.id}
+                         to={`/example/${example.id}`}
+                         onClick={SelectComponent}
+                         className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-2 text-sm -mt-[20px]`}
+                         style={{
+                           opacity: example.id === exampleId ? '1' : '0.6',
+                           borderLeft: example.id === exampleId
+                             ? '1px solid rgba(255,255,255,1)'
+                             : '1px solid rgba(255,255,255,0.4)'
+                         }}
+                       >
+                         {example.drawerLabel}
+                       </Link>
+                      </div>
+                     ))}                           
       </motion.div>
     )}
   </AnimatePresence>

@@ -83,7 +83,7 @@ const filteredButtons = button3.filter(btn => btn !== 'Free' && btn !== 'Premium
   <motion.span
     layout
     transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-    className="absolute rounded-full bg-black z-0 ml-0.5 sm:ml-2.5"
+    className="absolute rounded-full bg-black z-0 ml-0.5 sm:ml-0"
     style={{
       width: '50%',
       height: selectMode === 'Premium' ? '60px' : '60px',

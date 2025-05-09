@@ -155,7 +155,7 @@ export default defineConfig({
         delay: 1
       }
     }} className="flex flex-col items-center justify-center gap-4 w-full sm:w-fit mt-8">
-      <p className="text-[rgba(255,255,255,0.5)] mt-4 block text-md md:text-lg text-center ">
+      <p className="text-[rgba(255,255,255,0.5)] mt-4 block text-md md:text-lg text-center px-2">
   Reactify uses those libraries to work , click one to see the Docs
       </p>
 
