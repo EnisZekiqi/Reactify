@@ -1,9 +1,17 @@
-# Reactify – React Component Library
+<h1 align="center">⚡ REACTIFY</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/your-username/reactify?style=for-the-badge" />
+  <img src="https://img.shields.io/github/languages/top/your-username/reactify?style=for-the-badge" />
+  <img src="https://img.shields.io/github/languages/count/your-username/reactify?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/your-username/reactify?style=for-the-badge" />
+</p>
+
+## About 
 
 Reactify is a modern React component library built with performance and design in mind. It leverages **React**, **TailwindCSS**, and **Framer Motion** to help developers build beautiful, interactive UIs with minimal effort.
 
 This library includes reusable, customizable components like buttons, cards, animated text, menus, and much more — all optimized for smooth UX and fast integration.
-
 ---
 
 ## Key Features
@@ -25,16 +33,6 @@ This library includes reusable, customizable components like buttons, cards, ani
 - [Vite](https://vitejs.dev/)
 
 ---
-
-## Getting Started
-
-You can install Reactify into your project (soon via npm) or clone it directly:
-
-```bash
-git clone https://github.com/your-username/reactify.git
-cd reactify
-npm install
-npm run dev
 
 
 MIT License
