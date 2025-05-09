@@ -295,7 +295,7 @@ const itemVariants = {
                       </div>
                      ))} 
        <h1 className="text-md text-white font-bold lg:font-semibold ml-2 mb-4 mt-4">
-        Ohters
+        Others
          </h1> 
                {examples
                      .filter(example => example.for === 'in Components/Others')  // Filter by Components/Buttons

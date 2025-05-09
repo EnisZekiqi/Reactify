@@ -377,7 +377,7 @@ animate={{rotate:360 ,transition:{duration:0.5,ease:'easeInOut'}}}
                 </div>
             ) : 
                 chooseLanguage === 'javascript' ? (
-                <div className="w-[270px] sm:w-[500px] md:w-[850px] overflow-x-auto
+                <div className="w-[300px] sm:w-[500px] md:w-[850px] overflow-x-auto
                    ">
                   {/* USAGE CONTAINER */}
 
@@ -583,7 +583,7 @@ wrapLongLines={false}
 </div>           
                 ) : (
                   <div>
-                       <div className="w-[270px] sm:w-[500px] md:w-[850px]">
+                       <div className="w-[300px] sm:w-[500px] md:w-[850px]">
                   {/* USAGE CONTAINER */}
                   <div className="flex flex-col">
                         <p className="text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
