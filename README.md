@@ -1,11 +1,14 @@
-<h1 align="center">⚡ REACTIFY</h1>
+<p align="center">
+  <img src="assets/reactify.jpg" alt="Reactify Logo" width="200"/>
+</p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/last-commit/your-username/reactify?style=for-the-badge" />
-  <img src="https://img.shields.io/github/languages/top/your-username/reactify?style=for-the-badge" />
-  <img src="https://img.shields.io/github/languages/count/your-username/reactify?style=for-the-badge" />
-  <img src="https://img.shields.io/github/license/your-username/reactify?style=for-the-badge" />
+  <img src="https://img.shields.io/github/last-commit/EnisZekiqi/reactify?style=for-the-badge" />
+  <img src="https://img.shields.io/github/languages/top/EnisZekiqi/reactify?style=for-the-badge" />
+  <img src="https://img.shields.io/github/languages/count/EnisZekiqi/reactify?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/EnisZekiqi/reactify?style=for-the-badge" />
 </p>
+
 
 ## About 
 

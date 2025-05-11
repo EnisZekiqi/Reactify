@@ -325,7 +325,7 @@ const [copied,setCopied]=useState(false)
                 className="flex flex-col items-center justify-center">
                 <p className="rounded-full bg-[#1A1A1A] font-extralight uppercase text-xs p-2">Examples</p>
                 <h1 className="text-3xl font-medium text-[#fff] mt-3 text-center">Powerful Components</h1>
-                <span className="text-md font-normal text-white opacity-50 w-full md:w-[30%] text-center mt-3">Created with smooth animated & high performance animated components with interactive gestures</span>
+                <span className="text-sm sm:text-md font-normal text-white opacity-50 w-full md:w-[30%] text-center mt-3">Created with smooth animated & high performance animated components with interactive gestures</span>
             </motion.div>
         <motion.div
           variants={containerVariants}

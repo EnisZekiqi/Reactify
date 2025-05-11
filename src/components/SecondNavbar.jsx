@@ -316,9 +316,13 @@ const itemVariants = {
                          {example.drawerLabel}
                        </Link>
                       </div>
-                     ))}                           
+                     ))}    
+                <div className="border-t flex flex-col text-md font-medium w-[90%] ml-3 border-[#343434] pt-2 mt-6">
+              <a href="https://github.com/EnisZekiqi/Reactify" target="_blank">GitHub</a>
+              <a href="">Who made this?</a>
+            </div>
       </motion.div>
-    )}
+            )}
   </AnimatePresence>
 </>
 
