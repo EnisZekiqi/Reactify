@@ -26,13 +26,13 @@ const Payment = () => {
                     }}
                     transition={{ type: "spring", stiffness: 200, damping: 25 }}             
                 onClick={()=>setAddCash(true)}
-                    className="bg-black text-white rounded-full text-xs sm:text-lg w-24 sm:w-fit p-3 cursor-pointer z-50">+ Add Cash</motion.div>
+                    className="bg-black text-white rounded-full text-xs sm:text-lg w-22 sm:w-fit p-3 cursor-pointer z-50"> Add Cash</motion.div>
                 {addCash && <motion.div
                     initial={{opacity: 0 }}
                     animate={{opacity:1}}
                     transition={{duration:0.5}}
                 onClick={()=>setAddCash(false)}
-                    className=" text-black rounded-full p-3 cursor-pointer"><CiCircleRemove size={25}/></motion.div>}
+                    className=" text-black rounded-full p-0 sm:p-3 cursor-pointer"><CiCircleRemove size={25}/></motion.div>}
             </div>
             {addCash && 
                 <div className="flex flex-col text-black z-[500]">
@@ -64,7 +64,7 @@ const Payment = () => {
                         </div>
                     ))}
                     </div>
-                    <div className="opacity-0 h-22 sm:h-23"></div>
+                    <div className="opacity-0 w-22 h-23 sm:h-23"></div>
             </div>
             }
         </div>

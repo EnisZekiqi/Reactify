@@ -26,7 +26,7 @@ const FAQ = () => {
           whileHover={{ scale: 1.01 }}
         >
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-lg font-medium">
+            <div className="flex items-center gap-2 text-md sm:text-lg font-medium">
               {faq.icon}
               {faq.id}
             </div>

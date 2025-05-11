@@ -13,6 +13,16 @@ import { codeSnippet10,codeSnippet10TS } from '../javascript/MeltingLogic';
 import { codeSnippet11, codeSnippet11TS } from '../javascript/RotatingLogic';
 import { codeSnippet12,codeSnippet12TS } from '../javascript/LoopLogic';
 import { codeSnippet14,codeSnippet14TS,installation } from '../javascript/ConfettiLogic';
+import { codeSnippet15,codeSnippet15TS,installation as installation2 } from '../javascript/RateLogic';
+import { codeSnippet16,codeSnippet16TS } from '../javascript/SliderLogic';
+import { codeSnippet17,codeSnippet17TS } from '../javascript/LoopCard';
+import { codeSnippet18,codeSnippet18TS } from '../javascript/AuroraCard';
+import { codeSnippet19,codeSnippet19TS } from '../javascript/Definite';
+import { codeSnippet20,codeSnippet20TS } from '../javascript/Drop';
+import { codeSnippet21,codeSnippet21TS } from '../javascript/DropDown';
+import { codeSnippet22,codeSnippet22TS } from '../javascript/Elegance';
+import { codeSnippet23,codeSnippet23TS } from '../javascript/payment';
+import { codeSnippet24,codeSnippet24TS } from '../javascript/faq';
 
 import { Usage as Usage1, Animations as Animations1 } from '../javascript/helloLogic';
 import { Usage as Usage2, Animations as Animations2 } from '../javascript/helloLogic2';
@@ -26,7 +36,21 @@ import { Usage as Usage9, Animations as Animations9 } from '../javascript/Stream
 import { Usage as Usage10, CSS1 } from '../javascript/MeltingLogic'
 import { Usage as Usage11, Animations as Animations10 } from '../javascript/RotatingLogic'
 import { Usage as Usage12, Animations as Animations11 } from '../javascript/LoopLogic'
+
 import { Usage as Usage13, Animations as Animations13 } from '../javascript/ConfettiLogic'
+import { Usage as Usage15 } from '../javascript/RateLogic'
+import { Usage as Usage16 } from '../javascript/SliderLogic'
+
+import { Usage as Usage17 } from '../javascript/LoopCard'
+import { Usage as Usage18 } from '../javascript/AuroraCard'
+import { Usage as Usage19 } from '../javascript/Definite'
+
+import { Usage as Usage20 } from '../javascript/Drop'
+import { Usage as Usage21 } from '../javascript/DropDown'
+import { Usage as Usage22 } from '../javascript/Elegance'
+
+import { Usage as Usage23 } from '../javascript/payment'
+import { Usage as Usage24 } from '../javascript/faq'
 
 
 
@@ -55,6 +79,7 @@ const DefiniteCard = React.lazy(() => import('../Cards/DefiniteCard'));
 const DropNav = React.lazy(() => import('../Menus/DropNav'));
 const DropDownNav = React.lazy(() => import('../Menus/DropDownNav'));
 const Elegance = React.lazy(() => import('../Menus/Elegance'));
+//Components/Others//
 const Payment = React.lazy(() => import('../Others/Payment'));
 const FAQ = React.lazy(() => import('../Others/FAQ'));
 
@@ -215,10 +240,10 @@ export const examples = [
     name: "Rate Button",
     component: RateButton,
     drawerLabel: "Rate Button",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet15,
+    codeTS: codeSnippet15TS, 
+     usage: Usage15,
+    installation: installation2
   }, 
   {
     id: 'slider-button',
@@ -226,10 +251,9 @@ export const examples = [
     name: "Slider Button",
     component: SliderButton,
     drawerLabel: "Slider Button",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet16,
+    codeTS: codeSnippet16TS, 
+     usage: Usage16,
   }, 
   {
     id: 'loop-card',
@@ -237,10 +261,9 @@ export const examples = [
     name: "Loop Card",
     component: LoopCard,
     drawerLabel: "Loop Card",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet17,
+    codeTS: codeSnippet17TS, 
+     usage: Usage17,
   }, 
   {
     id: 'aurora-card',
@@ -248,10 +271,9 @@ export const examples = [
     name: "Aurora Card",
     component: AuroraCard,
     drawerLabel: "Aurora Card ",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet18,
+    codeTS: codeSnippet18TS, 
+     usage: Usage18,
   }, 
   {
     id: 'definite-card',
@@ -259,10 +281,9 @@ export const examples = [
     name: "Definite Card",
     component: DefiniteCard,
     drawerLabel: "Definite Card",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet19,
+    codeTS: codeSnippet19TS, 
+     usage: Usage19,
   }, 
    {
     id: 'drop-nav',
@@ -270,10 +291,9 @@ export const examples = [
     name: "Drop Nav",
     component: DropNav,
     drawerLabel: "Drop Nav",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet20,
+    codeTS: codeSnippet20TS, 
+     usage: Usage20,
   }, 
    {
     id: 'dropdown-nav',
@@ -281,10 +301,9 @@ export const examples = [
     name: "DropDown Nav",
     component: DropDownNav,
     drawerLabel: "DropDown Nav",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet21,
+    codeTS: codeSnippet21TS, 
+     usage: Usage21,
   }, 
    {
     id: 'elegance-nav',
@@ -292,10 +311,9 @@ export const examples = [
     name: "Elegance Nav",
     component: Elegance,
     drawerLabel: "Elegance Nav",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet22,
+    codeTS: codeSnippet22TS, 
+     usage: Usage22,
   }, 
    {
     id: 'payment-modal',
@@ -303,10 +321,9 @@ export const examples = [
     name: "Payment Modal",
     component: Payment,
     drawerLabel: "Payment Modal",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet23,
+    codeTS: codeSnippet23TS, 
+     usage: Usage23,
   },
    {
     id: 'faq-modal',
@@ -314,10 +331,9 @@ export const examples = [
     name: "FAQ ",
     component: FAQ,
     drawerLabel: "FAQ ",
-    code: codeSnippet10,
-    codeTS: codeSnippet10TS, 
-     usage: Usage13,
-    animations:Animations13
+    code: codeSnippet24,
+    codeTS: codeSnippet24TS, 
+     usage: Usage24,
   },
   
 ];

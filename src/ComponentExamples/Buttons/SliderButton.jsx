@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { button3 } from "../javascript/SliderLogic";
-import { button } from "framer-motion/client";
 
 const SliderButton = () => {
 

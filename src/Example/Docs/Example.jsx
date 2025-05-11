@@ -377,7 +377,7 @@ animate={{rotate:360 ,transition:{duration:0.5,ease:'easeInOut'}}}
                 </div>
             ) : 
                 chooseLanguage === 'javascript' ? (
-                <div className="w-[300px] sm:w-[500px] md:w-[850px] overflow-x-auto
+                <div className="w-[315px] sm:w-[500px] md:w-[850px] overflow-x-auto
                    ">
                   {/* USAGE CONTAINER */}
 
@@ -583,10 +583,10 @@ wrapLongLines={false}
 </div>           
                 ) : (
                   <div>
-                       <div className="w-[300px] sm:w-[500px] md:w-[850px]">
+                       <div className="w-[315px] sm:w-[500px] md:w-[850px]">
                   {/* USAGE CONTAINER */}
                   <div className="flex flex-col">
-                        <p className="text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
+                        <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-4">Usage</p>
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-0 sm:right-6">
     <button
@@ -625,7 +625,7 @@ wrapLongLines={false}
 {/* Animation CONTAINER */}
           {SelectedAnimation &&
           <div className="flex flex-col">
-                        <p className="text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
+                        <p className="text-2xl sm:text-3xl font-semibold text-white mb-2 mt-12">Animation</p>
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[300px] overflow-y-auto relative mb-6">
   <div className="absolute top-4 right-0 sm:right-6">
     <button
@@ -664,7 +664,7 @@ wrapLongLines={false}
 
 {/* CODE CONTAINER */}
                   <div className="flex flex-col mt-12">
-    <p className="text-3xl font-semibold text-white mb-2">Code</p>
+    <p className="text-2xl sm:text-3xl font-semibold text-white mb-2">Code</p>
 
                     <div className="showcode bg-[#121212] flex flex-col p-4 rounded-md border border-[#3b4345] w-[100%] h-[400px] overflow-y-auto relative">
   <div className="absolute top-4 right-0 sm:right-6">

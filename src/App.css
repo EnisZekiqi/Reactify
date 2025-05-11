@@ -3,6 +3,7 @@
   min-height: 100vh;
   padding: 2rem;
   overflow-y:hidden ;
+  overflow-x: hidden;
   z-index: 0;
 }
 

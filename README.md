@@ -11,7 +11,7 @@
 
 Reactify is a modern React component library built with performance and design in mind. It leverages **React**, **TailwindCSS**, and **Framer Motion** to help developers build beautiful, interactive UIs with minimal effort.
 
-This library includes reusable, customizable components like buttons, cards, animated text, menus, and much more — all optimized for smooth UX and fast integration.
+### This library includes reusable, customizable components like buttons, cards, animated text, menus, and much more — all optimized for smooth UX and fast integration.
 ---
 
 ## Key Features

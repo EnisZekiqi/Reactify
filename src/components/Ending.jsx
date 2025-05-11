@@ -66,8 +66,10 @@ const Ending = () => {
               }} whileTap={{
                 scale: 0.95
               }}>
+              <a href="/docs">
               Get Started
-         </motion.button>
+                </a>
+            </motion.button>
                 <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, transition: { delay: 1, duration: 0.5 } }}
