@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/reactify.jpg" alt="Reactify Logo" width="200"/>
+  <img src="https://res.cloudinary.com/datm8nslc/image/upload/v1747083055/reactify_odpazh.jpg" alt="Reactify Logo" width="200"/>
 </p>
 
 <p align="center">
