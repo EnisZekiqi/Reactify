@@ -1,6 +1,3 @@
-
-
-
 export const codeSnippet19 = `
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -75,7 +72,7 @@ export default DefiniteCard;
 
 
 
-`
+`;
 export const codeSnippet19TS = `
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -149,7 +146,7 @@ const DefiniteCard: React.FC = () => {
 
 export default DefiniteCard;
 
-`
+`;
 
 export const Usage = `
 
@@ -157,4 +154,4 @@ import DefiniteCard from "./DefiniteCard";
 
 
 <DefiniteCard/>
-`
+`;

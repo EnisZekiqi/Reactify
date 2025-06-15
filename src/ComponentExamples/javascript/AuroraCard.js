@@ -1,6 +1,3 @@
-
-
-
 export const codeSnippet18 = `
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -94,7 +91,7 @@ const AuroraCard = () => {
 export default AuroraCard;
 
 
-`
+`;
 export const codeSnippet18TS = `
 import { motion } from "framer-motion";
 import { useState, MouseEvent } from "react";
@@ -199,7 +196,7 @@ export default AuroraCard;
 
 
 
-`
+`;
 
 export const Usage = `
 
@@ -207,4 +204,4 @@ import AuroraCard from "./AuroraCard";
 
 
 <AuroraCard/>
-`
+`;

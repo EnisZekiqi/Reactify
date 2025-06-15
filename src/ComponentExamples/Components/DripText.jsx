@@ -7,10 +7,9 @@ const droplets = [
   { left: "2rem", delay: "delay-200" },
   { left: "3rem", delay: "delay-300" },
   { left: "4rem", delay: "delay-400" },
-    { left: "5rem", delay: "delay-500" },
-    { left: "6rem", delay: "delay-600" },
-    { left: "7rem", delay: "delay-700" },
-
+  { left: "5rem", delay: "delay-500" },
+  { left: "6rem", delay: "delay-600" },
+  { left: "7rem", delay: "delay-700" },
 ];
 
 const Drip = () => {

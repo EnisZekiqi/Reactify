@@ -63,7 +63,6 @@ export default FAQ;
 
 `;
 
-
 export const codeSnippet24TS = `
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";

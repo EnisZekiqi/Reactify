@@ -1,13 +1,15 @@
-export const example3 = 'Hover to Bubble'
+export const example3 = "Hover to Bubble";
 
 export const BubbleVariant = {
-    initial:{
-    opacity:0
-    },
-    animate: {
-      opacity:1,duration:0.7,delay:0.7  
-    }
-}
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    duration: 0.7,
+    delay: 0.7,
+  },
+};
 
 export const codeSnippet3 = `
 const BubbleText = () => {
@@ -50,7 +52,7 @@ const BubbleText = () => {
 }
 
 
-`
+`;
 
 export const Animations = `
 
@@ -63,7 +65,7 @@ export const BubbleVariant = {
     }
 }
 
-`
+`;
 
 export const codeSnippet3TS = ` 
 import { motion, Variants } from "framer-motion";
@@ -112,7 +114,7 @@ const BubbleText: React.FC<BubbleTextProps> = ({ example3, BubbleVariant }) => {
 
 export default BubbleText;
 
-`
+`;
 
 export const Usage = `
 import BubbleText from "./BubbleText";
@@ -122,5 +124,4 @@ import BubbleText from "./BubbleText";
  BubbleVariant={BubbleVariant}
  example3="Hover to Bubble"
   />
-`
-
+`;

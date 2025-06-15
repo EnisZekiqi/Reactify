@@ -1,11 +1,11 @@
-export const button2 = 'Star'
+export const button2 = "Star";
 
 export const installation = `
 
 
 npm install react-icons --save
 
-`
+`;
 
 export const codeSnippet15 = `
 import { useState } from "react";
@@ -107,7 +107,7 @@ const RateButton = () => {
 
 export default RateButton;
 
-`
+`;
 export const codeSnippet15TS = `
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -211,7 +211,7 @@ const RateButton: React.FC = () => {
 
 export default RateButton;
 
-`
+`;
 
 export const Usage = `
 
@@ -221,4 +221,4 @@ import RateButton from "./RateButton";
 <RateButton
  button2="Star"
   />
-`
+`;

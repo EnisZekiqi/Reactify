@@ -1,4 +1,3 @@
-
 export const codeSnippet22 = `
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -57,7 +56,7 @@ const Elegance = () => {
 
 export default Elegance;
 
-`
+`;
 export const codeSnippet22TS = `
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -127,7 +126,7 @@ const Elegance: React.FC = () => {
 
 export default Elegance;
 
-`
+`;
 
 export const Usage = `
 
@@ -142,4 +141,4 @@ import Elegance from "./Elegance";
     { id: 'Cloud', icon: <HiOutlineCloud  size={20}/> }
   ];
 />
-`
+`;

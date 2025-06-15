@@ -1,4 +1,4 @@
-export const example5 = 'DecypherText'
+export const example5 = "DecypherText";
 
 export const DecypherVariants = {
   hidden: { opacity: 0, x: 10 },
@@ -6,7 +6,6 @@ export const DecypherVariants = {
 };
 
 export const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
-
 
 export const codeSnippet5 = `
 
@@ -133,7 +132,7 @@ const ExposeText: React.FC<DecypherTextProps> = ({ chars, DecypherVariants, exam
   );
 };
 
-`
+`;
 
 export const Animations = `
 
@@ -142,7 +141,7 @@ const DecypherVariants = {
   visible: { opacity: 1, x: 0 },
 };
 
-`
+`;
 export const Usage = `
 import DecypherText from "./DecypherText";
 
@@ -150,5 +149,4 @@ import DecypherText from "./DecypherText";
 <DecypherText
  DecypherVariants={DecypherVariants}
  example5="DecypherText"
- chars={chars}  />`
-
+ chars={chars}  />`;

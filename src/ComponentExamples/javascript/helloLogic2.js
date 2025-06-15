@@ -1,6 +1,4 @@
-export const example2 = 'This is so cool'
-
-
+export const example2 = "This is so cool";
 
 export const wordContainerVariants = {
   hidden: { opacity: 1 },
@@ -15,23 +13,21 @@ export const wordContainerVariants = {
 
 // Child (each word)
 export const wordVariants = {
-    hidden: {
-        opacity: 0,
-        y: 10,
-        filter: "blur(4px)",
+  hidden: {
+    opacity: 0,
+    y: 10,
+    filter: "blur(4px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
     },
-    visible: {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        transition: {
-            duration: 0.5,
-            ease: "easeOut",
-        },
-    }
-}
-
-
+  },
+};
 
 export const codeSnippet2 = `
 const BlurText = ({ wordVariants, wordContainerVariants, example2 }) => {
@@ -88,7 +84,7 @@ const wordVariants = {
         },
     }
 }
-`
+`;
 
 export const codeSnippet2TS = `
 import { Variants } from "framer-motion";
@@ -122,8 +118,6 @@ const BlurText: React.FC<BlurTextProps> = ({ wordVariants, wordContainerVariants
 };
 `;
 
-
-
 export const Usage = `
 import BlurText from "./BlurText";
 
@@ -131,4 +125,4 @@ import BlurText from "./BlurText";
 <BlurText
  wordContainerVariants={wordContainerVariants}
  example2="This is so cool"
- wordVariants={wordVariants}  />`
+ wordVariants={wordVariants}  />`;

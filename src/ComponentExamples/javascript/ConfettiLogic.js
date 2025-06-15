@@ -1,6 +1,6 @@
-export const button1 = 'Submit'
+export const button1 = "Submit";
 
-import confetti from 'canvas-confetti';
+import confetti from "canvas-confetti";
 
 export const fireConfetti = () => {
   confetti({
@@ -16,7 +16,7 @@ npm install --save canvas-confetti
 
 npm install react-icons --save
 
-`
+`;
 
 export const Animations = `
 
@@ -28,7 +28,7 @@ const fireConfetti = () => {
   });
 };
 
-`
+`;
 
 export const codeSnippet14 = `
 import { useState } from "react";
@@ -114,7 +114,7 @@ const ConfettiButton = () => {
   );
 };
 
-`
+`;
 export const codeSnippet14TS = `
 declare function fireConfetti(): void;
 
@@ -186,7 +186,7 @@ const ConfettiButton: React.FC = () => {
     </div>
   );
 };
-`
+`;
 
 export const Usage = `
 
@@ -197,4 +197,4 @@ import ConfettiButton from "./ConfettiButton";
  fireConfetti={fireConfetti}
  button1="Submit"
   />
-`
+`;

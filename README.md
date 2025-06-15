@@ -9,22 +9,22 @@
   <img src="https://img.shields.io/github/license/EnisZekiqi/reactify?style=for-the-badge" />
 </p>
 
-
-## About 
+## About
 
 Reactify is a modern React component library built with performance and design in mind. It leverages **React**, **TailwindCSS**, and **Framer Motion** to help developers build beautiful, interactive UIs with minimal effort.
 
 ### This library includes reusable, customizable components like buttons, cards, animated text, menus, and much more — all optimized for smooth UX and fast integration.
+
 ---
 
 ## Key Features
 
--  Built with **React + Vite** for lightning-fast dev experience
--  Uses **TailwindCSS** for utility-first, responsive design
--  Powered by **Framer Motion** for fluid UI animations
--  Collection of ready-to-use components (buttons, text animations, cards, menus, etc.)
--  Clean, accessible, and UX-friendly designs
--  Easy to integrate into any modern React project
+- Built with **React + Vite** for lightning-fast dev experience
+- Uses **TailwindCSS** for utility-first, responsive design
+- Powered by **Framer Motion** for fluid UI animations
+- Collection of ready-to-use components (buttons, text animations, cards, menus, etc.)
+- Clean, accessible, and UX-friendly designs
+- Easy to integrate into any modern React project
 
 ---
 
@@ -36,7 +36,6 @@ Reactify is a modern React component library built with performance and design i
 - [Vite](https://vitejs.dev/)
 
 ---
-
 
 MIT License
 

@@ -1,4 +1,4 @@
-export const button3 = ['Free', 'Premium', 'Monthly', 'Annual']
+export const button3 = ["Free", "Premium", "Monthly", "Annual"];
 
 export const codeSnippet16 = `
 import { useState } from "react";
@@ -99,7 +99,7 @@ const filteredButtons = button3.filter(btn => btn !== 'Free' && btn !== 'Premium
 }
  
 export default SliderButton;
-`
+`;
 export const codeSnippet16TS = `
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -208,7 +208,7 @@ const SliderButton: React.FC = () => {
 export default SliderButton;
 
 
-`
+`;
 
 export const Usage = `
 
@@ -218,4 +218,4 @@ import SliderButton from "./SliderButton";
 <SliderButton
 button3 = ['Free', 'Premium', 'Monthly', 'Annual']
 />
-`
+`;

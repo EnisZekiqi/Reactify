@@ -103,7 +103,6 @@ const Payment = () => {
 export default Payment;
 `;
 
-
 export const codeSnippet23TS = `
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";

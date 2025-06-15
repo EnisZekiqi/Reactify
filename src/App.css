@@ -2,7 +2,7 @@
   position: relative;
   min-height: 100vh;
   padding: 2rem;
-  overflow-y:hidden ;
+  overflow-y: hidden;
   overflow-x: hidden;
   z-index: 0;
 }
@@ -13,7 +13,7 @@
   inset: 0;
   background-image:
     linear-gradient(rgba(6, 6, 6, 0.3), rgba(6, 6, 6, 0.3)),
-    url('https://www.hover.dev/black-noise.png');
+    url("https://www.hover.dev/black-noise.png");
   background-position: center;
   background-repeat: repeat;
   background-size: auto;
@@ -22,17 +22,16 @@
   opacity: 0.05;
   z-index: -1;
 }
-.coverBG{
-  background:rgba(6, 6, 6, 0.8);
+.coverBG {
+  background: rgba(6, 6, 6, 0.8);
   background-position: center;
   background-repeat: repeat;
   background-size: auto;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-    opacity: 0.05;
-
+  opacity: 0.05;
 }
-.empty{
+.empty {
   height: 200px;
 }
 
@@ -45,7 +44,7 @@
 }
 
 .showcode::-webkit-scrollbar-thumb {
-  background-color:rgba(159, 170, 172,0.6);
+  background-color: rgba(159, 170, 172, 0.6);
   border-radius: 20px;
 }
 
@@ -58,47 +57,44 @@
 }
 
 .searchComponent::-webkit-scrollbar-thumb {
-  background-color:rgba(159, 170, 172,0.6);
+  background-color: rgba(159, 170, 172, 0.6);
   border-radius: 20px;
 }
 
-
-.componentList{
+.componentList {
   display: block;
 }
-.githubExample{
-    display: block;
-
+.githubExample {
+  display: block;
 }
-.drawerComponent{
-    display: none;
-
-}
-
-@media (max-width:864px) {
- .componentList{
-  display:none;
- } 
- .githubExample{
-    display:none;
- }
- .drawerComponent{
- display:block;
- }
- .componentList{
+.drawerComponent {
   display: none;
- }
 }
-.library{
-  background-color: #121212 ;
+
+@media (max-width: 864px) {
+  .componentList {
+    display: none;
+  }
+  .githubExample {
+    display: none;
+  }
+  .drawerComponent {
+    display: block;
+  }
+  .componentList {
+    display: none;
+  }
+}
+.library {
+  background-color: #121212;
   border: 1px solid #3b4345;
   padding: 6px;
   border-radius: 10px;
   width: 170px;
   height: 40px;
 }
-@media (max-width:640px) {
-  .library{
+@media (max-width: 640px) {
+  .library {
     width: 300px;
   }
 }
@@ -106,16 +102,15 @@
   width: 100%;
   height: 55px;
   margin-left: -1rem;
-  padding-right:  3rem;
+  padding-right: 3rem;
   padding-bottom: 5px;
   border-radius: 20px;
- margin-top: -35px;
+  margin-top: -35px;
 
   /* Blurred backdrop */
   background: rgba(6, 6, 6, 0.5); /* darker than app-bg's 0.3 */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-
 
   z-index: 1000;
 }
@@ -124,30 +119,29 @@
   width: 100%;
   height: 55px;
   margin-left: -1.7rem;
-  padding-right:  1.3rem;
+  padding-right: 1.3rem;
   padding-bottom: 5px;
   border-radius: 20px;
- margin-top: -35px;
+  margin-top: -35px;
 
   /* Blurred backdrop */
   background: rgba(6, 6, 6, 0.5); /* darker than app-bg's 0.3 */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
-
   z-index: 1000;
 }
 
-.list ::before{
- content: '';
- position: absolute;
- width: 100%;
- bottom: 0;
- left: 0;
- background: linear-gradient(to top,#060606,transparent);
+.list ::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, #060606, transparent);
 }
 
-.logowrapper{
+.logowrapper {
   background-color: #00d8ff;
   border-radius: 10px;
   padding: 5px;
@@ -188,25 +182,21 @@
   color: #888;
 }
 
-
-
 /*Components Custom Css is Here !*/
 
-.animate-aurora{
+.animate-aurora {
   background-size: 200% auto;
   animation: aurora 2s linear infinite;
 }
 
 @keyframes aurora {
-  0%{
+  0% {
     background-position: 0% 50%;
   }
-  100%{
+  100% {
     background-position: 100% 100%;
   }
 }
-
-
 
 @keyframes drip {
   0% {
@@ -224,26 +214,21 @@
   animation: drip 1.5s linear infinite;
 }
 
-
-.cardIm2g{
+.cardIm2g {
   background-image: url(https://res.cloudinary.com/datm8nslc/image/upload/v1746221984/images8_c4eus0.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  animation: card 0.8s linear infinite
-
+  animation: card 0.8s linear infinite;
 }
 
 @keyframes card {
-  0%{
+  0% {
     background-image: url(https://res.cloudinary.com/datm8nslc/image/upload/v1746222025/images_5_q74apj.jpg);
-
   }
-  50%{
+  50% {
     background-image: url(https://res.cloudinary.com/datm8nslc/image/upload/v1746222033/images_9_rgjjwh.jpg);
-
   }
-  100%{
+  100% {
     background-image: url(https://res.cloudinary.com/datm8nslc/image/upload/v1746221984/images8_c4eus0.jpg);
   }
 }
-

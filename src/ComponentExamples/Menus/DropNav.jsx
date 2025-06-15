@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CiCamera, CiAlarmOn, CiLocationOn, CiImageOn,CiAlarmOff,CiGps   } from "react-icons/ci";
+import {
+  CiCamera,
+  CiAlarmOn,
+  CiLocationOn,
+  CiImageOn,
+  CiAlarmOff,
+  CiGps,
+} from "react-icons/ci";
 
 const menuItems = {
   Camera: [
@@ -143,9 +150,15 @@ const DropNav = () => {
                   : "bg-transparent text-[#000] hover:bg-[#181b1b] hover:text-[#fbfbfb]"
               }`}
             >
-              {item === "Camera" && <CiCamera className="w-5 h-5 sm:w-6 sm:h-6" />}
-              {item === "Alarm" && <CiAlarmOn className="w-5 h-5 sm:w-6 sm:h-6" />}
-              {item === "Location" && <CiLocationOn className="w-5 h-5 sm:w-6 sm:h-6" />}
+              {item === "Camera" && (
+                <CiCamera className="w-5 h-5 sm:w-6 sm:h-6" />
+              )}
+              {item === "Alarm" && (
+                <CiAlarmOn className="w-5 h-5 sm:w-6 sm:h-6" />
+              )}
+              {item === "Location" && (
+                <CiLocationOn className="w-5 h-5 sm:w-6 sm:h-6" />
+              )}
               <span>{item}</span>
             </div>
           ))}

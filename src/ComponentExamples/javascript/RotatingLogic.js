@@ -1,8 +1,4 @@
-export const example11 = [
-  'LinkedIn',
-  'GitHub',
-  'Reddit']
-
+export const example11 = ["LinkedIn", "GitHub", "Reddit"];
 
 export const Animations = `
 
@@ -11,7 +7,7 @@ export const Animations = `
         hover: { x: 20 },
         reset: { x: 0 },
     };
- `
+ `;
 
 export const codeSnippet11 = `
 
@@ -132,8 +128,6 @@ const WhirlingText: React.FC<WhirlingTextProps> = ({example11}) => {
  
 `;
 
-
-
 export const Usage = `
 import WhirlingText from "./WhirlingText";
 
@@ -141,4 +135,4 @@ import WhirlingText from "./WhirlingText";
 <WhirlingText
 letterVariants={letterVariants}
 example11=['LinkedIn,GitHub,Reddit']/>
-`
+`;

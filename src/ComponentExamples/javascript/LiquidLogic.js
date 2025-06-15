@@ -1,14 +1,13 @@
-export const example7 = 'So Liquid!'
+export const example7 = "So Liquid!";
 
 export const Usage = `
 import LiquidText from "./LiquidText";
 
 
 <LiquidText
- example7="So Liquid!"  />`
+ example7="So Liquid!"  />`;
 
-
- export const codeSnippet7 = `
+export const codeSnippet7 = `
  
  const LiquidText = () => {
     return ( 
@@ -29,8 +28,8 @@ import LiquidText from "./LiquidText";
 }
  
  `;
- 
- export const codeSnippet7TS = `
+
+export const codeSnippet7TS = `
  import { Variants } from "framer-motion";
  
  interface LiquidText {

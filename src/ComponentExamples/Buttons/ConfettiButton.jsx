@@ -4,15 +4,14 @@ import { fireConfetti } from "../javascript/ConfettiLogic";
 import { AiOutlineArrowDown, AiOutlineLoading } from "react-icons/ai";
 
 const ConfettiButton = () => {
-  const [buttonFunction,setButtonFunction]=useState('Submit')
-
+  const [buttonFunction, setButtonFunction] = useState("Submit");
 
   const handleClick = () => {
-    setButtonFunction('Loading')
+    setButtonFunction("Loading");
 
     setTimeout(() => {
       fireConfetti();
-      setButtonFunction('Submit')
+      setButtonFunction("Submit");
     }, 3500);
   };
 
@@ -31,13 +30,13 @@ const ConfettiButton = () => {
       {/* Animated Content Layer */}
       <motion.button
         className="absolute top-0 left-0 w-full h-full flex justify-center items-center"
-        disabled={buttonFunction === 'Loading'}
+        disabled={buttonFunction === "Loading"}
         initial={{ y: "-100%" }}
         animate={{ y: "0%" }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <AnimatePresence mode="wait">
-          {buttonFunction === 'Loading' && (
+          {buttonFunction === "Loading" && (
             <motion.div
               key="loader"
               className="flex justify-center items-center text-black"
@@ -56,7 +55,7 @@ const ConfettiButton = () => {
 
         {/* Submit Text Animate In/Out */}
         <AnimatePresence>
-          {buttonFunction === 'Submit' && (
+          {buttonFunction === "Submit" && (
             <motion.div
               key="submit"
               className="flex items-center gap-2 absolute top-[8%] mt-2 text-black z-[500]"

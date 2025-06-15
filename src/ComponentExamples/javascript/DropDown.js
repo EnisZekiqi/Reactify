@@ -1,4 +1,3 @@
-
 export const codeSnippet21 = `
 import { motion,AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -95,7 +94,7 @@ const DropDownNav = () => {
 }
  
 export default DropDownNav;
-`
+`;
 export const codeSnippet21TS = `
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -229,7 +228,7 @@ const DropDownNav: React.FC = () => {
 
 export default DropDownNav;
 
-`
+`;
 
 export const Usage = `
 
@@ -237,4 +236,4 @@ import DropDownNav from "./DropDownNav";
 
 
 <DropDownNav/>
-`
+`;

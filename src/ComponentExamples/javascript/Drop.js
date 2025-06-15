@@ -1,38 +1,44 @@
-import { CiCamera, CiAlarmOn, CiLocationOn, CiImageOn,CiAlarmOff,CiGps   } from "react-icons/ci";
+import {
+  CiCamera,
+  CiAlarmOn,
+  CiLocationOn,
+  CiImageOn,
+  CiAlarmOff,
+  CiGps,
+} from "react-icons/ci";
 
 export const menuItems = {
-    Camera: [
-      {
-        title: "Gallery",
-        desc: "Check all the images you have taken",
-      },
-      {
-        title: "Camera",
-        desc: "Take selfies & photos whenever you are",
-      },
-    ],
-    Alarm: [
-      {
-        title: "Alarm",
-        desc: "Set up Alarm at anytime you need it",
-      },
-      {
-        title: "Disable",
-        desc: "Disable all Alarms you have set up ",
-      },
-    ],
-    Location: [
-      {
-        title: "Current Location",
-        desc: "See where you are right now",
-      },
-      {
-        
-        title: "Set up Location",
-        desc: "Choose where you want to travel",
-      },
-    ],
-  };
+  Camera: [
+    {
+      title: "Gallery",
+      desc: "Check all the images you have taken",
+    },
+    {
+      title: "Camera",
+      desc: "Take selfies & photos whenever you are",
+    },
+  ],
+  Alarm: [
+    {
+      title: "Alarm",
+      desc: "Set up Alarm at anytime you need it",
+    },
+    {
+      title: "Disable",
+      desc: "Disable all Alarms you have set up ",
+    },
+  ],
+  Location: [
+    {
+      title: "Current Location",
+      desc: "See where you are right now",
+    },
+    {
+      title: "Set up Location",
+      desc: "Choose where you want to travel",
+    },
+  ],
+};
 
 export const codeSnippet20 = `
 import { useState } from "react";
@@ -194,7 +200,7 @@ const DropNav = () => {
 
 export default DropNav;
 
-`
+`;
 export const codeSnippet20TS = `
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -367,7 +373,7 @@ const DropNav: React.FC = () => {
 
 export default DropNav;
 
-`
+`;
 
 export const Usage = `
 
@@ -409,4 +415,4 @@ import DropNav from "./DropNav";
     ],
   }
     />
-`
+`;

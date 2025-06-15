@@ -64,10 +64,19 @@ const AuroraCard = () => {
             viewport={{ once: true }}
           >
             <p className="text-lg sm:text-3xl">Hover Aurora</p>
-                      <motion.span
-                          animate={{ opacity: [0.8, 1, 0.7, 0.8], transition: { duration: 2, ease: 'easeInOut', repeat: Infinity } }}
-                          className="text-xs sm:text-md font-medium mt-4"
-                      >This card is cool right ? i am loving this animation </motion.span>
+            <motion.span
+              animate={{
+                opacity: [0.8, 1, 0.7, 0.8],
+                transition: {
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                },
+              }}
+              className="text-xs sm:text-md font-medium mt-4"
+            >
+              This card is cool right ? i am loving this animation{" "}
+            </motion.span>
           </motion.div>
 
           {/* 🚀 CTA Button */}

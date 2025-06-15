@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
-import { example1, letterVariants } from '../javascript/helloLogic';
+import { motion } from "framer-motion";
+import { example1, letterVariants } from "../javascript/helloLogic";
 
 const SimpleText = () => {
-    return ( 
- <motion.div
+  return (
+    <motion.div
       initial="hidden"
       animate="visible"
       variants={{
@@ -27,7 +27,8 @@ const SimpleText = () => {
           {char === " " ? "\u00A0" : char}
         </motion.span>
       ))}
-    </motion.div>     );
-}
- 
+    </motion.div>
+  );
+};
+
 export default SimpleText;

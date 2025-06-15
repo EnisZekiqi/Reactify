@@ -1,4 +1,4 @@
-export const example10 = ' Melting'
+export const example10 = " Melting";
 
 export const CSS1 = `
 
@@ -18,7 +18,7 @@ export const CSS1 = `
   animation: drip 1.5s linear infinite;
 }
 
-`
+`;
 
 export const codeSnippet10 = `
 
@@ -121,12 +121,11 @@ const DripText: React.FC<ScrollTextProps> = ({example10}) => {
   );
 };
 
-`
-
+`;
 
 export const Usage = `
 import DripText from "./DripText";
 
 
 <DripText example10="Melting"/>
-`
+`;

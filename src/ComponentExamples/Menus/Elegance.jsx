@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiOutlineCloud, HiOutlineOfficeBuilding, HiOutlineBookOpen, HiOutlineDesktopComputer } from "react-icons/hi";
+import {
+  HiOutlineCloud,
+  HiOutlineOfficeBuilding,
+  HiOutlineBookOpen,
+  HiOutlineDesktopComputer,
+} from "react-icons/hi";
 
 const Elegance = () => {
   const [selectedTab, setSelectedTab] = useState(null);
 
   const TABS = [
-    { id: 'Office', icon: <HiOutlineOfficeBuilding  size={20}/> },
-    { id: 'School', icon: <HiOutlineBookOpen  size={20}/> },
-    { id: 'Tech', icon: <HiOutlineDesktopComputer  size={20}/> },
-    { id: 'Cloud', icon: <HiOutlineCloud  size={20}/> }
+    { id: "Office", icon: <HiOutlineOfficeBuilding size={20} /> },
+    { id: "School", icon: <HiOutlineBookOpen size={20} /> },
+    { id: "Tech", icon: <HiOutlineDesktopComputer size={20} /> },
+    { id: "Cloud", icon: <HiOutlineCloud size={20} /> },
   ];
 
   return (
@@ -32,7 +37,7 @@ const Elegance = () => {
             className="bg-[#232829] rounded-2xl px-2 py-2 text-[#d6dbdc] flex items-center gap-2 border border-[#3b4345] overflow-hidden"
           >
             <span>{tab.icon}</span>
-                <AnimatePresence>
+            <AnimatePresence>
               {selectedTab === tab.id && (
                 <motion.span
                   key="label"

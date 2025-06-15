@@ -20,8 +20,7 @@ const RateButton = () => {
   };
 
   return (
-      <div className="relative z-[100]"
-          onClick={handleClick}>
+    <div className="relative z-[100]" onClick={handleClick}>
       <AnimatePresence>
         {rateMe === "Clicked" && (
           <motion.span
@@ -44,7 +43,7 @@ const RateButton = () => {
         whileTap={{ scale: 0.9 }}
         transition={{ duration: 0.3, damping: 50 }}
         onMouseEnter={() => setRateMe("Hovering")}
-         disabled={rateMe === 'Clicked'}
+        disabled={rateMe === "Clicked"}
         className={`group flex border border-[#3b4345ab] cursor-pointer items-center justify-center gap-2 w-[150px] rounded-2xl px-2.5 bg-[rgba(0,0,0,0.7)] shadow-2xl text-white transition-all duration-500 ${
           rateMe === "Clicked" ? "shadow-[0_0_12px_#FFB900]" : ""
         }`}
@@ -71,17 +70,17 @@ const RateButton = () => {
                 />
               </motion.div>
             )}
-                  </AnimatePresence>
-         {!animateStar && (
+          </AnimatePresence>
+          {!animateStar && (
             <motion.span
-                initial={{ opacity: 0, y: -20 }}
-                 animate={{opacity:1,y:0,transition:{duration:0.5}}}
-                 >
-                <CiStar
-              className="text-white mt-0.5 group-hover:text-amber-400 group-hover:drop-shadow-[0_0_6px_#FFB900] transition-all duration-300 absolute top-[10px] left-0"
-              size={25}
-            />
-          </motion.span> 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+            >
+              <CiStar
+                className="text-white mt-0.5 group-hover:text-amber-400 group-hover:drop-shadow-[0_0_6px_#FFB900] transition-all duration-300 absolute top-[10px] left-0"
+                size={25}
+              />
+            </motion.span>
           )}
         </div>
 

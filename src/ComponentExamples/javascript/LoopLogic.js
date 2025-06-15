@@ -1,5 +1,4 @@
-export const example12 = ['Coding', ' Interface', ' Experience']
-
+export const example12 = ["Coding", " Interface", " Experience"];
 
 export const Animations = `
 
@@ -8,7 +7,7 @@ const letterVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-`
+`;
 
 export const codeSnippet12 = `
 
@@ -176,12 +175,10 @@ const LoopText: React.FC<WhirlingTextProps> = ({example12}) => {
  
 `;
 
-
-
 export const Usage = `
 import LoopText from "./LoopText";
 
 <LoopText
 letterVariants={letterVariants}
 example12=['Coding', ' Interface', ' Experience']/>
-`
+`;

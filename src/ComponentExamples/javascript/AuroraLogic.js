@@ -1,15 +1,13 @@
-export const example8 = 'Aurora Hover'
-
+export const example8 = "Aurora Hover";
 
 export const Usage = `
 import AuroraText from "./AuroraText";
 
 
 <AuroraText
- example8="Aurora Hover"  />`
+ example8="Aurora Hover"  />`;
 
-
- export const codeSnippet8 = `
+export const codeSnippet8 = `
  
  const AuroraText = () => {
     return ( 
@@ -25,8 +23,8 @@ import AuroraText from "./AuroraText";
 }
  
  `;
- 
- export const codeSnippet8TS = `
+
+export const codeSnippet8TS = `
  
  interface AuroraText {
    example8: string;
@@ -63,4 +61,4 @@ export const CSS = `
 }
 
 
-`
+`;

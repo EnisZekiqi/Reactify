@@ -1,5 +1,5 @@
-export const example6 = 'This is a text which will animate bit by bit when you scroll down.Cool right ? All this is made by Enis Zekiqi with love and dedication'
-
+export const example6 =
+  "This is a text which will animate bit by bit when you scroll down.Cool right ? All this is made by Enis Zekiqi with love and dedication";
 
 export const wordContainerVariants = {
   hidden: { opacity: 1 },
@@ -14,21 +14,21 @@ export const wordContainerVariants = {
 
 // Child (each word)
 export const wordVariants = {
-    hidden: {
-        opacity: 0,
-        y: 10,
-        filter: "blur(4px)",
+  hidden: {
+    opacity: 0,
+    y: 10,
+    filter: "blur(4px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
     },
-    visible: {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        transition: {
-            duration: 0.5,
-            ease: "easeOut",
-        },
-    }
-}
+  },
+};
 
 export const Animations = `
 
@@ -60,7 +60,7 @@ const wordVariants = {
     }
 }
 
-`
+`;
 export const codeSnippet6 = `
 
 const ScrollText = ({wordVariants,wordContainerVariants,example6}) => {
@@ -224,8 +224,7 @@ const ScrollText: React.FC<ScrollTextProps> = ({
 export default ScrollText;
 
 
-`
-
+`;
 
 export const Usage = `
 import ScrollText from "./ScrollText";
@@ -235,6 +234,4 @@ import ScrollText from "./ScrollText";
  wordVariants={wordVariants}
  example6="This is a text which will animate bit by bit when you scroll down.Cool right ?"
  wordContainerVariants={wordContainerVariants}  />
-`
-
-
+`;

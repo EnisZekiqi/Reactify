@@ -6,8 +6,8 @@ const DefiniteCard = () => {
 
   return (
     <motion.div
-      initial={{  opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.8,delay:0.2 } }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.8, delay: 0.2 } }}
       onMouseEnter={() => setChangeDefinite(true)}
       onMouseLeave={() => setChangeDefinite(false)}
       className="bg-black hover:bg-white transition-all duration-300 rounded-3xl p-1.5 w-[230px] h-[230px]  sm:w-[350px] sm:h-[350px] overflow-hidden relative"
@@ -16,25 +16,25 @@ const DefiniteCard = () => {
       <div
         className={`defniniteCard absolute inset-0 z-0 transition-all duration-300`}
         style={{
-          height: changeDefinite ? '85%' : '100%',
-          top: changeDefinite ? '-4px' : '0',
+          height: changeDefinite ? "85%" : "100%",
+          top: changeDefinite ? "-4px" : "0",
           WebkitMaskImage:
-            'linear-gradient(to bottom, black 45%, transparent 95%)',
-          maskImage: 'linear-gradient(to bottom, black 45%, transparent 95%)',
-          maskRepeat: 'no-repeat',
-          maskSize: '100% 100%',
+            "linear-gradient(to bottom, black 45%, transparent 95%)",
+          maskImage: "linear-gradient(to bottom, black 45%, transparent 95%)",
+          maskRepeat: "no-repeat",
+          maskSize: "100% 100%",
           backgroundImage:
-            'url(https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          borderRadius: '16px',
+            "url(https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderRadius: "16px",
         }}
       />
 
       {/* Foreground Text */}
       <div
         className={`relative z-10 flex items-center justify-between w-full px-3 h-full transition-all duration-300 ${
-          changeDefinite ? 'text-black' : 'text-white'
+          changeDefinite ? "text-black" : "text-white"
         }`}
       >
         <motion.p
@@ -47,8 +47,8 @@ const DefiniteCard = () => {
           <span
             className={`font-light   ${
               changeDefinite
-                ? 'text-[rgba(0,0,0,0.6)]'
-                : 'text-[rgba(255,255,255,0.6)]'
+                ? "text-[rgba(0,0,0,0.6)]"
+                : "text-[rgba(255,255,255,0.6)]"
             }`}
           >
             Italy
@@ -59,7 +59,7 @@ const DefiniteCard = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.1, delay: 0 }}
           className={`text-md font-medium mt-[85%] rounded-full p-2 cursor-pointer ${
-            changeDefinite ? 'bg-[rgba(0,216,255,0.6)]' : 'bg-[#34343480]'
+            changeDefinite ? "bg-[rgba(0,216,255,0.6)]" : "bg-[#34343480]"
           }`}
         >
           Directions

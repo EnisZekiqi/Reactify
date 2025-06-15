@@ -1,5 +1,4 @@
-export const example9 = 'This text goes and comes back'
-
+export const example9 = "This text goes and comes back";
 
 export const Animations = `
 
@@ -17,7 +16,7 @@ const controls = useAnimation();
     }, [controls]);
 
 
-`
+`;
 
 export const codeSnippet9 = `
 
@@ -106,12 +105,11 @@ return (
 
 
 
-`
-
+`;
 
 export const Usage = `
 import StreamText from "./StreamText";
 
 
 <StreamText example9="This text goes and comes back"/>
-`
+`;

@@ -43,7 +43,7 @@ const letterVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-`
+`;
 
 export const codeSnippetTS = `
 import { motion, Variants } from "framer-motion";
@@ -74,8 +74,7 @@ const SimpleText: React.FC<SimpleTextProps> = ({ containerVariants, letterVarian
 
 export default SimpleText;
 
-`
-
+`;
 
 export const Usage = `
 import SimpleText from "./SimpleText";
@@ -85,4 +84,4 @@ import SimpleText from "./SimpleText";
  containerVariants={containerVariants}
  example1="Hello World!"
  letterVariants={letterVariants}  />
-`
+`;

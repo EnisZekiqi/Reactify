@@ -7,10 +7,30 @@ const FAQ = () => {
   const [showFAQ, setShowFAQ] = useState("");
 
   const faqs = [
-    { id: "What is Interaction Design", description: "Interaction design is about creating engaging interfaces with well-thought-out behaviors.", icon: <CiChat1 size={23} /> },
-    { id: "Principles & Patterns", description: "Design principles and reusable patterns help users navigate your app intuitively.", icon: <CiCoins1 size={23} /> },
-    { id: "Usability & Accessibility", description: "Ensuring that your product is easy to use and accessible to all users is essential.", icon: <CiRoute size={23} /> },
-    { id: "UX Optimization", description: "UX optimization focuses on improving user satisfaction by refining every interaction.", icon: <CiMicrochip size={23} /> }
+    {
+      id: "What is Interaction Design",
+      description:
+        "Interaction design is about creating engaging interfaces with well-thought-out behaviors.",
+      icon: <CiChat1 size={23} />,
+    },
+    {
+      id: "Principles & Patterns",
+      description:
+        "Design principles and reusable patterns help users navigate your app intuitively.",
+      icon: <CiCoins1 size={23} />,
+    },
+    {
+      id: "Usability & Accessibility",
+      description:
+        "Ensuring that your product is easy to use and accessible to all users is essential.",
+      icon: <CiRoute size={23} />,
+    },
+    {
+      id: "UX Optimization",
+      description:
+        "UX optimization focuses on improving user satisfaction by refining every interaction.",
+      icon: <CiMicrochip size={23} />,
+    },
   ];
 
   return (
@@ -18,9 +38,7 @@ const FAQ = () => {
       {faqs.map((faq, index) => (
         <motion.div
           layout
-          onClick={() =>
-            setShowFAQ(showFAQ === faq.id ? "" : faq.id)
-          }
+          onClick={() => setShowFAQ(showFAQ === faq.id ? "" : faq.id)}
           key={index}
           className="p-3 border border-[#343434] rounded-2xl w-[320px] bg-white text-black cursor-pointer shadow-sm"
           whileHover={{ scale: 1.01 }}
