@@ -31,6 +31,7 @@ import { codeSnippet21, codeSnippet21TS } from "../javascript/DropDown";
 import { codeSnippet22, codeSnippet22TS } from "../javascript/Elegance";
 import { codeSnippet23, codeSnippet23TS } from "../javascript/payment";
 import { codeSnippet24, codeSnippet24TS } from "../javascript/faq";
+import { codeSnippet25, codeSnippet25TS } from "../javascript/FluidMenu";
 
 import {
   Usage as Usage1,
@@ -89,6 +90,7 @@ import { Usage as Usage22 } from "../javascript/Elegance";
 
 import { Usage as Usage23 } from "../javascript/payment";
 import { Usage as Usage24 } from "../javascript/faq";
+import { Usage as Usage25 } from "../javascript/FluidMenu";
 
 const SimpleText = React.lazy(() => import("../Components/SimpleText"));
 const BlurText = React.lazy(() => import("../Components/BlurText"));
@@ -119,6 +121,7 @@ const FluidMenu = React.lazy(() => import("../Menus/FluidMenu"));
 //Components/Others//
 const Payment = React.lazy(() => import("../Others/Payment"));
 const FAQ = React.lazy(() => import("../Others/FAQ"));
+const Parallax = React.lazy(() => import("../Others/ParallaxHero"));
 
 export const examples = [
   {
@@ -354,9 +357,9 @@ export const examples = [
     name: "Fluid Menu",
     component: FluidMenu,
     drawerLabel: "Fluid Menu",
-    code: codeSnippet22,
-    codeTS: codeSnippet22TS,
-    usage: Usage22,
+    code: codeSnippet25,
+    codeTS: codeSnippet25TS,
+    usage: Usage25,
     new:'New'
   },
   {
@@ -378,5 +381,16 @@ export const examples = [
     code: codeSnippet24,
     codeTS: codeSnippet24TS,
     usage: Usage24,
+  },
+  {
+    id: "parallax-hero",
+    for: "in Components/Others",
+    name: "Parallax Hero ",
+    component: Parallax,
+    drawerLabel: "Parallax Hero ",
+    code: codeSnippet24,
+    codeTS: codeSnippet24TS,
+    usage: Usage24,
+    new:'Beta'
   },
 ];

@@ -236,7 +236,7 @@ const Example = () => {
                     key={example.id}
                     to={`/example/${example.id}`}
                     onClick={() => setSeeCode("preview")}
-                    className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px]`}
+                    className={`opacity-70 hover:opacity-100 transition-all duration-300 font-medium pl-3 pt-1.5 text-sm -mt-[20px] flex items-center`}
                     style={{
                       opacity: example.id === exampleId ? "1" : "0.6",
                       borderLeft:
@@ -246,6 +246,8 @@ const Example = () => {
                     }}
                   >
                     {example.drawerLabel}
+                    {example.new && (<span className="rounded py-0.5 text-white bg-[rgba(0,216,255,0.15)] px-1 text-xs font-extralight ml-1 border border-[#00d8ff]">{example.new}</span>)}
+
                   </Link>
                 ))}
             </div>

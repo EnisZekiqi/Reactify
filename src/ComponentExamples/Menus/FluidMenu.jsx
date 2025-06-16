@@ -1,5 +1,5 @@
 import { motion,AnimatePresence } from "framer-motion";
-import { useState,useRef,useEffect } from "react";
+import { useState,useRef } from "react";
 
 const FluidMenu = () => {
 
@@ -21,19 +21,13 @@ const FluidMenu = () => {
         setMenuOpen((prev) => !prev);
     };
     
-      useEffect(() => {
-        if (menuOpen) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "auto";
-        }
-      }, [menuOpen]);
+      
 
     return ( 
         <>
          <div className="relative w-full -mt-[30%]">
   {/* Header and Button */}
-  <div className="flex items-center justify-between gap-[250px] pt-4 border-b border-[#343434] pb-2">
+  <div className="flex items-center justify-between gap-[130px] sm:gap-[250px] pt-4 border-b border-[#343434] pb-2">
     <h1 className="text-xl sm:text-2xl md:text-3xl">Brand</h1>
     <button
       ref={buttonRef}

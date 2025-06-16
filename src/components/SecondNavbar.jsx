@@ -366,7 +366,7 @@ const SecondNavbar = () => {
                       }}
                     >
                       {example.drawerLabel}
-                      {example.new && (<span className="rounded py-0.5 text-white bg-[rgba(0,216,255,0.15)] px-1 text-xs font-extralight ml-1 border border-[#00d8ff]">{example.new}</span>)}
+                      {example.new && (<span className="rounded py-[1.5px] text-white bg-[rgba(0,216,255,0.15)] px-1 text-xs font-extralight ml-1 border border-[#00d8ff]">{example.new}</span>)}
 
                     </Link>
                   </div>
@@ -392,6 +392,8 @@ const SecondNavbar = () => {
                       }}
                     >
                       {example.drawerLabel}
+                      {example.new && (<span className="rounded py-[1.5px] text-white bg-[rgba(0,216,255,0.15)] px-1 text-xs font-extralight ml-1 border border-[#00d8ff]">{example.new}</span>)}
+
                     </Link>
                   </div>
                 ))}
