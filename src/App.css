@@ -233,8 +233,3 @@
 }
 
 /* Add this to your CSS file */
-prompt {
-  font-size: 0.8em;   /* Makes the text smaller */
-  padding: 4px 8px;   /* Optional: reduce padding */
-  display: inline-block; /* Optional: for inline styling */
-}
