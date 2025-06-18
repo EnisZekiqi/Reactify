@@ -23,9 +23,9 @@ import {
 import Docs from "./Example/Docs/Docs";
 import Example2 from "./Example/Docs/Example";
 import { Link } from "react-router-dom";
+import { IoMdCheckmark, IoMdCopy, IoMdClose } from "react-icons/io";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -82,6 +82,19 @@ function App() {
 
   const words = text.split(" ");
 
+  const [npmText,setNpmText]=useState('npm i reactify-ui-kit')
+
+const [copied, setCopied] = useState(false);
+
+  const handleCopy = (event) => {
+    event.stopPropagation();
+    setCopied(true);
+    navigator.clipboard.writeText(npmText);
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
+  };
+
   const AllIntro = () => (
     <div className="app-bg">
       <Navbar />
@@ -91,6 +104,9 @@ function App() {
         containerVariants={containerVariants}
         logos={logos}
         itemVariants={itemVariants}
+        npmText={npmText}
+        copied={copied}
+        handleCopy={handleCopy}
       />
       <div className="empty"></div>
       <Example />
@@ -117,7 +133,13 @@ function HeroSection({
   containerVariants,
   logos,
   itemVariants,
-}) {
+  npmText,
+  handleCopy,
+  copied
+})
+
+
+{
   return (
     <div className=" text-white">
       <div className="relative flex flex-col items-center justify-center mt-24 sm:mt-10 z-[90]">
@@ -260,12 +282,22 @@ function HeroSection({
           }}
           className="flex items-center justify-center gap-4 w-full sm:w-fit"
         >
-          <p className="text-white mt-4 hidden sm:block text-md md:text-lg text-center underline">
-            Ready to bring your ideas to life?
+          <p className="text-white bg-[#191919] px-3 py-1.5 rounded-xl mt-4 hidden sm:block text-md md:text-lg text-center ">
+            {npmText}
+             <button
+                              onClick={handleCopy}
+                              className=" cursor-pointer ml-4 -mt-2 text-[rgba(255,255,255,0.7)] rounded  transition "
+                            >
+                              {copied ? (
+                                <IoMdCheckmark className="w-[17px] h-[17px]" />
+                              ) : (
+                                <IoMdCopy className="w-[17px] h-[17px]" />
+                              )}{" "}
+            </button>
+            
           </p>
-
           <motion.button
-            className="mt-4 md:px-6 md:py-3  sm:px-4 sm:py-2 px-2 py-2 w-full sm:w-fit bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg shadow font-medium"
+            className="mt-4 md:px-6 md:py-1.5  sm:px-4 sm:py-2 px-2 py-2 w-full sm:w-fit bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg shadow font-medium"
             whileHover={{
               scale: 1.05,
             }}

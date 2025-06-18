@@ -1,9 +1,22 @@
 {
-  "name": "reactlibrary",
-  "private": true,
-  "version": "0.0.0",
+"name": "reactify-ui-kit",
+  "version": "1.0.0",
+  "description": "A modern React UI component library with Tailwind, Framer Motion, and live code examples.",
+  "author": "Enis Dev",
   "license": "MIT",
   "type": "module",
+  "main": "dist/reactify-ui.cjs",
+  "module": "dist/reactify-ui.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/reactify-ui.js",
+      "require": "./dist/reactify-ui.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -19,12 +32,16 @@
     "motion": "^12.6.3",
     "prism-react-renderer": "^2.4.1",
     "prismjs": "^1.30.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.5.0",
     "react-syntax-highlighter": "^15.6.1",
     "tailwindcss": "^4.1.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
@@ -36,6 +53,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "prettier": "^3.5.3",
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "^3.9.1"
   }
 }

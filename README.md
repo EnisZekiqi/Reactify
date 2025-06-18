@@ -1,41 +1,69 @@
 <p align="center">
-  <img src="https://res.cloudinary.com/datm8nslc/image/upload/v1747083055/reactify_odpazh.jpg" alt="Reactify Logo" width="200"/>
+  <img src="https://res.cloudinary.com/datm8nslc/image/upload/v1750280333/capturev3_gbmiub.jpg" alt="Reactify Logo" width="300"/>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/EnisZekiqi/reactify?style=for-the-badge" />
-  <img src="https://img.shields.io/github/languages/top/EnisZekiqi/reactify?style=for-the-badge" />
   <img src="https://img.shields.io/github/languages/count/EnisZekiqi/reactify?style=for-the-badge" />
   <img src="https://img.shields.io/github/license/EnisZekiqi/reactify?style=for-the-badge" />
 </p>
 
-## About
+<p align="center">
+  <em>License: MIT</em>
+</p>
 
-Reactify is a modern React component library built with performance and design in mind. It leverages **React**, **TailwindCSS**, and **Framer Motion** to help developers build beautiful, interactive UIs with minimal effort.
-
-### This library includes reusable, customizable components like buttons, cards, animated text, menus, and much more — all optimized for smooth UX and fast integration.
+<p align="center">
+  A modern, animated, and responsive React component library powered by TailwindCSS and Framer Motion.
+</p>
 
 ---
+
+##  About the Project
+
+**Reactify UI Kit** is a lightweight, performance-first React component library designed for modern frontend developers. Whether you're building a portfolio, a dashboard, or a landing page — Reactify gives you elegant, animated, plug-and-play components out of the box.
+
+>  Includes ready-to-use components: buttons, animated text, cards, nav menus, and more.
+
+---
+
 
 ## Key Features
 
-- Built with **React + Vite** for lightning-fast dev experience
-- Uses **TailwindCSS** for utility-first, responsive design
-- Powered by **Framer Motion** for fluid UI animations
-- Collection of ready-to-use components (buttons, text animations, cards, menus, etc.)
-- Clean, accessible, and UX-friendly designs
-- Easy to integrate into any modern React project
+ Built with **React + Vite**
+-  Styled using **TailwindCSS**
+-  Smooth animations via **Framer Motion**
+-  Reusable and customizable components
+-  Supports both **JavaScript** and **TypeScript**
+-  Easy to explore with **copy-paste examples**
+-  Perfect for fast prototyping and UI experiments
 
 ---
 
-## Stack
+## 📦 Installation
 
-- [React](https://reactjs.org/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Vite](https://vitejs.dev/)
+Install via NPM:
+
+
+npm install reactify-ui-kit
+
 
 ---
+
+##  Usage Example
+
+import { AuroraCard, ConfettiButton } from 'reactify-ui-kit';
+
+function App() {
+  return (
+    <div className="p-4">
+      <AuroraCard />
+      <ConfettiButton />
+    </div>
+  );
+}
+
+---
+
 
 MIT License
 

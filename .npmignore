@@ -1,0 +1,11 @@
+# ignore everything except dist/
+src/
+public/
+examples/
+ComponentExamples/
+javascript/
+typescript/
+.vscode/
+README.md
+tailwind.config.js
+postcss.config.js
