@@ -2,11 +2,11 @@
   <img src="https://res.cloudinary.com/datm8nslc/image/upload/v1750281950/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6461746d386e736c632f696d6167652f75706c6f61642f76313735303238303333332f6361707475726576335f67626d6975622e6a7067-removebg-preview_fqaena.png" alt="Reactify Logo" width="300"/>
 </p>
 
-<prompt style={{ fontSize: '0.8em', padding: '4px 8px' }}>
+<p >
   <img src="https://img.shields.io/github/last-commit/EnisZekiqi/reactify?style=for-the-badge" />
   <img src="https://img.shields.io/github/languages/count/EnisZekiqi/reactify?style=for-the-badge" />
   <img src="https://img.shields.io/github/license/EnisZekiqi/reactify?style=for-the-badge" />
-</prompt>
+</p>
 
 
 <p align="center">
