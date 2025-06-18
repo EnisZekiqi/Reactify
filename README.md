@@ -2,15 +2,12 @@
   <img src="https://res.cloudinary.com/datm8nslc/image/upload/v1750280333/capturev3_gbmiub.jpg" alt="Reactify Logo" width="300"/>
 </p>
 
-<p align="center">
+<prompt style={{ fontSize: '0.8em', padding: '4px 8px' }}>
   <img src="https://img.shields.io/github/last-commit/EnisZekiqi/reactify?style=for-the-badge" />
   <img src="https://img.shields.io/github/languages/count/EnisZekiqi/reactify?style=for-the-badge" />
   <img src="https://img.shields.io/github/license/EnisZekiqi/reactify?style=for-the-badge" />
-</p>
+</prompt>
 
-<p align="center">
-  <em>License: MIT</em>
-</p>
 
 <p align="center">
   A modern, animated, and responsive React component library powered by TailwindCSS and Framer Motion.
