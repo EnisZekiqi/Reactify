@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+import { SiJavascript,SiTypescript  } from "react-icons/si";
+
 const variants = () => {
   const [variant, setVariant] = useState(0);
   const [components, setComponents] = useState(0);
@@ -7,7 +9,7 @@ const variants = () => {
 
   useEffect(() => {
     if (!hasStarted) return;
-    const achieve = 24;
+    const achieve = 26;
     const interval = setInterval(() => {
       setVariant((prev) => {
         if (prev < achieve) {
@@ -69,9 +71,25 @@ const variants = () => {
             <div className="flex flex-col justify-end bg-[#00D8FF] rounded-xl text-8xl font-bold text-black p-6 w-[300px] md:w-[450px]  h-[220px]">
               {variant} <p className="font-normal text-lg">Components</p>
             </div>
-            <div className="flex flex-col items-start justify-end bg-transparent border border-[#00D8FF] rounded-xl text-8xl p-6 text-[#00D8FF] w-[300px] md:w-[450px] h-[220px]">
-              {components} <p className="font-normal text-lg">Variants</p>
-            </div>
+            <div className="group relative overflow-hidden flex flex-col items-start justify-end bg-transparent border border-[#00D8FF] rounded-xl text-8xl p-6 text-[#00D8FF] w-[300px] md:w-[450px] h-[220px]">
+  {/* JS Logo */}
+  <div
+    className="absolute top-4 right-18 -rotate-10 w-8 h-8 opacity-0 group-hover:opacity-30 transition-opacity duration-300"
+  >
+ <SiJavascript />
+  </div>
+
+  {/* TS Logo */}
+  <div
+    className="absolute bottom-16 rotate-10 right-24 w-8 h-8 opacity-0 group-hover:opacity-30 transition-opacity duration-300"
+  >
+    <SiTypescript />
+  </div>
+
+  {components}
+  <p className="font-normal text-lg z-10">Variants</p>
+</div>
+
           </>
         )}
       </motion.div>

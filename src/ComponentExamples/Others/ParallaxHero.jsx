@@ -44,7 +44,7 @@ const ParallaxHero = () => {
           {/* LEFT IMAGE */}
           <motion.div
             style={{ y: yImgLeft }}
-            className="w-[200px] h-[300px] bg-no-repeat bg-center bg-cover -rotate-10"
+            className="w-[200px] h-[300px] bg-no-repeat bg-center bg-cover "
           >
                       <motion.div
                           initial={{ opacity: 0, scale: 0 }}
@@ -53,7 +53,7 @@ const ParallaxHero = () => {
                 width: "100%",
                 height: "100%",
                 backgroundImage:
-                  "url(https://images.unsplash.com/photo-1595001354022-29103be3b73a?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+                  "url(https://images.unsplash.com/photo-1749746812481-6e03eabdd2e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 backgroundSize: bgSizeLeftPercent,
@@ -69,20 +69,20 @@ const ParallaxHero = () => {
                        initial={{ opacity: 0, scale: 0 }}
                        animate={{opacity:1,scale:1,transition:{delay:0.3,duration:0.3}}}
             style={{ y: yImgRight }}
-            className="w-[300px] h-[350px] bg-no-repeat bg-center bg-cover rotate-20"
+            className="w-[300px] h-[350px] bg-no-repeat bg-center bg-cover "
           >
             <motion.div
               style={{
                 width: "100%",
                 height: "100%",
                 backgroundImage:
-                  "url(https://images.unsplash.com/photo-1746294250258-a2c039ece448?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0OHx8fGVufDB8fHx8fA%3D%3D)",
+                  "url(https://images.unsplash.com/photo-1749909551094-a03dee3ff334?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4Mnx8fGVufDB8fHx8fA%3D%3D)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 backgroundSize: bgSizeRightPercent,
                 backgroundAttachment:'fixed'
               }}
-              className="w-full h-full will-change-transform"
+              className="w-full h-full will-change-transform mt-10 rotate-12"
             />
           </motion.div>
         </div>

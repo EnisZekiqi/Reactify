@@ -32,6 +32,9 @@ import { codeSnippet22, codeSnippet22TS } from "../javascript/Elegance";
 import { codeSnippet23, codeSnippet23TS } from "../javascript/payment";
 import { codeSnippet24, codeSnippet24TS } from "../javascript/faq";
 import { codeSnippet25, codeSnippet25TS } from "../javascript/FluidMenu";
+import { codeSnippet26, codeSnippet26TS } from "../javascript/ParallaxHero";
+import { codeSnippet27, codeSnippet27TS } from "../javascript/DotHero";
+import { codeSnippet28, codeSnippet28TS } from "../javascript/Pricing";
 
 import {
   Usage as Usage1,
@@ -91,6 +94,9 @@ import { Usage as Usage22 } from "../javascript/Elegance";
 import { Usage as Usage23 } from "../javascript/payment";
 import { Usage as Usage24 } from "../javascript/faq";
 import { Usage as Usage25 } from "../javascript/FluidMenu";
+import { Usage as Usage26 } from "../javascript/ParallaxHero";
+import { Usage as Usage27, CSS2 } from "../javascript/DotHero";
+import { Usage as Usage28 } from "../javascript/Pricing";
 
 const SimpleText = React.lazy(() => import("../Components/SimpleText"));
 const BlurText = React.lazy(() => import("../Components/BlurText"));
@@ -112,6 +118,9 @@ const SliderButton = React.lazy(() => import("../Buttons/SliderButton"));
 const LoopCard = React.lazy(() => import("../Cards/LoopCard"));
 const AuroraCard = React.lazy(() => import("../Cards/AuroraCard"));
 const DefiniteCard = React.lazy(() => import("../Cards/DefiniteCard"));
+const PricingCards = React.lazy(() => import("../Cards/PricingCards"));
+const GridCard = React.lazy(() => import("../Cards/GridCard"));
+
 //Components/Menus//
 const DropNav = React.lazy(() => import("../Menus/DropNav"));
 const DropDownNav = React.lazy(() => import("../Menus/DropDownNav"));
@@ -122,6 +131,7 @@ const FluidMenu = React.lazy(() => import("../Menus/FluidMenu"));
 const Payment = React.lazy(() => import("../Others/Payment"));
 const FAQ = React.lazy(() => import("../Others/FAQ"));
 const Parallax = React.lazy(() => import("../Others/ParallaxHero"));
+const Dot = React.lazy(() => import("../Others/DotHero"));
 
 export const examples = [
   {
@@ -292,6 +302,17 @@ export const examples = [
     usage: Usage16,
   },
   {
+    id: "grid-card",
+    for: "in Components/Cards",
+    name: "Grid Card",
+    component: GridCard,
+    drawerLabel: "Grid Card",
+    code: codeSnippet17,
+    codeTS: codeSnippet17TS,
+    usage: Usage17,
+    new:'Beta'
+  },
+  {
     id: "loop-card",
     for: "in Components/Cards",
     name: "Loop Card",
@@ -320,6 +341,17 @@ export const examples = [
     code: codeSnippet19,
     codeTS: codeSnippet19TS,
     usage: Usage19,
+  },
+  {
+    id: "pricing-cards",
+    for: "in Components/Cards",
+    name: "Pricing Cards",
+    component: PricingCards,
+    drawerLabel: "Pricing Cards",
+    code: codeSnippet28,
+    codeTS: codeSnippet28TS,
+    usage: Usage28,
+    new:'New'
   },
   {
     id: "drop-nav",
@@ -388,9 +420,21 @@ export const examples = [
     name: "Parallax Hero ",
     component: Parallax,
     drawerLabel: "Parallax Hero ",
-    code: codeSnippet24,
-    codeTS: codeSnippet24TS,
-    usage: Usage24,
-    new:'Beta'
+    code: codeSnippet26,
+    codeTS: codeSnippet26TS,
+    usage: Usage26,
+    new:'New'
+  },
+  {
+    id: "dot-hero",
+    for: "in Components/Others",
+    name: "Dot Hero ",
+    component: Dot,
+    drawerLabel: "Dot Hero ",
+    code: codeSnippet27,
+    codeTS: codeSnippet27TS,
+    usage: Usage27,
+    css: CSS2,
+    new:'New'
   },
 ];

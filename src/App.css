@@ -12,8 +12,7 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(6, 6, 6, 0.3), rgba(6, 6, 6, 0.3)),
-    url("https://www.hover.dev/black-noise.png");
+    linear-gradient(rgba(6, 6, 6, 0.3), rgba(6, 6, 6, 0.3));
   background-position: center;
   background-repeat: repeat;
   background-size: auto;
@@ -22,6 +21,7 @@
   opacity: 0.05;
   z-index: -1;
 }
+
 .coverBG {
   background: rgba(6, 6, 6, 0.8);
   background-position: center;
@@ -101,10 +101,9 @@
 .navbar {
   width: 100%;
   height: 55px;
-  margin-left: -1rem;
+  margin-left: -2rem;
   padding-right: 3rem;
   padding-bottom: 5px;
-  border-radius: 20px;
   margin-top: -35px;
 
   /* Blurred backdrop */
@@ -233,3 +232,66 @@
 }
 
 /* Add this to your CSS file */
+.dot { 
+  
+  background-size:cover;
+  background-position: center center;
+  background-repeat: repeat;
+  animation: move 0.7s linear infinite;
+ background-image: url(/src/assets/magicpattern-polka-dot-pattern-1750367755498.png);
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
+
+/* Example CSS */
+.cardxx {
+  position: relative;
+  /* ...other styles... */
+}
+
+.cardxx-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  /* ...other styles... */
+}
+
+.cardxx:hover .cardxx-text {
+  opacity: 1;
+}
+.caarrd{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url(./assets/magicpattern-grid-pattern-1750442140525.png);
+}
+.bg-grid {
+  background-image: linear-gradient(#3B4345 1px, transparent 1px),
+    linear-gradient(90deg, #3B4345 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+.animate-gridMove {
+  animation: gridMove 3s linear infinite;
+}
+.ray{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./assets/magicpattern-god-rays-1750445330695.png);
+}
