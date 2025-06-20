@@ -7,7 +7,7 @@ const Pricing = () => {
 
   const cards = [
     {
-      title: "EnterPrise",
+      title: "Enterprise",
       description: "Everything to go public",
       price: { Monthly: 499, Annual: 399 },
       ability: [
@@ -29,11 +29,11 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-6">
-      <h1 className="mt-[20%] font-bold text-4xl">Pricing Plans</h1>
+    <div className="flex flex-col items-center gap-6 h-screen">
+      <h1 className="mt-[50%] lg:mt-[20%] font-bold text-2xl lg:text-4xl">Pricing Plans</h1>
 
       {/* Toggle */}
-      <div className="relative bg-[#1c1c1c] p-1 rounded-full flex items-center gap-4 w-64 justify-between">
+      <div className="relative bg-[#1c1c1c] p-1 rounded-full flex items-center gap-4 w-42 lg:w-64 justify-between">
         <motion.span
           layout
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -68,11 +68,11 @@ const Pricing = () => {
           return (
             <motion.div
               key={index}
-              className="bg-[#060606] h-fit border border-[#3B4345] rounded-lg shadow-md p-6 w-80 hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#060606] h-fit border border-[#3B4345] rounded-lg shadow-md p-6 w-56 lg:w-80 hover:shadow-xl transition-shadow duration-300"
               whileHover={{ scale: 1.05 }}
             >
               <h2 className="text-2xl font-bold mb-2">{prp.title}</h2>
-              <p className="text-gray-400 mb-4">{prp.description}</p>
+              <p className="text-gray-400 text-sm md:text-md mb-4">{prp.description}</p>
 
               {/* Animated Price */}
               <div className="text-3xl font-semibold mb-4 h-10 overflow-hidden relative">

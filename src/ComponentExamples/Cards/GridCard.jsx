@@ -7,7 +7,7 @@ const GridCard = () => {
               scale: 1.03,
               boxShadow: "10px 10px 6px 0px rgba(59,67,69,0.5)"
       }}
-      className=" relative group w-[300px] h-[300px] overflow-hidden border border-[rgb(59,67,69)] rounded-lg bg-black"
+      className=" relative group w-[270px] h-[270px] md:w-[300px] md:h-[300px] overflow-hidden border border-[rgb(59,67,69)] rounded-lg bg-black"
     >
       {/* Grid Background Layer */}
       <div className="absolute inset-0 z-0 bg-grid animate-gridMove opacity-10"></div>
