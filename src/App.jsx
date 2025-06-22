@@ -216,7 +216,7 @@ function HeroSection({
         </motion.div>
         {/* Tooltip Logos */}
         <motion.div
-          className="flex gap-8 justify-center mt-15"
+          className="flex gap-8 justify-center mt-15 pointer-events-auto"
           variants={containerVariants}
           initial="hidden"
           animate="show"
@@ -224,7 +224,7 @@ function HeroSection({
           {logos.map((logo, index) => (
             <motion.div className="" key={logo.id} variants={itemVariants}>
               <Tippy
-                className="opacity-100 hover:opacity-60 transition-all duration-300 w-[200px] mx-6"
+                className="opacity-100 hover:opacity-60 transition-all duration-300 w-[200px] mx-6 "
                 content={logo.text}
                 placement="top"
               >

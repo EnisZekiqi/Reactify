@@ -36,30 +36,6 @@
 
 ---
 
-## 📦 Installation
-
-Install via NPM:
-
-
-npm install reactify-ui-kit
-
-
----
-
-##  Usage Example
-
-import { AuroraCard, ConfettiButton } from 'reactify-ui-kit';
-
-function App() {
-  return (
-    <div className="p-4">
-      <AuroraCard />
-      <ConfettiButton />
-    </div>
-  );
-}
-
----
 
 
 MIT License

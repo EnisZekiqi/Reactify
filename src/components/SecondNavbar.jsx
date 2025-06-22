@@ -194,7 +194,7 @@ const SecondNavbar = () => {
                 animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
                 exit={{ y: 20, opacity: 0, transition: { duration: 0.5 } }}
                 ref={ref}
-                className="searchComponent fixed top-1/2 left-1/2 w-[290px] overflow-y-auto flex flex-col items-center gap-2 md:w-[520px] border border-[#3b4345] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
+                className="searchComponent fixed top-1/2 left-1/2 w-[320px] overflow-y-auto flex flex-col items-center gap-2 md:w-[520px] border border-[#3b4345] p-2.5 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl bg-cover bg-center bg-[#181b1b] z-[600]"
                 style={{
                   height: searchFunction ? "400px" : "70px",
                   transition: "height 0.5s ease-in-out",
@@ -244,7 +244,7 @@ const SecondNavbar = () => {
                         <Link
                           onClick={() => setOpenSearch(false)}
                           to={`/example/${item.id}`}
-                          className="flex flex-col items-start w-[245px] sm:w-[75vh] bg-[#232829] border border-[#3b4345] gap-1 hover:bg-[#181b1b] p-2 rounded-xl transition-all duration-300"
+                          className="flex flex-col items-start w-[270px] sm:w-[75vh] bg-[#232829] border border-[#3b4345] gap-1 hover:bg-[#181b1b] p-2 rounded-xl transition-all duration-300"
                         >
                           <span className="text-white text-sm md:text-base font-semibold">
                             {item.name}
@@ -399,7 +399,7 @@ const SecondNavbar = () => {
                     </Link>
                   </div>
                 ))}
-              <div className="border-t flex flex-col text-md font-medium w-[90%] ml-3 border-[#343434] pt-2 mt-6">
+              <div className="border-t flex flex-col text-sm font-medium w-[90%] ml-3 border-[#343434] pt-2 mt-6">
                 <a
                   href="https://github.com/EnisZekiqi/Reactify"
                   target="_blank"

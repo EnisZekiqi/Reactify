@@ -57,8 +57,8 @@ const variants = () => {
         <p className="rounded-full bg-[#1A1A1A] font-extralight uppercase text-xs p-2">
           Explore
         </p>
-        <h1 className="text-3xl font-medium text-[#fff] mt-3 text-center">
-          Learn about components
+        <h1 className="text-[25px] font-medium text-[#fff] mt-3 text-center">
+          Learn components
         </h1>
         <span className="text-sm sm:text-md font-normal text-white opacity-50 w-full md:w-[30%] text-center mt-3">
           A hundred percent free,and at least twice as awesome{" "}

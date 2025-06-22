@@ -23,7 +23,7 @@ const WhyUs = () => {
                         <p className="rounded-full bg-[#1A1A1A] font-extralight uppercase text-xs p-2">
                           Why Reactify ?
                         </p>
-                        <h1 className="text-3xl font-medium text-[#fff] mt-3 text-center">
+                        <h1 className="text-[26px] font-medium text-[#fff] mt-3 text-center">
                           Built for the developers
                         </h1>
                         <span className="text-sm sm:text-md font-normal text-white opacity-50 w-full md:w-[30%] text-center mt-3">
@@ -60,7 +60,7 @@ const WhyUs = () => {
                         
                        </motion.div>
                        <motion.div
-                         className="bg-[#191919] rounded-xl p-2 w-full md:w-[300px] h-[300px] lg:h-[600px]  flex flex-col justify-between overflow-hidden"
+                         className="bg-[#191919] rounded-xl p-2 w-full md:w-[300px] h-[250px] lg:h-[600px]  flex flex-col justify-between overflow-hidden"
                        >
                         <div className="flex flex-col">
                         <div className="flex items-center gap-2 mt-6">
