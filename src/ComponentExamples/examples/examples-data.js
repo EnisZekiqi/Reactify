@@ -35,6 +35,7 @@ import { codeSnippet25, codeSnippet25TS } from "../javascript/FluidMenu";
 import { codeSnippet26, codeSnippet26TS } from "../javascript/ParallaxHero";
 import { codeSnippet27, codeSnippet27TS } from "../javascript/DotHero";
 import { codeSnippet28, codeSnippet28TS } from "../javascript/Pricing";
+import { codeSnippet29, codeSnippet29TS } from "../javascript/Grid";
 
 import {
   Usage as Usage1,
@@ -97,6 +98,7 @@ import { Usage as Usage25 } from "../javascript/FluidMenu";
 import { Usage as Usage26 } from "../javascript/ParallaxHero";
 import { Usage as Usage27, CSS2 } from "../javascript/DotHero";
 import { Usage as Usage28 } from "../javascript/Pricing";
+import { Usage as Usage29 } from "../javascript/Grid";
 
 const SimpleText = React.lazy(() => import("../Components/SimpleText"));
 const BlurText = React.lazy(() => import("../Components/BlurText"));
@@ -307,10 +309,10 @@ export const examples = [
     name: "Grid Card",
     component: GridCard,
     drawerLabel: "Grid Card",
-    code: codeSnippet17,
-    codeTS: codeSnippet17TS,
-    usage: Usage17,
-    new:'Beta'
+    code: codeSnippet29,
+    codeTS: codeSnippet29TS,
+    usage: Usage29,
+    new:'New'
   },
   {
     id: "loop-card",

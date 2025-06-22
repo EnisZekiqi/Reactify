@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { SiJavascript,SiTypescript  } from "react-icons/si";
+import { SiJavascript, SiTypescript } from "react-icons/si";
+import { CiText } from "react-icons/ci";
+import { RxButton } from "react-icons/rx";
+
 
 const variants = () => {
   const [variant, setVariant] = useState(0);
@@ -68,9 +71,24 @@ const variants = () => {
       >
         {hasStarted && (
           <>
-            <div className="flex flex-col justify-end bg-[#00D8FF] rounded-xl text-8xl font-bold text-black p-6 w-[300px] md:w-[450px]  h-[220px]">
-              {variant} <p className="font-normal text-lg">Components</p>
-            </div>
+            <div className="group relative overflow-hidden flex flex-col items-start justify-end bg-[#00D8FF] rounded-xl text-8xl p-6 text-black w-[300px] md:w-[450px] h-[220px]">
+  {/* JS Logo */}
+  <div
+    className="absolute top-4 right-18  -rotate-10 w-8 h-8 opacity-0 group-hover:opacity-30 transition-opacity duration-300"
+  >
+<CiText/>
+              </div>
+
+  {/* TS Logo */}
+  <div
+    className="absolute bottom-16 rotate-10 right-24 w-8 h-8 opacity-0 group-hover:opacity-30 transition-opacity duration-300"
+  >
+    <RxButton />
+  </div>
+
+  {variant}
+  <p className="font-normal text-lg z-10">Components</p>
+</div>
             <div className="group relative overflow-hidden flex flex-col items-start justify-end bg-transparent border border-[#00D8FF] rounded-xl text-8xl p-6 text-[#00D8FF] w-[300px] md:w-[450px] h-[220px]">
   {/* JS Logo */}
   <div

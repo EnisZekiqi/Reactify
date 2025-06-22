@@ -25,6 +25,7 @@ import Example2 from "./Example/Docs/Example";
 import { Link } from "react-router-dom";
 import { IoMdCheckmark, IoMdCopy, IoMdClose } from "react-icons/io";
 import reactlog from '../src/assets/export.png'
+import WhyUs from "./components/WhyUs";
 function App() {
 
   const containerVariants = {
@@ -96,7 +97,9 @@ function App() {
       
       />
       <div className="empty"></div>
-      <Example />
+      <WhyUs />
+      <div className="empty"></div>
+
       <Variants />
       <div className="empty" style={{ height: "100px" }}></div>
       <Ending />
@@ -127,7 +130,7 @@ function HeroSection({
 {
   return (
     <div className=" text-white flex flex-col lg:flex-row items-center justify-center lg:justify-between mt-14">
-      <div className="relative flex flex-col items-center lg:items-start justify-center mt-24 sm:mt-10 z-[90]">
+      <div className="relative flex flex-col pointer-events-none  items-center lg:items-start justify-center mt-24 sm:mt-10 z-[90]">
         <div className="flex flex-col items-center lg:items-start mt-[5%]">
          
           {/* Background Image Layer */}
@@ -200,7 +203,7 @@ function HeroSection({
           Ready to bring your ideas to life?
 </p>
           <motion.button
-            className="mt-4 md:px-6 md:py-1.5  sm:px-4 sm:py-2 px-2 py-2 w-full sm:w-fit bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg shadow font-medium"
+            className="explore mt-4 pointer-events-auto md:px-6 md:py-1.5  sm:px-4 sm:py-2 px-2 py-2 w-full sm:w-fit bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg  font-medium"
             whileHover={{
               scale: 1.05,
             }}
@@ -254,22 +257,32 @@ function HeroSection({
   <img className="ml-20 lg:ml-0" src={reactlog} width="220px" alt="" />
 
   {/* Card 1 */}
-  <div className="cardxx z-[600] w-[200px] h-[200px] border z-[500] border-[#343434] rounded-xl -ml-[100px] lg:-ml-[220px] -mt-10 -rotate-10">
+  <Link to="/example/dot-hero">
+  <motion.div
+  initial={{opacity:0,y:-10}}
+  animate={{opacity:1,y:0,transition:{duration:0.3,delay:0.3}}}
+  className="cardxx z-[600] w-[200px] h-[200px] border border-[#343434] rounded-xl -ml-[100px] lg:-ml-[220px] -mt-10 -rotate-10">
     <div className="dot w-[200px] h-[200px] flex items-center justify-center">
       <h1 className="cardxx-text text-white text-2xl font-bold transition-all duration-300 text-center">
         DotHero
       </h1>
     </div>
-  </div>
+  </motion.div>
+  </Link>
 
   {/* Card 2 */}
-  <div className="cardxx relative group w-[200px] rotate-10 h-[200px] -mt-[200px] lg:mt-0 ml-[280px] lg:ml-0 overflow-hidden border border-[#343434] rounded-lg ">
+  <Link to="/example/grid-card">
+  <motion.div
+  initial={{opacity:0,y:-10}}
+  animate={{opacity:1,y:0,transition:{duration:0.3,delay:0.6}}}
+  className="cardxx relative group w-[200px] rotate-10 h-[200px] -mt-[200px] lg:mt-0 ml-[280px] lg:ml-0 overflow-hidden border border-[#343434] rounded-lg ">
     <div className="absolute inset-0 z-0 bg-grid animate-gridMove opacity-10"></div>
     <motion.div className="absolute inset-0 pointer-events-none z-10" />
     <div className="cardxx-text z-20 flex items-center justify-center h-full text-white font-bold text-2xl transition-all duration-300 text-center">
       Grid Card
     </div>
-  </div>
+  </motion.div>
+  </Link>
 </div>
 
     </div>
