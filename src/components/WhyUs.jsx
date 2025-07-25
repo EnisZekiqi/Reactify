@@ -33,96 +33,187 @@ const WhyUs = () => {
                 </motion.div>
                <motion.div
                     
-                       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-2 mt-[5%] justify-items-center"
+                       class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[5%] justify-items-center  rounded-xl"
                      >
-                       <motion.div
-                         class="... bg-[#191919] rounded-xl p-2 w-[100%] md:w-[300px] h-[220px] md:h-[300px]"
-                       >
-                        <div className="flex items-center gap-2 mt-6">
-                        <svg class="text-white  bg-[#191919]" width="112" height="72" viewBox="0 0 112 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M62.3532 62.3285L94.3961 43.8285C95.5919 43.1382 96.1897 42.2333 96.1897 41.3285L96.1898 38.3285C96.1898 37.4237 95.5919 36.5189 94.3962 35.8285L48.4968 9.3285C46.1054 7.94779 42.228 7.94779 39.8366 9.3285L7.79365 27.8285C6.59792 28.5189 6.00005 29.4237 6.00005 30.3285V33.3427C6.00625 34.2428 6.6041 35.1418 7.7936 35.8285L53.6929 62.3285C56.0844 63.7092 59.9617 63.7092 62.3532 62.3285Z" fill="var(--site-background)"></path><path d="M7.7936 32.8285C6.59786 32.1381 5.99999 31.2333 6 30.3285C6.00001 29.4237 6.59787 28.5189 7.7936 27.8285L39.8365 9.3285C42.228 7.94779 46.1053 7.94779 48.4968 9.3285L94.3961 35.8285C95.5919 36.5189 96.1897 37.4237 96.1897 38.3285C96.1897 39.2333 95.5919 40.1381 94.3961 40.8285L62.3532 59.3285C59.9617 60.7092 56.0844 60.7092 53.6929 59.3285L7.7936 32.8285Z" fill="var(--site-background)"></path><path d="M6 30.3285C6.00001 29.4237 6.59787 28.5189 7.7936 27.8285L39.8365 9.3285C42.228 7.94779 46.1053 7.94779 48.4968 9.3285L94.3961 35.8285C95.5919 36.5189 96.1897 37.4237 96.1897 38.3285M6 30.3285C5.99999 31.2333 6.59786 32.1381 7.7936 32.8285L53.6929 59.3285C56.0844 60.7092 59.9617 60.7092 62.3532 59.3285L94.3961 40.8285C95.5919 40.1381 96.1897 39.2333 96.1897 38.3285M6 30.3285V33.3427C6.0062 34.2428 6.60405 35.1418 7.79355 35.8285L53.6929 62.3285C56.0844 63.7092 59.9617 63.7092 62.3531 62.3285L94.3961 43.8285C95.5918 43.1382 96.1897 42.2333 96.1897 41.3285L96.1897 38.3285" stroke="currentColor"></path><path d="M10.3922 31.3281C9.43562 30.7758 9.43562 29.8804 10.3922 29.3281L42.4351 10.8281C43.3917 10.2758 44.9427 10.2758 45.8992 10.8281L91.7986 37.3281C92.7552 37.8804 92.7552 38.7758 91.7986 39.3281L59.7557 57.8281C58.7991 58.3804 57.2481 58.3804 56.2916 57.8281L10.3922 31.3281Z" fill="var(--site-background)" stroke="currentColor" stroke-opacity="0.3"></path><path d="M91.1283 42.8285L104.119 35.3285C105.075 34.7762 105.554 34.0523 105.554 33.3284L105.554 30.3284C105.554 29.6046 105.075 28.8807 104.119 28.3284L70.3437 8.82843C68.4306 7.72386 65.3287 7.72386 63.4155 8.82843L50.4252 16.3284C49.4686 16.8807 48.9903 17.6046 48.9903 18.3284L48.9902 21.3284C48.9902 22.0523 49.4685 22.7762 50.4251 23.3285L84.2001 42.8285C86.1133 43.933 89.2151 43.933 91.1283 42.8285Z" fill="var(--site-background)"></path><path d="M105.554 30.3284C105.554 29.6046 105.075 28.8807 104.119 28.3284L70.3437 8.82843C68.4306 7.72386 65.3287 7.72386 63.4155 8.82843L50.4252 16.3284C49.4686 16.8807 48.9903 17.6046 48.9903 18.3284M105.554 30.3284C105.554 31.0523 105.075 31.7761 104.119 32.3284L91.1284 39.8284C89.2152 40.933 86.1133 40.933 84.2001 39.8284L50.4252 20.3284C49.4686 19.7761 48.9903 19.0523 48.9903 18.3284M105.554 30.3284L105.554 33.3284C105.554 34.0523 105.075 34.7762 104.119 35.3285L91.1283 42.8285C89.2151 43.933 86.1133 43.933 84.2001 42.8285L50.4251 23.3285C49.4685 22.7762 48.9902 22.0523 48.9902 21.3284L48.9903 18.3284" stroke="currentColor"></path><rect width="6" height="2" rx="1" transform="matrix(0.866025 -0.5 0.866025 0.5 56.4883 15.3281)" fill="currentColor"></rect></svg>
-                        <h1 className='text-md sm:text-lg'>Responsive design</h1>
-                        </div>       
-                        <p className="mt-6 px-2 text-white/50 text-sm sm:text-base font-light">Okay, it’s not exactly cutting edge, but just throw a screen size in front of the display and it will work on every one of them</p>
-                         
-                         
-                       </motion.div>
-                       <motion.div
-                         class="... bg-[#191919] rounded-xl p-2 w-[100%] md:w-[420px] lg:w-[450px] h-[220px] md:h-[300px]"
-                       >
-                        <div className="flex flex-col">
-                        <div className="flex items-center gap-2 mt-6">
-                        <svg class="text-white bg-[#191919]" width="112" height="72" viewBox="0 0 112 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_408_5693)"><rect width="63" height="63" rx="2" transform="matrix(0.866025 -0.5 0.866025 0.5 1 38)" stroke="currentColor" stroke-opacity="0.3" stroke-dasharray="3 3"></rect><path d="M91.066 26L77.2096 34C76.7313 34.2762 76.4922 34.6381 76.4922 35.0001V38.0283C76.5043 38.3807 76.7433 38.731 77.2091 39L91.0655 47C92.0221 47.5523 93.5731 47.5523 94.5296 47L108.386 39C108.864 38.7239 109.103 38.362 109.103 38.0001L109.104 35.0001C109.104 34.6381 108.865 34.2762 108.387 34L94.5301 26C93.5736 25.4477 92.0226 25.4477 91.066 26Z" fill="var(--site-background)" stroke="currentColor"></path><path d="M53.8274 47.5L39.971 55.5C39.4927 55.7762 39.2536 56.1381 39.2536 56.5001L39.252 59.5001C39.252 59.862 39.4911 60.2239 39.9694 60.5L53.8258 68.5C54.7824 69.0523 56.3333 69.0523 57.2899 68.5L71.1463 60.5C71.6246 60.2239 71.8637 59.862 71.8637 59.5001L71.8654 56.5001C71.8654 56.1381 71.6262 55.7762 71.1479 55.5L57.2915 47.5C56.3349 46.9477 54.784 46.9477 53.8274 47.5Z" fill="var(--site-background)"></path><path d="M16.5883 26L2.73193 34C2.25362 34.2762 2.01447 34.6381 2.01449 35.0001L2.01367 38.0001C2.01371 38.362 2.25285 38.7239 2.73111 39L16.5875 47C17.5441 47.5523 19.095 47.5523 20.0516 47L33.908 39C34.3863 38.7239 34.6254 38.362 34.6255 38.0001L34.6263 35.0001C34.6263 34.6381 34.3871 34.2762 33.9088 34L20.0524 26C19.0959 25.4477 17.5449 25.4477 16.5883 26Z" fill="var(--site-background)"></path><path d="M53.8278 4.50027L39.9713 12.5003C39.4931 12.7764 39.254 13.1382 39.2539 13.5001V16.5568C39.2776 16.8997 39.516 17.2385 39.9694 17.5002L53.8258 25.5002C54.7824 26.0525 56.3333 26.0525 57.2899 25.5002L71.1463 17.5002C71.6247 17.224 71.8638 16.862 71.8637 16.5001V13.4437C71.8401 13.1008 71.6016 12.762 71.1483 12.5003L57.2919 4.50027C56.3353 3.94799 54.7843 3.94799 53.8278 4.50027Z" fill="var(--site-background)"></path><path d="M34.6263 35.0001C34.6263 34.6381 34.3871 34.2762 33.9088 34L20.0524 26C19.0959 25.4477 17.5449 25.4477 16.5883 26L2.73193 34C2.25362 34.2762 2.01447 34.6381 2.01449 35.0001M34.6263 35.0001C34.6263 35.362 34.3871 35.7239 33.9088 36L20.0524 44C19.0959 44.5523 17.5449 44.5523 16.5883 44L2.73193 36C2.25365 35.7239 2.0145 35.362 2.01449 35.0001M34.6263 35.0001L34.6255 38.0001C34.6254 38.362 34.3863 38.7239 33.908 39L20.0516 47C19.095 47.5523 17.5441 47.5523 16.5875 47L2.73111 39C2.25285 38.7239 2.01371 38.362 2.01367 38.0001L2.01449 35.0001" stroke="currentColor"></path><path d="M71.8654 56.5001C71.8654 56.1381 71.6262 55.7762 71.1479 55.5L57.2915 47.5C56.3349 46.9477 54.784 46.9477 53.8274 47.5L39.971 55.5C39.4927 55.7762 39.2536 56.1381 39.2536 56.5001M71.8654 56.5001C71.8654 56.862 71.6262 57.2239 71.1479 57.5L57.2915 65.5C56.3349 66.0523 54.784 66.0523 53.8274 65.5L39.971 57.5C39.4927 57.2239 39.2536 56.862 39.2536 56.5001M71.8654 56.5001L71.8637 59.5001C71.8637 59.862 71.6246 60.2239 71.1463 60.5L57.2899 68.5C56.3333 69.0523 54.7824 69.0523 53.8258 68.5L39.9694 60.5C39.4911 60.2239 39.252 59.862 39.252 59.5001L39.2536 56.5001" stroke="currentColor"></path><path d="M71.8637 13.4437C71.8401 13.1008 71.6016 12.762 71.1483 12.5003L57.2919 4.50027C56.3353 3.94799 54.7843 3.94799 53.8278 4.50027L39.9713 12.5003C39.4931 12.7764 39.254 13.1382 39.2539 13.5001M71.8637 13.4437C71.89 13.8242 71.6515 14.2097 71.1483 14.5003L57.2919 22.5003C56.3353 23.0526 54.7843 23.0526 53.8278 22.5003L39.9713 14.5003C39.493 14.2241 39.2538 13.8621 39.2539 13.5001M71.8637 13.4437V16.5001C71.8638 16.862 71.6247 17.224 71.1463 17.5002L57.2899 25.5002C56.3333 26.0525 54.7824 26.0525 53.8258 25.5002L39.9694 17.5002C39.516 17.2385 39.2776 16.8997 39.2539 16.5568V13.5001" stroke="currentColor"></path><path d="M109.104 35.0001C109.104 34.6381 108.865 34.2762 108.387 34L94.5301 26C93.5735 25.4477 92.0226 25.4477 91.066 26L77.2096 34C76.7313 34.2762 76.4922 34.6381 76.4922 35.0001M109.104 35.0001C109.104 35.362 108.865 35.7239 108.387 36L94.5301 44C93.5735 44.5523 92.0226 44.5523 91.066 44L77.2096 36C76.7313 35.7239 76.4922 35.362 76.4922 35.0001M109.104 35.0001L109.103 38.0001C109.103 38.362 108.864 38.7239 108.386 39L94.5296 47C93.5731 47.5523 92.0221 47.5523 91.0655 47L77.2091 39C76.7433 38.731 76.5043 38.3807 76.4922 38.0283V35.0001" stroke="currentColor"></path><path d="M19.1868 32.5001L51.2297 14.0001M51.2297 14.0001V18.0001M51.2297 14.0001H44.3015" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M91.9324 37.5001L59.8894 56.0001M59.8894 56.0001L59.8894 52.0001M59.8894 56.0001L66.8176 56.0001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M59.8894 14.0001L91.9324 32.5001M91.9324 32.5001L85.0041 32.5001M91.9324 32.5001L91.9324 28.5001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M51.2297 56.0001L19.1868 37.5001M19.1868 37.5001H26.115M19.1868 37.5001V41.5001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_408_5693"><rect width="112" height="72" fill="var(--site-background)"></rect></clipPath></defs></svg>                   
-                        <h1 className='text-md sm:text-lg'>Logical Functions</h1>  
-                        </div>
-                        <p className="mt-6 px-2 text-white/50 font-light text-sm sm:text-base">Some Components uses states and functions to work , they are synchronized and work independently </p>
-                        </div>
-                        
-                        
-                       </motion.div>
-                       <motion.div
-                         className="bg-[#191919] rounded-xl p-2 w-full md:w-[300px] h-[250px] lg:h-[600px]  flex flex-col justify-between overflow-hidden"
-                       >
-                        <div className="flex flex-col">
-                        <div className="flex items-center gap-2 mt-6">
-                        <svg class="text-white bg-[#191919]" width="112" height="72" viewBox="0 0 112 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_408_5776)"><path d="M52.1952 5.0003L4.56383 32.5003C3.60721 33.0526 3.12888 33.7765 3.12891 34.5004V37.5004C3.12892 38.2242 3.60721 38.9481 4.56378 39.5003L52.1952 67.0003C54.1083 68.1049 57.2102 68.1049 59.1234 67.0003L106.755 39.5003C107.711 38.9481 108.19 38.2242 108.19 37.5004V34.5004C108.19 33.7765 107.711 33.0526 106.755 32.5003L59.1234 5.0003C57.2103 3.89573 54.1084 3.89573 52.1952 5.0003Z" fill="var(--site-background)"></path><path d="M3.12891 34.5004C3.12888 33.7765 3.60721 33.0526 4.56383 32.5003L52.1952 5.0003C54.1084 3.89573 57.2103 3.89573 59.1234 5.0003L106.755 32.5003C107.711 33.0526 108.19 33.7765 108.19 34.5004M3.12891 34.5004C3.12893 35.2242 3.60727 35.948 4.56383 36.5003L52.1952 64.0003C54.1084 65.1049 57.2103 65.1049 59.1234 64.0003L106.755 36.5003C107.711 35.948 108.19 35.2242 108.19 34.5004M3.12891 34.5004V37.5004C3.12892 38.2242 3.60721 38.9481 4.56378 39.5003L52.1952 67.0003C54.1083 68.1049 57.2102 68.1049 59.1234 67.0003L106.755 39.5003C107.711 38.9481 108.19 38.2242 108.19 37.5004V34.5004" stroke="currentColor"></path><path d="M13.2223 38.5L59.9877 11.5C60.4659 11.2239 61.2414 11.2239 61.7197 11.5L103.289 35.5M13.2223 38.5L54.7915 62.5C55.2698 62.7761 56.0453 62.7761 56.5236 62.5L103.289 35.5M13.2223 38.5L12.3563 38C11.878 37.7239 11.878 37.2761 12.3563 37L59.9877 9.5C60.4659 9.22386 61.2414 9.22386 61.7197 9.5L104.155 34C104.633 34.2761 104.633 34.7239 104.155 35L103.289 35.5" stroke="currentColor"></path><path d="M10.7309 33.4928C10.7277 33.2238 10.5484 32.9554 10.1928 32.7501C9.4754 32.3359 8.3122 32.3359 7.59476 32.7501C7.23924 32.9554 7.0599 33.2238 7.05673 33.4928M10.7309 33.4928C10.7341 33.7667 10.5548 34.0412 10.1928 34.2501C9.4754 34.6643 8.3122 34.6643 7.59476 34.2501C7.23284 34.0412 7.0535 33.7667 7.05673 33.4928M10.7309 33.4928V34.5001C10.7308 34.7715 10.5515 35.043 10.1928 35.2501C9.47536 35.6643 8.31216 35.6643 7.59472 35.2501C7.24053 35.0456 7.0612 34.7783 7.05673 34.5103V33.4928" stroke="currentColor" stroke-opacity="0.3"></path><path d="M15.061 31.0001C15.061 30.7287 14.8816 30.4572 14.5229 30.2501C13.8054 29.8359 12.6422 29.8359 11.9248 30.2501C11.5681 30.4561 11.3887 30.7257 11.3867 30.9956M15.061 31.0001C15.0609 31.2716 14.8816 31.543 14.5229 31.7501C13.8054 32.1643 12.6422 32.1643 11.9248 31.7501C11.5641 31.5419 11.3847 31.2685 11.3867 30.9956M15.061 31.0001V32.0033C15.0596 32.2736 14.8802 32.5438 14.5229 32.7501C13.8054 33.1643 12.6422 33.1643 11.9248 32.7501C11.5675 32.5438 11.3881 32.2736 11.3867 32.0033V30.9956" stroke="currentColor" stroke-opacity="0.3"></path><path d="M15.7168 28.5001C15.7168 28.7716 15.8962 29.043 16.2549 29.2501C16.9723 29.6643 18.1355 29.6643 18.853 29.2501C19.2117 29.043 19.391 28.7716 19.391 28.5001M15.7168 28.5001C15.7168 28.2287 15.8962 27.9572 16.2549 27.7501C16.9723 27.3359 18.1355 27.3359 18.853 27.7501C19.2117 27.9572 19.391 28.2287 19.391 28.5001M15.7168 28.5001L15.7169 29.5001C15.7169 29.7715 15.8962 30.043 16.2549 30.2501C16.9724 30.6643 18.1356 30.6643 18.853 30.2501C19.2117 30.043 19.3911 29.7715 19.3911 29.5001L19.391 28.5001" stroke="currentColor" stroke-opacity="0.3"></path><rect width="8" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 24.4805 39.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="8" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 41.8027 49.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="8" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 19.2852 38.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="5" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 33.1406 34.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="5" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 50.4629 44.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="7" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 29.6777 40.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="7" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 46.998 50.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="4" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 34.873 41.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="4" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 53.9258 54.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="4" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 52.1934 51.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="4" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 36.6055 44.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="4" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 55.6582 57.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="4" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 38.3379 47.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="7" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 39.2031 31)" fill="currentColor" fill-opacity="0.3"></rect><rect width="5" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 56.5234 41)" fill="currentColor" fill-opacity="0.3"></rect><rect width="6" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 37.4727 36)" fill="currentColor" fill-opacity="0.3"></rect><rect width="6" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 54.793 46)" fill="currentColor" fill-opacity="0.3"></rect><rect width="9" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 40.0703 38.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="9" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 57.3906 48.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="4" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 44.3984 32)" fill="currentColor" fill-opacity="0.3"></rect><rect width="12" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 61.7207 42)" fill="currentColor" fill-opacity="0.3"></rect><rect width="7" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 49.5957 33)" fill="currentColor" fill-opacity="0.3"></rect><rect width="7" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 66.918 43)" fill="currentColor" fill-opacity="0.3"></rect><rect width="10" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 57.3906 28.5)" fill="currentColor" fill-opacity="0.3"></rect><rect width="10" height="2" rx="0.5" transform="matrix(0.866025 -0.5 0.866025 0.5 74.7109 38.5)" fill="currentColor" fill-opacity="0.3"></rect></g><defs><clipPath id="clip0_408_5776"><rect width="112" height="72" fill="var(--site-background)"></rect></clipPath></defs></svg>
-                        <h1 className='text-md sm:text-lg'>CSS variables</h1>  
-                        </div>
-                        <p className="mt-6 px-2 text-white/50 font-light text-sm sm:text-base">Customizing your theme is as simple as creating a few CSS variables.You have components that uses both tailwind and CSS for perfections</p>
-                        </div>
-                        
-                        <div className="flex h-full w-full gap-12 justify-center mt-30">
-                        {/* CSS Icon with drop shadow and rotation */}
-                        <div className="-rotate-10">
-                            <SiCss3 size={60} className="text-blue-500  drop-shadow-[0_10px_25px_-5px_rgba(0,0,255,0.4)]" />
-                        </div>
+          <motion.div
+  className="pc relative bg-transparent z-100 mask-b-from-80% mask-b-to-100%  rounded-xl flex flex-col justify-end p-4 w-full h-[400px] overflow-hidden group border border-[#343434]  divide-y md:divide-y-0 md:divide-x divide-[#343434]"
+  whileHover="hover"
+  initial="initial"
+>
+  {/* Hover background layer */}
+  <div className="ccc absoluite inset-0 z-0" />
 
-                        {/* Tailwind Icon with drop shadow and rotation */}
-                        <div className="mt-12 rotate-10 ">
-                            <SiTailwindcss size={60} className="text-cyan-400 drop-shadow-[0_10px_25px_-5px_rgba(56,189,248,0.4)]" />
-                        </div>
-                        </div>
+  {/* Canvas overlay */}
+  <motion.canvas
+    width="400"
+    height="264"
+    aria-label="Dithered version of image"
+    className="absolute inset-0 w-full h-full object-cover image-rendering-pixelated opacity-0 z-0"
+    variants={{
+      initial: { opacity: 0 },
+      hover: { opacity: 1, transition: { duration: 0.3 } },
+    }}
+  />
 
-                         {/* Bottom Fixed Slick Menu */}
-                         
-                       </motion.div>
-                       <motion.div
-                         class="col-span-1 lg:col-span-2 ...  bg-[#191919] rounded-xl p-2 lg:-mt-[30%] w-[100%] lg:w-[95%] -ml-0 lg:ml-17  flex-col gap-10 items-center justify-center"
-                       >
-                        <div className="flex items-center">
-                        <div className="flex flex-col" >
-                        <div className="flex items-center gap-2 mt-6">
-                            <svg class="text-white bg-[#191919]" width="112" height="72" viewBox="0 0 112 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_408_5765)"><path d="M11.3887 58.234C11.3887 59.5912 12.2855 60.9484 14.0791 61.984C17.6663 64.055 23.4823 64.055 27.0694 61.984C28.863 60.9484 29.7598 59.5912 29.7598 58.234M11.3887 58.234C11.3887 56.8767 12.2855 55.5195 14.0791 54.484C17.6663 52.4129 23.4823 52.4129 27.0694 54.484C28.8631 55.5195 29.7598 56.8767 29.7598 58.234M11.3887 58.234V61.234C11.3887 62.5912 12.2855 63.9484 14.0791 64.984C17.6663 67.055 23.4823 67.055 27.0694 64.984C28.863 63.9484 29.7598 62.5912 29.7598 61.234V58.234" stroke="currentColor" stroke-opacity="0.2"></path><path d="M44.3896 44.484C38.8892 41.3084 29.9714 41.3084 24.471 44.484C21.7208 46.0718 20.3457 48.1529 20.3458 50.234L20.3457 53.234C20.3457 55.3151 21.7208 57.3962 24.471 58.984C29.9713 62.1597 38.8892 62.1597 44.3896 58.984C47.1397 57.3962 48.5148 55.3151 48.5148 53.234V50.2555C48.5243 48.1673 47.1493 46.0773 44.3896 44.484Z" fill="var(--site-background)" fill-opacity="0.4"></path><path d="M20.3458 50.234C20.3458 52.3151 21.7208 54.3962 24.471 55.984C29.9714 59.1597 38.8892 59.1597 44.3896 55.984C47.1303 54.4017 48.5054 52.3294 48.5148 50.2555M20.3458 50.234C20.3457 48.1529 21.7208 46.0718 24.471 44.484C29.9714 41.3084 38.8892 41.3084 44.3896 44.484C47.1493 46.0773 48.5243 48.1673 48.5148 50.2555M20.3458 50.234L20.3457 53.234C20.3457 55.3151 21.7208 57.3962 24.471 58.984C29.9713 62.1597 38.8892 62.1597 44.3896 58.984C47.1397 57.3962 48.5148 55.3151 48.5148 53.234V50.2555" stroke="currentColor" stroke-opacity="0.4"></path><path d="M61.7097 34.484C54.2962 30.2038 42.2765 30.2038 34.8629 34.484C31.1562 36.6241 29.3028 39.429 29.3028 42.234L29.3027 45.234C29.3027 48.0389 31.1561 50.8439 34.8629 52.984C42.2764 57.2642 54.2961 57.2642 61.7097 52.984C65.4164 50.8439 67.2698 48.0389 67.2698 45.234V42.2104C67.2595 39.4133 65.4061 36.6181 61.7097 34.484Z" fill="var(--site-background)" fill-opacity="0.6"></path><path d="M29.3028 42.234C29.3028 45.0389 31.1562 47.8439 34.8629 49.984C42.2765 54.2642 54.2962 54.2642 61.7097 49.984C65.4269 47.8379 67.2802 45.0232 67.2698 42.2104M29.3028 42.234C29.3028 39.429 31.1562 36.6241 34.8629 34.484C42.2765 30.2038 54.2962 30.2038 61.7097 34.484C65.4061 36.6181 67.2595 39.4133 67.2698 42.2104M29.3028 42.234L29.3027 45.234C29.3027 48.0389 31.1561 50.8439 34.8629 52.984C42.2764 57.2642 54.2961 57.2642 61.7097 52.984C65.4164 50.8439 67.2698 48.0389 67.2698 45.234V42.2104" stroke="currentColor" stroke-opacity="0.6"></path><path d="M79.0318 24.484C69.7051 19.0992 54.5835 19.0992 45.2568 24.484C40.5934 27.1764 38.2618 30.7052 38.2618 34.234L38.2617 37.234C38.2617 40.7628 40.5934 44.2916 45.2567 46.984C54.5835 52.3688 69.705 52.3688 79.0317 46.984C83.6951 44.2916 86.0268 40.7628 86.0268 37.234L86.0268 34.234C86.0268 30.7052 83.6951 27.1764 79.0318 24.484Z" fill="var(--site-background)" fill-opacity="0.8"></path><path d="M38.2618 34.234C38.2618 37.7628 40.5934 41.2916 45.2568 43.984C54.5835 49.3688 69.7051 49.3688 79.0318 43.984C83.6951 41.2916 86.0268 37.7628 86.0268 34.234M38.2618 34.234C38.2618 30.7052 40.5934 27.1764 45.2568 24.484C54.5835 19.0992 69.7051 19.0992 79.0318 24.484C83.6951 27.1764 86.0268 30.7052 86.0268 34.234M38.2618 34.234L38.2617 37.234C38.2617 40.7628 40.5934 44.2916 45.2567 46.984C54.5835 52.3688 69.705 52.3688 79.0317 46.984C83.6951 44.2916 86.0268 40.7628 86.0268 37.234L86.0268 34.234" stroke="currentColor" stroke-opacity="0.8"></path><path d="M55.6487 37.9841C66.8885 44.4734 85.112 44.4734 96.3519 37.9841C101.972 34.7394 104.782 30.4867 104.782 26.2341L104.782 23.2341C104.782 18.9814 101.972 14.7287 96.3518 11.4841C85.112 4.99473 66.8885 4.99473 55.6487 11.4841C50.0287 14.7287 47.2188 18.9814 47.2188 23.2341L47.2188 26.2341C47.2188 30.4867 50.0287 34.7394 55.6487 37.9841Z" fill="var(--site-background)"></path><path d="M104.782 23.2341C104.782 18.9814 101.972 14.7287 96.3518 11.4841C85.112 4.99473 66.8885 4.99473 55.6487 11.4841C50.0287 14.7287 47.2188 18.9814 47.2188 23.2341M104.782 23.2341C104.782 27.4867 101.972 31.7394 96.3518 34.9841C85.112 41.4734 66.8885 41.4734 55.6487 34.9841C50.0287 31.7394 47.2187 27.4867 47.2188 23.2341M104.782 23.2341L104.782 26.2341C104.782 30.4867 101.972 34.7394 96.3519 37.9841C85.112 44.4734 66.8885 44.4734 55.6487 37.9841C50.0287 34.7394 47.2188 30.4867 47.2188 26.2341L47.2188 23.2341" stroke="currentColor"></path></g><defs><clipPath id="clip0_408_5765"><rect width="112" height="72" fill="var(--site-background)"></rect></clipPath></defs></svg>
-                            <h1 className='text-md sm:text-lg'>Transitions & Animations</h1>  
-                            </div>
-                            <p className="mt-6 px-2 text-white/50 font-light w-full md:w-[50%] text-sm sm:text-base">Transitions that work the way you'd expect — throw a few utilities on an element and you're in business.</p>
-                            </div>
-                            <div className=" hidden md:flex items-center flex-col mt-6">
-                            <div className="flex w-[100%] justify-end relative" ref={ref}>
-                         <hr className="w-full h-1 bg-[#191919] opacity-45" />
+  {/* Radial gradient mask */}
+  <div className="absolute inset-0 bg-gradient-radial from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
 
-                            {/* Moving Cube */}
-                            {isInView && (
-                                <motion.div
-                                initial={{ x: 0 }}
-                                animate={{
-                                    x: [0, -200], // Adjust 300 to match your hr width
-                                }}
-                                transition={{
-                                    duration: 1.5,
-                                    delay:0.3,
-                                    repeat: Infinity,
-                                    repeatType: "reverse",
-                                    ease: "easeInOut",
-                                }}
-                                className="absolute -mt-5 w-10 h-10 rounded-lg bg-[#00d8ff]"
-                                />
-                            )}
-                                </div>
-                                <p className="mt-6 text-center text-white/50">Transition in linear plus repeat type reverse & infinite animation</p>
-                            </div>
-                        </div>
-                       
-                       </motion.div>
+  {/* Text */}
+  <motion.div
+    layout
+    className="absolute bottom-4 left-4 right-4 z-20"
+    variants={{
+      initial: { y: 0 },
+      hover: { y: -30, transition: { duration: 0.4 } },
+    }}
+  >
+    <h1 className="text-2xl font-medium"> User Experience</h1>
+    <motion.p
+      className="text-white/60 text-sm mt-2"
+      variants={{
+        initial: { opacity: 0, y: 20 },
+        hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
+      }}
+    >
+      We design smooth UI flows and intuitive layouts that keep users engaged.
+                </motion.p>
+                
+  </motion.div>
+</motion.div>
+
+
+                      <motion.div
+  className="champ relative bg-transparent z-100 mask-b-from-80% mask-b-to-100%  rounded-xl flex flex-col justify-end p-4 w-full h-[400px] overflow-hidden group border border-[#343434]  divide-y md:divide-y-0 md:divide-x divide-[#343434]"
+  whileHover="hover"
+  initial="initial"
+>
+  {/* Hover background layer */}
+  <div className="ccc absoluite inset-0 z-0" />
+
+  {/* Canvas overlay */}
+  <motion.canvas
+    width="400"
+    height="264"
+    aria-label="Dithered version of image"
+    className="absolute inset-0 w-full h-full object-cover image-rendering-pixelated opacity-0 z-0"
+    variants={{
+      initial: { opacity: 0 },
+      hover: { opacity: 1, transition: { duration: 0.3 } },
+    }}
+  />
+
+  {/* Radial gradient mask */}
+  <div className="absolute inset-0 bg-gradient-radial from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
+
+  {/* Text */}
+  <motion.div
+    layout
+    className="absolute bottom-4 left-4 right-4 z-20"
+    variants={{
+      initial: { y: 0 },
+      hover: { y: -30, transition: { duration: 0.4 } },
+    }}
+  >
+    <h1 className="text-2xl font-medium">Improved SEO</h1>
+    <motion.p
+      className="text-white/60 text-sm mt-2"
+      variants={{
+        initial: { opacity: 0, y: 20 },
+        hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
+      }}
+    >
+      Rank higher on Google.Stand out from competitors
+    </motion.p>
+  </motion.div>
+</motion.div>
+                        <motion.div
+  className="fast relative bg-transparent z-100 mask-b-from-80% mask-b-to-100%  rounded-xl flex flex-col justify-end p-4 w-full h-[400px] overflow-hidden group border border-[#343434]  divide-y md:divide-y-0 md:divide-x divide-[#343434]"
+  whileHover="hover"
+  initial="initial"
+>
+  {/* Hover background layer */}
+  <div className="ccc absoluite inset-0 z-0" />
+
+  {/* Canvas overlay */}
+  <motion.canvas
+    width="400"
+    height="264"
+    aria-label="Dithered version of image"
+    className="absolute inset-0 w-full h-full object-cover image-rendering-pixelated opacity-0 z-0"
+    variants={{
+      initial: { opacity: 0 },
+      hover: { opacity: 1, transition: { duration: 0.3 } },
+    }}
+  />
+
+  {/* Radial gradient mask */}
+  <div className="absolute inset-0 bg-gradient-radial from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
+
+  {/* Text */}
+  <motion.div
+    layout
+    className="absolute bottom-4 left-4 right-4 z-20"
+    variants={{
+      initial: { y: 0 },
+      hover: { y: -30, transition: { duration: 0.4 } },
+    }}
+  >
+    <h1 className="text-2xl font-medium">Increased conversion</h1>
+    <motion.p
+      className="text-white/60 text-sm mt-2"
+      variants={{
+        initial: { opacity: 0, y: 20 },
+        hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
+      }}
+    >
+      Turn components into life . Boost your projects
+    </motion.p>
+  </motion.div>
+</motion.div>
+                         <motion.div
+  className="save relative bg-transparent z-100 mask-b-from-80% mask-b-to-100%  rounded-xl flex flex-col justify-end p-4 w-full h-[400px] overflow-hidden group border border-[#343434]  divide-y md:divide-y-0 md:divide-x divide-[#343434]"
+  whileHover="hover"
+  initial="initial"
+>
+  {/* Hover background layer */}
+  <div className="ccc absoluite inset-0 z-0" />
+
+  {/* Canvas overlay */}
+  <motion.canvas
+    width="400"
+    height="264"
+    aria-label="Dithered version of image"
+    className="absolute inset-0 w-full h-full object-cover image-rendering-pixelated opacity-0 z-0"
+    variants={{
+      initial: { opacity: 0 },
+      hover: { opacity: 1, transition: { duration: 0.3 } },
+    }}
+  />
+
+  {/* Radial gradient mask */}
+  <div className="absolute inset-0 bg-gradient-radial from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
+
+  {/* Text */}
+  <motion.div
+    layout
+    className="absolute bottom-4 left-4 right-4 z-20"
+    variants={{
+      initial: { y: 0 },
+      hover: { y: -30, transition: { duration: 0.4 } },
+    }}
+  >
+    <h1 className="text-2xl font-medium">Cost Savings</h1>
+    <motion.p
+      className="text-white/60 text-sm mt-2"
+      variants={{
+        initial: { opacity: 0, y: 20 },
+        hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
+      }}
+    >
+      Reduce your time by eliminating the code you write
+    </motion.p>
+  </motion.div>
+</motion.div>
                      </motion.div>
         </div>
         </>

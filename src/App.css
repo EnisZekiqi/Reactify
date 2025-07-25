@@ -305,3 +305,94 @@
 .explore{
   box-shadow: rgba(0, 216, 255,0.5) 0px 8px 25px 0px, rgba(255, 255, 255, 0) 0px 0px 10px 1px inset, rgba(0, 85, 255, 0.12) 0px 0px 0px 1px;
 }
+.pc {
+  background-image: url(./assets/pc-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.pc:hover {
+  filter: grayscale(0%);
+}
+
+.ccc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./assets/magicpattern-polka-dot-pattern-1753481144174.png);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.group:hover .ccc::before {
+  opacity: 1;
+}
+
+
+.champ {
+  background-image: url(./assets/champ-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.champ:hover {
+  filter: grayscale(0%);
+}
+
+.fast {
+  background-image: url(./assets/fast-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.fast:hover {
+  filter: grayscale(0%);
+}
+.save {
+  background-image: url(./assets/save-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.save:hover {
+  filter: grayscale(0%);
+}
+@media (max-width:400px) {
+  .save {
+      filter: grayscale(0%);
+      background-size:auto;
+
+  }
+  .fast {
+      filter: grayscale(0%);
+            background-size:auto;
+
+
+  }
+  .champ {
+      filter: grayscale(0%);
+            background-size:auto;
+
+
+  }
+  .pc{
+      filter: grayscale(0%);
+            background-size:auto;
+
+
+  }
+}
