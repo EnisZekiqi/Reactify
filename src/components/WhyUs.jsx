@@ -67,9 +67,9 @@ const WhyUs = () => {
       hover: { y: -30, transition: { duration: 0.4 } },
     }}
   >
-    <h1 className="text-2xl font-medium"> User Experience</h1>
+    <h1 className="text-xl sm:text-2xl font-medium"> User Experience</h1>
     <motion.p
-      className="text-white/60 text-sm mt-2"
+      className="text-white/60 text-sm mt-2 hidden sm:block"
       variants={{
         initial: { opacity: 0, y: 20 },
         hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
@@ -77,6 +77,7 @@ const WhyUs = () => {
     >
       We design smooth UI flows and intuitive layouts that keep users engaged.
                 </motion.p>
+                <p className="block sm:hidden text-white/60 text-[13px] mb-6">   We design smooth UI flows and intuitive layouts that keep users engaged.</p>
                 
   </motion.div>
 </motion.div>
@@ -114,9 +115,9 @@ const WhyUs = () => {
       hover: { y: -30, transition: { duration: 0.4 } },
     }}
   >
-    <h1 className="text-2xl font-medium">Improved SEO</h1>
+    <h1 className="text-xl sm:text-2xl font-medium">Improved SEO</h1>
     <motion.p
-      className="text-white/60 text-sm mt-2"
+      className="text-white/60 text-sm mt-2 hidden sm:block"
       variants={{
         initial: { opacity: 0, y: 20 },
         hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
@@ -124,6 +125,7 @@ const WhyUs = () => {
     >
       Rank higher on Google.Stand out from competitors
     </motion.p>
+    <p className="block text-white/60 text-[13px] mb-6 sm:hidden">Rank higher on Google.Stand out from competitors</p>
   </motion.div>
 </motion.div>
                         <motion.div
@@ -158,16 +160,17 @@ const WhyUs = () => {
       hover: { y: -30, transition: { duration: 0.4 } },
     }}
   >
-    <h1 className="text-2xl font-medium">Increased conversion</h1>
+    <h1 className="text-xl sm:text-2xl font-medium">Increased conversion</h1>
     <motion.p
-      className="text-white/60 text-sm mt-2"
+      className="text-white/60 text-sm mt-2 hidden sm:block"
       variants={{
         initial: { opacity: 0, y: 20 },
         hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
       }}
     >
       Turn components into life . Boost your projects
-    </motion.p>
+                </motion.p>
+     <p className="block text-white/60 text-[13px] mb-6 sm:hidden"> Turn components into life . Boost your projects</p>
   </motion.div>
 </motion.div>
                          <motion.div
@@ -202,16 +205,18 @@ const WhyUs = () => {
       hover: { y: -30, transition: { duration: 0.4 } },
     }}
   >
-    <h1 className="text-2xl font-medium">Cost Savings</h1>
+    <h1 className="text-xl sm:text-2xl font-medium">Cost Savings</h1>
     <motion.p
-      className="text-white/60 text-sm mt-2"
+      className="text-white/60 text-sm mt-2 hidden sm:block"
       variants={{
         initial: { opacity: 0, y: 20 },
         hover: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } },
       }}
     >
-      Reduce your time by eliminating the code you write
-    </motion.p>
+      Reduce your time by eliminating the code you write & it's free
+                </motion.p>
+    <p className="block text-white/60 text-[13px] mb-6 sm:hidden"> Reduce your time by eliminating the code you write & it's free</p>
+
   </motion.div>
 </motion.div>
                      </motion.div>
