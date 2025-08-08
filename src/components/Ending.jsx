@@ -117,7 +117,7 @@ const Ending = () => {
               scale: 0.95,
             }}
           >
-            <a href="/docs">Get Started</a>
+            <a href="/docs">Check Docs</a>
           </motion.button>
           <motion.p
             initial={{ opacity: 0 }}

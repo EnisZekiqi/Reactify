@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="navbar flex justify-between fixed ">
+      <div className="navbar flex justify-between items-center fixed mt-4">
         <Link to="/">
-          <div className=" flex flex-row-reverse items-center  rounded-[10px] mt-4">
+          <div className=" flex flex-row-reverse items-center  rounded-[10px] ">
             <p className="hidden md:block text-white font-medium text-lg">
               Reactify
             </p>
@@ -51,7 +51,7 @@ const Navbar = () => {
             </motion.svg>
           </div>
         </Link>
-        <div className="flex items-center gap-4 text-sm font-normal mt-4">
+        <div className="hidden sm:flex items-center gap-4 text-sm font-normal mt-4">
           <a
             className="opacity-70 hover:opacity-100 transition-all duration-300"
             href="https://github.com/EnisZekiqi"
@@ -72,6 +72,7 @@ const Navbar = () => {
             Docs
           </Link>
         </div>
+        <a className="sm:hidden block"  href="https://github.com/EnisZekiqi/Reactify" target="_blank"><button className="bg-[#00d8ff] hover:bg-[#00adcc] text-black rounded-lg px-3 py-1 my-3 text-sm font-medium">GitHub</button></a>
       </div>
     </>
   );

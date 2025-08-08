@@ -211,7 +211,7 @@ function HeroSection({
               scale: 0.95,
             }}
           >
-            <Link to="/docs"> Get Started</Link>
+            <Link to="/example/simple-text"> Get Started</Link>
           </motion.button>
         </motion.div>
         {/* Tooltip Logos */}
